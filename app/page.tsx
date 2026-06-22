@@ -1,3 +1,6 @@
+import About from "@/components/Homepage/About";
+import Locations from "@/components/Homepage/Locations";
+import WhatWeDo from "@/components/Homepage/What-we-do";
 import Image from "next/image";
 
 export default function Home() {
@@ -12,6 +15,14 @@ export default function Home() {
           className="object-cover object-center"
         />
       </section>
+
+      {/* {What we do section} */}
+      <WhatWeDo />
+      {/* {About us section} */}
+      <About />
+
+      {/* {Location Map section} */}
+      <Locations />
      
     </main>
   );

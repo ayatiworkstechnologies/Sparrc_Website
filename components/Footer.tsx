@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 
 const footerData = {
-  logo: "/images/logo.png",
+  logo: "/images/footer-logo.png",
 
   description:
     "SPARRC is a pioneering Sports and Fitness Medicine centre. We ensure our clients attain the priceless possession of health through Fitness.",
@@ -187,7 +187,15 @@ export default function Footer() {
         <div className="mt-14 text-center">
           <p className="text-[14px] font-bold text-black">
             Copyright © 2026 by Sparrc Kinesiohealth Private Limited - All Right
-            Reserved | Design & Developed by Ayatiworks
+            Reserved | Design & Developed by{" "}
+            <a
+              href="https://www.ayatiworks.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#4D1EFF]  transition hover:text-[#f15a24]"
+            >
+              Ayatiworks
+            </a>
           </p>
         </div>
       </div>
