@@ -119,86 +119,86 @@ export default function WhatWeDo() {
         </div>
       </section>
 
-      <section className="overflow-hidden bg-[#f7f7f7] px-6 py-20 md:px-10 lg:px-16">
-        <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-2 lg:items-center">
-          <motion.div
-            initial={{
-              x: -100,
-              opacity: 0,
-              filter: "blur(10px)",
-            }}
-            whileInView={{
-              x: 0,
-              opacity: 1,
-              filter: "blur(0px)",
-            }}
-            viewport={{ once: true, amount: 0.35 }}
-            transition={{
-              duration: 1.55,
-              ease: smoothEase,
-            }}
-          >
-            <motion.p
-              initial={{ y: 25, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{
-                duration: 1,
-                delay: 0.25,
-                ease: smoothEase,
-              }}
-              className="mb-14 text-[14px] font-bold uppercase tracking-wide text-black"
-            >
-              What We Do
-            </motion.p>
+      <section className="relative overflow-hidden bg-[#f5f6fb] px-6 py-24 md:px-10 lg:px-16">
+  <div className="absolute inset-x-0 bottom-0 h-1/2 bg-[#f5f6fb]" />
 
-            <h2 className="max-w-[590px] text-[34px] font-extrabold leading-[1.42] tracking-[-0.02em] text-black md:text-[44px]">
-              Helping people move better, recover faster, and live healthier
-              through expert-led rehabilitation, fitness, and sports medicine
-              programs.
-            </h2>
-          </motion.div>
+  <div className="relative mx-auto max-w-7xl">
+    <div className="grid overflow-hidden rounded-[36px] bg-[linear-gradient(180deg,#286cba_0%,#3b55a5_55%,#524095_100%)] lg:grid-cols-[58%_42%]">
+      {/* Left Dark Content */}
+      <motion.div
+        initial={{ x: -90, opacity: 0, filter: "blur(10px)" }}
+        whileInView={{ x: 0, opacity: 1, filter: "blur(0px)" }}
+        viewport={{ once: true, amount: 0.35 }}
+        transition={{ duration: 1.45, ease: smoothEase }}
+        className="relative p-8 md:p-12 lg:p-16"
+      >
+        {/* <div className="absolute left-0 top-0 h-40 w-50 rounded-full bg-[#ffff]/0 blur-2xl" /> */}
 
-          <motion.div
-            initial={{
-              x: 100,
-              opacity: 0,
-              filter: "blur(10px)",
-            }}
-            whileInView={{
-              x: 0,
-              opacity: 1,
-              filter: "blur(0px)",
-            }}
-            viewport={{ once: true, amount: 0.35 }}
-            transition={{
-              duration: 1.55,
-              delay: 0.2,
-              ease: smoothEase,
-            }}
-            className="lg:pt-24"
-          >
-            <p className="max-w-[590px] text-[16px] leading-8 text-black">
-              SPARRC is a pioneering Sports and Fitness Medicine Clinic. We
-              ensure our clients attain the priceless possession of health
-              through Fitness. We encourage our clients to lead an active
-              lifestyle to be able to enjoy their life to the fullest.
-            </p>
+        <p className="mb-10 text-[14px] font-bold uppercase tracking-[0.22em] text-[#f3efef]">
+          What We Do
+        </p>
 
-            <motion.div
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              viewport={{ once: true, amount: 0.6 }}
-              transition={{
-                duration: 1.4,
-                delay: 0.55,
-                ease: smoothEase,
-              }}
-              className="mt-14 h-px w-full origin-left bg-gray-300"
-            />
-          </motion.div>
+        <h2 className="relative max-w-[720px] text-[25px] font-extrabold leading-[1.35] tracking-[-0.03em] text-white md:text-[40px]">
+          Helping people move better, recover faster, and live healthier through
+          expert-led rehabilitation, fitness, and sports medicine programs.
+        </h2>
+      </motion.div>
+
+      {/* Right White Card */}
+      <motion.div
+        initial={{ x: 90, opacity: 0, filter: "blur(10px)" }}
+        whileInView={{ x: 0, opacity: 1, filter: "blur(0px)" }}
+        viewport={{ once: true, amount: 0.35 }}
+        transition={{
+          duration: 1.45,
+          delay: 0.2,
+          ease: smoothEase,
+        }}
+        className="bg-white p-8 md:p-12 lg:p-14"
+      >
+        <p className="text-[16px] leading-8 text-black">
+          SPARRC is a pioneering Sports and Fitness Medicine Clinic. We ensure our
+          clients attain the priceless possession of health through Fitness. We
+          encourage our clients to lead an active lifestyle to be able to enjoy
+          their life to the fullest.
+        </p>
+
+        <motion.div
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true, amount: 0.6 }}
+          transition={{
+            duration: 1.4,
+            delay: 0.55,
+            ease: smoothEase,
+          }}
+          className="mt-10 h-px w-full origin-left bg-gray-300"
+        />
+
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          {["Rehabilitation", "Fitness", "Sports Medicine", "Active Living"].map(
+            (item, index) => (
+              <motion.div
+                key={item}
+                initial={{ y: 24, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.75,
+                  delay: 0.65 + index * 0.1,
+                  ease: smoothEase,
+                }}
+                className="rounded-2xl border border-gray-100 bg-[#f7f7f7] px-5 py-4 text-[14px] font-bold text-black"
+              >
+                {item}
+              </motion.div>
+            )
+          )}
         </div>
-      </section>
+      </motion.div>
+    </div>
+  </div>
+</section>
     </>
   );
 }

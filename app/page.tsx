@@ -1,5 +1,8 @@
 import About from "@/components/Homepage/About";
+import FeaturedServices from "@/components/Homepage/FeaturedServices";
 import Locations from "@/components/Homepage/Locations";
+import ManagementTeam from "@/components/Homepage/ManagementTeam";
+import PatientTestimonials from "@/components/Homepage/PatientTestimonials";
 import WhatWeDo from "@/components/Homepage/What-we-do";
 import Image from "next/image";
 
@@ -20,6 +23,14 @@ export default function Home() {
       <WhatWeDo />
       {/* {About us section} */}
       <About />
+
+      {/* {Featured service section} */}
+      <FeaturedServices />
+
+      {/* {Patient Testimonials Section} */}
+      <PatientTestimonials />
+      {/* {Management Team section} */}
+      <ManagementTeam />
 
       {/* {Location Map section} */}
       <Locations />

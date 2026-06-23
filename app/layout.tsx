@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import StickySocialIcons from "@/components/StickySocialIcons";
 
 const jost = Jost({
   variable: "--font-jost",
@@ -33,6 +34,8 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
+        {/* {sticky social icons and arrow to top button} */}
+        <StickySocialIcons />
         <Footer />
       </body>
     </html>

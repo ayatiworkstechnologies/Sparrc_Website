@@ -20,7 +20,7 @@ const aboutStats = [
 export default function AboutUs() {
   return (
     <section className="overflow-hidden bg-white px-6 py-20 md:px-10 lg:px-16">
-      <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[65fr_35fr]">
+      <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[60fr_40fr]">
         {/* Left 65% */}
         <motion.div
           initial={{ x: -90, opacity: 0, filter: "blur(10px)" }}
@@ -161,7 +161,7 @@ export default function AboutUs() {
             alt="About SPARRC"
             fill
             sizes="(max-width: 1024px) 100vw, 35vw"
-            className="object-cover"
+            className="object-contain"
           />
         </motion.div>
       </div>
