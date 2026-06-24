@@ -134,11 +134,11 @@ export default function Locations() {
         >
           <p className="mb-8 text-[15px] text-black">Locations</p>
 
-          <h2 className="max-w-[760px] text-[36px] font-extrabold leading-[1.3] text-black md:text-[52px]">
+          <h2 className="max-w-[760px] text-[36px] font-extrabold leading-[1.3] text-black md:text-[30px]">
             SPARRC brings trusted medical knowledge for healthier living.
           </h2>
 
-          <div className="mt-10 grid gap-x-16 gap-y-8 md:grid-cols-2">
+          <div className="mt-8 grid gap-x-16 gap-y-8 md:grid-cols-2">
             {locations.map((item) => (
               <button
                 key={item.name}
@@ -156,7 +156,7 @@ export default function Locations() {
                   />
 
                   <h3
-                    className={`text-[22px] font-extrabold transition ${
+                    className={`text-[20px] font-semibold transition ${
                       active.name === item.name
                         ? "text-[#4D1EFF]"
                         : "text-black group-hover:text-[#4D1EFF]"

@@ -9,13 +9,27 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="bg-white">
-      <section className="relative h-[520px] overflow-hidden md:h-[620px]">
+      <section className="relative w-full  overflow-hidden bg-white">
+        {/* Mobile Banner */}
         <Image
-          src="/images/banner.png"
-          alt="SPARRC Banner"
-          fill
+          src="/images/mobile-homebanner.png"
+          alt="SPARRC Mobile Banner"
+          width={768}
+          height={900}
           priority
-          className="object-cover object-center"
+          sizes="100vw"
+          className="block h-auto w-full object-contain md:hidden"
+        />
+
+        {/* Tablet / Desktop Banner */}
+        <Image
+          src="/images/banner-desktop.png"
+          alt="SPARRC Desktop Banner"
+          width={1920}
+          height={800}
+          priority
+          sizes="100vw"
+          className="hidden h-auto w-full object-contain md:block"
         />
       </section>
 
@@ -34,7 +48,7 @@ export default function Home() {
 
       {/* {Location Map section} */}
       <Locations />
-     
+
     </main>
   );
 }
