@@ -12,27 +12,27 @@ const footerData = {
     {
       name: "Facebook",
       icon: "/icons/facebook.svg",
-      href: "#",
+      href: "https://www.facebook.com/SparrcInstitute/",
     },
     {
       name: "X",
       icon: "/icons/x.svg",
-      href: "#",
+      href: "https://twitter.com/sparrcinstitute",
     },
     {
       name: "Instagram",
       icon: "/icons/instagram.svg",
-      href: "#",
+      href: "https://www.instagram.com/sparrcinstitute/",
     },
     {
       name: "YouTube",
       icon: "/icons/youtube.svg",
-      href: "#",
+      href: "https://www.youtube.com/@Sparrc",
     },
     {
       name: "LinkedIn",
       icon: "/icons/linkedin.svg",
-      href: "#",
+      href: "https://www.linkedin.com/company/sparrc/",
     },
   ],
 
@@ -102,6 +102,7 @@ export default function Footer() {
                   key={item.name}
                   href={item.href}
                   aria-label={item.name}
+                  target="_blank"
                   className="flex h-7 w-7 items-center justify-center rounded bg-white shadow-sm transition hover:-translate-y-1"
                 >
                   <Image

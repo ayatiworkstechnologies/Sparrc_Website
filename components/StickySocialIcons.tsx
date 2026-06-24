@@ -6,11 +6,11 @@ import { ArrowUp } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const socialIcons = [
-  { name: "Facebook", icon: "/icons/facebook.svg", href: "#" },
-  { name: "X", icon: "/icons/x.svg", href: "#" },
-  { name: "Instagram", icon: "/icons/instagram.svg", href: "#" },
-  { name: "LinkedIn", icon: "/icons/linkedin.svg", href: "#" },
-  { name: "YouTube", icon: "/icons/youtube.svg", href: "#" },
+  { name: "Facebook", icon: "/icons/facebook.svg", href: "https://www.facebook.com/SparrcInstitute/" },
+  { name: "X", icon: "/icons/x.svg", href: "https://twitter.com/sparrcinstitute" },
+  { name: "Instagram", icon: "/icons/instagram.svg", href: "https://www.instagram.com/sparrcinstitute/" },
+  { name: "LinkedIn", icon: "/icons/linkedin.svg", href: "https://www.linkedin.com/company/sparrc/" },
+  { name: "YouTube", icon: "/icons/youtube.svg", href: "https://www.youtube.com/@Sparrc" },
 ];
 
 export default function StickySocialIcons() {
