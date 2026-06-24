@@ -194,7 +194,7 @@ export default function Header() {
                   href={item.href}
                   className={`flex items-center gap-2 rounded-full px-7 py-3 text-[15px] font-medium transition-all duration-300 ${
                     active
-                      ? "bg-[linear-gradient(180deg,#286cba_0%,#3b55a5_55%,#524095_100%)] text-white shadow-[0_14px_30px_rgba(77,30,255,0.10)]"
+                      ? "bg-[linear-gradient(180deg,#286cba_0%,#3b55a5_55%,#524095_100%)] text-white shadow-[0_14px_30px_rgba(77,30,255,0.15)]"
                       : "text-black hover:text-[#4D1EFF]"
                   }`}
                 >
