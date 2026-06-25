@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import { Jost } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickySocialIcons from "@/components/StickySocialIcons";
+import ScrollToTop from "@/components/ScrollToTop";
+
 
 const jost = Jost({
   variable: "--font-jost",
@@ -32,9 +35,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${jost.variable} ${circe.variable} antialiased`}>
       <body>
+        <ScrollToTop />
         <Header />
         {children}
-        {/* {sticky social icons and arrow to top button} */}
         <StickySocialIcons />
         <Footer />
       </body>
