@@ -92,7 +92,10 @@ const navItems: NavItem[] = [
       { label: "Research", slug: "research" },
       { label: "IISM College", slug: "iism-college" },
       { label: "Privacy Policy", slug: "privacy-policy" },
-      { label: "Refund / Cancellation / Return Policy", slug: "refund-cancellation-return-policy" },
+      {
+        label: "Refund / Cancellation / Return Policy",
+        slug: "refund-cancellation-return-policy",
+      },
       { label: "Terms and Conditions", slug: "terms-and-conditions" },
     ],
   },
@@ -102,18 +105,31 @@ const navItems: NavItem[] = [
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [mobileDropdown, setMobileDropdown] = useState<number | null>(null);
-  const [scrolled, setScrolled] = useState(false);
+  const [hideTopbar, setHideTopbar] = useState(false);
 
   const pathname = usePathname();
   const isHome = pathname === "/";
-  const headerWhite = !isHome || scrolled;
+  const headerWhite = !isHome || hideTopbar;
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 80);
-    onScroll();
+    const updateTopbar = () => {
+      const y = window.scrollY;
 
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+      if (y > 24) {
+        setHideTopbar(true);
+        return;
+      }
+
+      if (y === 0) {
+        setHideTopbar(false);
+      }
+    };
+
+    updateTopbar();
+
+    window.addEventListener("scroll", updateTopbar, { passive: true });
+
+    return () => window.removeEventListener("scroll", updateTopbar);
   }, []);
 
   const subHref = (parentHref: string, slug: string) => `${parentHref}/${slug}`;
@@ -138,31 +154,31 @@ export default function Header() {
 
   return (
     <header
-      className={`left-0 top-0 z-50 w-full transition-colors duration-300 ${
+      className={`left-0 top-0 z-50 w-full transition-colors duration-500 ${
         isHome ? "fixed" : "sticky"
       } ${headerWhite ? "bg-white shadow-sm" : "bg-transparent"}`}
     >
-      {/* Top Bar */}
       <div
-        className={`hidden overflow-hidden transition-[max-height,opacity,transform] duration-500 ease-in-out xl:block ${
-          scrolled
-            ? "max-h-0 -translate-y-2 opacity-0"
-            : "max-h-[42px] translate-y-0 opacity-100"
-        } ${headerWhite ? "bg-white" : "bg-white/40 backdrop-blur-md"}`}
+        className={`hidden overflow-hidden transition-[height,opacity] duration-500 ease-out xl:block ${
+          hideTopbar ? "h-0 opacity-0" : "h-[42px] opacity-100"
+        } ${headerWhite ? "bg-white" : "bg-white/45 backdrop-blur-md"}`}
       >
         <div className="mx-auto flex h-[42px] max-w-[1600px] items-center justify-between px-10 text-[13px] text-black">
           <div className="flex items-center gap-2">
             <MapPin size={16} className="text-[#f15a24]" />
             <span>No 4, Alwarpet Street, Chennai 600018</span>
           </div>
+
           <div className="flex items-center gap-2">
             <Mail size={16} className="text-[#f15a24]" />
             <span>sparrc@gmail.com</span>
           </div>
+
           <div className="flex items-center gap-2">
             <Phone size={16} className="text-[#f15a24]" />
             <span>+ 91 965 965 0000</span>
           </div>
+
           <div className="flex items-center gap-2">
             <Video size={16} className="text-[#f15a24]" />
             <span>+91 9566111427</span>
@@ -170,8 +186,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Main Nav */}
-      <div className="mx-auto flex  h-[88px] max-w-[1600px] items-center justify-between px-6 md:px-8 xl:px-10">
+      <div className="mx-auto flex h-[88px] max-w-[1600px] items-center justify-between px-6 md:px-8 xl:px-10">
         <Link href="/" className="flex shrink-0 items-center">
           <Image
             src="/images/logo.png"
@@ -180,7 +195,7 @@ export default function Header() {
             height={82}
             priority
             quality={100}
-            className="h-auto w-[95px] md:w-[95px] xl:w-[100px]"
+            className="h-auto w-[95px]"
           />
         </Link>
 
@@ -228,7 +243,7 @@ export default function Header() {
                             href={href}
                             className={`group/item flex items-center justify-between rounded-2xl px-4 py-3 text-[14px] leading-snug transition-all duration-300 ${
                               activeDrop
-                                ? "bg-[#4D1EFF] text-white shado shadow-[#4D1EFF]/25"
+                                ? "bg-[#4D1EFF] text-white"
                                 : "bg-[#f8fafc] text-slate-800 hover:bg-[#4D1EFF] hover:text-white"
                             }`}
                           >
@@ -260,7 +275,6 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {open && (
         <div className="mx-4 mb-4 max-h-[75vh] overflow-y-auto rounded-2xl bg-white p-5 shadow-xl xl:hidden">
           <div className="space-y-3">
@@ -273,10 +287,14 @@ export default function Header() {
                     <button
                       type="button"
                       onClick={() =>
-                        setMobileDropdown(mobileDropdown === index ? null : index)
+                        setMobileDropdown(
+                          mobileDropdown === index ? null : index
+                        )
                       }
                       className={`flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-medium ${
-                        active ? "bg-[#4D1EFF] text-white" : "text-gray-700 hover:bg-gray-50"
+                        active
+                          ? "bg-[#4D1EFF] text-white"
+                          : "text-gray-700 hover:bg-gray-50"
                       }`}
                     >
                       {item.name}
@@ -320,8 +338,10 @@ export default function Header() {
                   key={item.name}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className={`flex items-center justify-between rounded-xl px-4 py-3 text-sm font-medium ${
-                    active ? "bg-[#4D1EFF] text-white" : "text-gray-700 hover:bg-gray-50"
+                  className={`block rounded-xl px-4 py-3 text-sm font-medium ${
+                    active
+                      ? "bg-[#4D1EFF] text-white"
+                      : "text-gray-700 hover:bg-gray-50"
                   }`}
                 >
                   {item.name}

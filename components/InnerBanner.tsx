@@ -11,26 +11,30 @@ type InnerBannerProps = {
   bgImage: string;
 };
 
-const parentRoutes = [
-  { name: "Departments", href: "/departments" },
-  { name: "Therapies", href: "/therapies" },
-  { name: "Myofascial", href: "/myofascial" },
-  { name: "Story", href: "/story" },
-  { name: "Events", href: "/events" },
-  { name: "About", href: "/about" },
-  { name: "Contact", href: "/contact" },
-];
-
 const ease = [0.16, 1, 0.3, 1] as const;
+
+function formatBreadcrumbLabel(slug: string) {
+  return slug
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
 
 export default function InnerBanner({ title, bgImage }: InnerBannerProps) {
   const pathname = usePathname();
 
-  const parent = parentRoutes.find(
-    (item) => pathname === item.href || pathname.startsWith(`${item.href}/`)
-  );
+  const pathSegments = pathname.split("/").filter(Boolean);
 
-  const showParent = parent && parent.href !== pathname;
+  const breadcrumbs = pathSegments.map((segment, index) => {
+    const href = "/" + pathSegments.slice(0, index + 1).join("/");
+    const isLast = index === pathSegments.length - 1;
+
+    return {
+      href,
+      label: isLast ? title : formatBreadcrumbLabel(segment),
+      isLast,
+    };
+  });
 
   return (
     <section className="relative min-h-[170px] overflow-hidden bg-white sm:min-h-[190px] md:min-h-[220px] lg:min-h-[240px]">
@@ -65,22 +69,22 @@ export default function InnerBanner({ title, bgImage }: InnerBannerProps) {
               Home
             </Link>
 
-            {showParent && (
-              <>
+            {breadcrumbs.map((item) => (
+              <div key={item.href} className="flex items-center gap-3">
                 <ChevronRight size={18} className="text-[#f15a24]" />
 
-                <Link
-                  href={parent.href}
-                  className="font-medium text-black transition hover:text-[#f15a24]"
-                >
-                  {parent.name}
-                </Link>
-              </>
-            )}
-
-            <ChevronRight size={18} className="text-[#f15a24]" />
-
-            <span className="font-medium text-black">{title}</span>
+                {item.isLast ? (
+                  <span className="font-medium text-black">{item.label}</span>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className="font-medium text-black transition hover:text-[#f15a24]"
+                  >
+                    {item.label}
+                  </Link>
+                )}
+              </div>
+            ))}
           </div>
         </motion.div>
       </div>
