@@ -14,7 +14,7 @@ export default function LifestyleDiseasesManagementsPage() {
         <div className="pointer-events-none absolute right-[-130px] top-[-100px] h-[420px] w-[420px] rounded-full bg-[#1268d6]/10 blur-3xl" />
         <div className="pointer-events-none absolute left-[-130px] bottom-20 h-[360px] w-[360px] rounded-full bg-[#19d3a2]/10 blur-3xl" /> */}
 
-        <div className="relative mx-auto grid max-w-6xl items-center gap-8 rounded-[32px] border border-white bg-white/90 p-5  md:grid-cols-[0.9fr_1.1fr] md:p-8">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-8 rounded-[32px] border border-white bg-white/90 p-5  lg:grid-cols-[0.9fr_1.1fr] md:p-8">
           <div>
             <div className="mb-4 inline-flex rounded-full bg-[#eafff5] px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.14em] text-[#12b886]">
               Lifestyle Wellness
@@ -44,12 +44,12 @@ export default function LifestyleDiseasesManagementsPage() {
           </div>
 
           <div className="relative">
-            <div className="absolute -inset-3 rounded-[32px] bg-gradient-to-br from-[#1268d6]/15 to-[#19d3a2]/15 blur-xl" />
+            {/* <div className="absolute -inset-3 rounded-[32px] bg-gradient-to-br from-[#1268d6]/15 to-[#19d3a2]/15 blur-xl" /> */}
             <div className="relative overflow-hidden rounded-[28px] bg-white p-2 shadow-[0_18px_55px_rgba(18,104,214,0.12)]">
               <img
                 src="/images/lifestyle-diseases-managements-main.png"
                 alt="Lifestyle diseases management exercise session"
-                className="h-[280px] w-full rounded-[22px] object-cover md:h-[410px]"
+                className="h-auto w-full rounded-[22px] object-contain"
               />
             </div>
           </div>

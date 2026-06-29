@@ -3,6 +3,7 @@ import FeaturedServices from "@/components/Homepage/FeaturedServices";
 import Locations from "@/components/Homepage/Locations";
 import ManagementTeam from "@/components/Homepage/ManagementTeam";
 import PatientTestimonials from "@/components/Homepage/PatientTestimonials";
+import RecoveryCTA from "@/components/Homepage/RecoveryCTA";
 import WhatWeDo from "@/components/Homepage/What-we-do";
 import Image from "next/image";
 
@@ -48,6 +49,9 @@ export default function Home() {
 
       {/* {Location Map section} */}
       <Locations />
+
+      {/* {Recovery CTA section} */}
+      <RecoveryCTA />
 
     </main>
   );

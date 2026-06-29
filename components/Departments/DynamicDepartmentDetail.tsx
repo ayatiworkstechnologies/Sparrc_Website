@@ -5,49 +5,96 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Activity,
+  Apple,
+  ArrowRightCircle,
+  BadgeCheck,
   BarChart3,
-  CalendarCheck,
-  ChevronLeft,
-  ChevronRight,
-  Crosshair,
-  Dumbbell,
-  Footprints,
-  Heart,
-  HeartHandshake,
-  HeartPulse,
-  ShieldCheck,
-  Sparkles,
+  Bike,
   Bone,
   Brain,
-  Zap,
-  PersonStanding,
+  CalendarCheck,
+  CheckCircle2,
+  ChevronLeft,
+  ChevronRight,
+  CircleAlert,
+  CircleDot,
+  ClipboardCheck,
+  ClipboardList,
+  Crosshair,
+  Dumbbell,
+  FileSearch,
+  Footprints,
+  Gauge,
   Hand,
-  StretchHorizontal,
-  Stethoscope,
+  HandHeart,
+  Heart,
+  HeartCrack,
+  HeartHandshake,
+  HeartPulse,
+  Leaf,
+  Microscope,
+  PersonStanding,
+  Repeat,
+  Scale,
+  ScanHeart,
   ScanSearch,
+  ShieldCheck,
+  Sparkles,
+  Stethoscope,
+  StretchHorizontal,
+  Syringe,
+  Timer,
+  Utensils,
+  Users,
+  Waves,
+  Zap,
   type LucideIcon,
 } from "lucide-react";
 
 type IconName =
+  | ""
   | "activity"
+  | "apple"
+  | "arrowRightCircle"
+  | "badgeCheck"
   | "chart"
-  | "calendar"
-  | "target"
-  | "dumbbell"
-  | "footprints"
-  | "heart"
-  | "heartPulse"
-  | "heartHandshake"
-  | "shield"
-  | "sparkles"
+  | "bike"
   | "bone"
   | "brain"
-  | "zap"
-  | "personStanding"
+  | "calendar"
+  | "checkCircle"
+  | "circleAlert"
+  | "circleDot"
+  | "clipboardCheck"
+  | "clipboardList"
+  | "target"
+  | "dumbbell"
+  | "fileSearch"
+  | "footprints"
+  | "gauge"
   | "hand"
-  | "stretch"
+  | "handHeart"
+  | "heart"
+  | "heartCrack"
+  | "heartPulse"
+  | "heartHandshake"
+  | "leaf"
+  | "microscope"
+  | "personStanding"
+  | "repeat"
+  | "scale"
+  | "scan"
+  | "scanHeart"
+  | "shield"
+  | "sparkles"
   | "stethoscope"
-  | "scan";
+  | "stretch"
+  | "syringe"
+  | "timer"
+  | "utensils"
+  | "users"
+  | "waves"
+  | "zap";
 
 export type FeatureItem = {
   icon?: IconName;
@@ -113,31 +160,56 @@ function DynamicIcon({
   name?: IconName;
   size?: number;
 }) {
-  const icons: Record<IconName, LucideIcon> = {
+  if (!name) return null;
+
+  const icons: Record<Exclude<IconName, "">, LucideIcon> = {
     activity: Activity,
+    apple: Apple,
+    arrowRightCircle: ArrowRightCircle,
+    badgeCheck: BadgeCheck,
     chart: BarChart3,
-    calendar: CalendarCheck,
-    target: Crosshair,
-    dumbbell: Dumbbell,
-    footprints: Footprints,
-    heart: Heart,
-    heartPulse: HeartPulse,
-    heartHandshake: HeartHandshake,
-    shield: ShieldCheck,
-    sparkles: Sparkles,
+    bike: Bike,
     bone: Bone,
     brain: Brain,
-    zap: Zap,
-    personStanding: PersonStanding,
+    calendar: CalendarCheck,
+    checkCircle: CheckCircle2,
+    circleAlert: CircleAlert,
+    circleDot: CircleDot,
+    clipboardCheck: ClipboardCheck,
+    clipboardList: ClipboardList,
+    target: Crosshair,
+    dumbbell: Dumbbell,
+    fileSearch: FileSearch,
+    footprints: Footprints,
+    gauge: Gauge,
     hand: Hand,
-    stretch: StretchHorizontal,
-    stethoscope: Stethoscope,
+    handHeart: HandHeart,
+    heart: Heart,
+    heartCrack: HeartCrack,
+    heartPulse: HeartPulse,
+    heartHandshake: HeartHandshake,
+    leaf: Leaf,
+    microscope: Microscope,
+    personStanding: PersonStanding,
+    repeat: Repeat,
+    scale: Scale,
     scan: ScanSearch,
+    scanHeart: ScanHeart,
+    shield: ShieldCheck,
+    sparkles: Sparkles,
+    stethoscope: Stethoscope,
+    stretch: StretchHorizontal,
+    syringe: Syringe,
+    timer: Timer,
+    utensils: Utensils,
+    users: Users,
+    waves: Waves,
+    zap: Zap,
   };
 
-  const Icon = icons[name] ?? Activity;
+  const Icon = icons[name];
 
-  return <Icon size={size} strokeWidth={2} />;
+  return Icon ? <Icon size={size} strokeWidth={2} /> : null;
 }
 
 function TextBlock({
@@ -145,7 +217,7 @@ function TextBlock({
   heading,
   content,
   iconCard = false,
-  icon = "activity",
+  icon,
   iconImage,
   listIcon,
 }: {
@@ -157,9 +229,11 @@ function TextBlock({
   iconImage?: string;
   listIcon?: string;
 }) {
+  const hasIcon = Boolean(icon || iconImage);
+
   return (
     <div>
-      {iconCard && (
+      {iconCard && hasIcon && (
         <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#e9f5ff] to-[#dffcf2] text-[#1268d6] shadow-[0_12px_30px_rgba(18,104,214,0.12)]">
           {iconImage ? (
             <img
@@ -175,7 +249,12 @@ function TextBlock({
 
       {eyebrow && (
         <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-[#eafff5] px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.14em] text-[#12b886]">
-          <DynamicIcon name={icon} size={14} />
+          {hasIcon &&
+            (iconImage ? (
+              <img src={iconImage} alt="" className="h-4 w-4 object-contain" />
+            ) : (
+              <DynamicIcon name={icon} size={14} />
+            ))}
           {eyebrow}
         </div>
       )}
@@ -292,7 +371,7 @@ function ImageCarousel({ images, alt }: { images: string[]; alt: string }) {
               type="button"
               onClick={prevSlide}
               aria-label="Previous image"
-              className="absolute left-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/95 text-[#1268d6] shadow-lg transition hover:bg-[#1268d6] hover:text-white"
+              className="absolute left-4 top-1/2 flex h-10 w-10 cursor-pointer -translate-y-1/2 items-center justify-center rounded-full bg-white/95 text-[#1268d6] shadow-lg transition hover:bg-[#1268d6] hover:text-white"
             >
               <ChevronLeft size={20} />
             </button>
@@ -301,7 +380,7 @@ function ImageCarousel({ images, alt }: { images: string[]; alt: string }) {
               type="button"
               onClick={nextSlide}
               aria-label="Next image"
-              className="absolute right-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/95 text-[#1268d6] shadow-lg transition hover:bg-[#1268d6] hover:text-white"
+              className="absolute right-4 top-1/2 flex h-10 w-10 cursor-pointer -translate-y-1/2 items-center justify-center rounded-full bg-white/95 text-[#1268d6] shadow-lg transition hover:bg-[#1268d6] hover:text-white"
             >
               <ChevronRight size={20} />
             </button>
