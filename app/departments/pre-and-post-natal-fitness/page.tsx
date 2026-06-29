@@ -45,6 +45,7 @@ export default function PreAndPostNatalFitnessPage() {
               "SPARRC addresses both the physical fitness needs and the nutritional needs of the mother during this delicate stage in their lives. The pregnant mother is evaluated to include their height, weight and body mass index for prescribing fitness protocol. Their pressure and pulse rate is also considered such that when they exercise their pulse rate should be maintained at appropriate levels so that the child is benefitted by the movement and not debrided of any blood supply. Aquatherapy has proven very useful for women to workout without putting pressure on themselves or experiencing any pain. The exercise program includes Swiss Ball, Mat Exercises, EFX as well as TRX – to ensure that the posture is good and correct in order to have a safe and easy delivery",
             images: [
               "/images/pre-and-post-natal-fitness-2.png",
+              "/images/pre-and-post-natal-fitness-3.png",
               
             ],
             layout: "carouselLeft",
