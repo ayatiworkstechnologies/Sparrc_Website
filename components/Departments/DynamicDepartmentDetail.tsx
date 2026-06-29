@@ -105,6 +105,8 @@ export type FeatureItem = {
 export type DetailSection = {
   eyebrow?: string;
   heading?: string;
+  intro?: string;
+  points?: string[];
   content?: string | string[];
   image?: string;
   images?: string[];
@@ -112,6 +114,7 @@ export type DetailSection = {
   layout?:
     | "content"
     | "gradientCard"
+    | "pointsCard"
     | "imageLeft"
     | "imageRight"
     | "carouselLeft"
@@ -300,6 +303,46 @@ function TextBlock({
   );
 }
 
+function PointsCard({ section }: { section: DetailSection }) {
+  return (
+    <div className="rounded-[30px] border border-white bg-gradient-to-br from-white via-[#f8fbff] to-[#effff8] p-6 shadow-[0_18px_60px_rgba(18,104,214,0.08)] backdrop-blur md:p-8">
+      <TextBlock
+        eyebrow={section.eyebrow}
+        heading={section.heading}
+        content={section.intro}
+        iconCard
+        icon={section.icon}
+        iconImage={section.iconImage}
+      />
+
+      {section.points?.length ? (
+        <div className="mt-6 grid gap-3 sm:grid-cols-2">
+          {section.points.map((point, index) => (
+            <div
+              key={index}
+              className="group flex items-start gap-3 rounded-2xl border border-[#e7f1ff] bg-white/90 p-4 shadow-[0_10px_28px_rgba(18,104,214,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_16px_38px_rgba(18,104,214,0.11)]"
+            >
+              {section.listIcon ? (
+                <img
+                  src={section.listIcon}
+                  alt=""
+                  className="mt-[6px] h-4 w-4 shrink-0 object-contain"
+                />
+              ) : (
+                <span className="mt-[8px] h-2.5 w-2.5 shrink-0 rounded-full bg-[#1268d6]" />
+              )}
+
+              <p className="text-[14px] font-semibold leading-[1.8] text-[#172033] md:text-[15px]">
+                {point}
+              </p>
+            </div>
+          ))}
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
 function ImageFrame({
   src,
   alt,
@@ -407,7 +450,11 @@ function ImageCarousel({ images, alt }: { images: string[]; alt: string }) {
   );
 }
 
-function FeatureGrid({ features = defaultFeatures }: { features?: FeatureItem[] }) {
+function FeatureGrid({
+  features = defaultFeatures,
+}: {
+  features?: FeatureItem[];
+}) {
   return (
     <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-4">
       {features.map((item) => (
@@ -603,6 +650,20 @@ export default function DynamicDepartmentDetail({
                       alt={section.heading || "Assessment image"}
                     />
                   )}
+                </motion.div>
+              );
+            }
+
+            if (section.layout === "pointsCard") {
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 28 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-80px" }}
+                  transition={{ duration: 0.7, ease }}
+                >
+                  <PointsCard section={section} />
                 </motion.div>
               );
             }
