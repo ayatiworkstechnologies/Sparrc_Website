@@ -51,6 +51,9 @@ export default function DynamicDepartmentCards({
       ? "md:grid-cols-2"
       : "sm:grid-cols-2 lg:grid-cols-3";
 
+  const containerWidth =
+    columns === 2 ? "max-w-[900px]" : "max-w-[1380px]";
+
   return (
     <section
       className={`relative overflow-hidden bg-white px-4 py-14 sm:px-6 md:px-10 md:py-20 lg:px-16 ${sectionClassName}`}
@@ -68,13 +71,7 @@ export default function DynamicDepartmentCards({
             alt=""
             fill
             sizes="100vw"
-            className="
-              object-cover
-              object-center
-              sm:object-center
-              md:object-center
-              lg:object-[center_right]
-            "
+            className="object-cover object-center sm:object-center md:object-center lg:object-[center_right]"
             priority={false}
           />
 
@@ -82,13 +79,13 @@ export default function DynamicDepartmentCards({
         </motion.div>
       )}
 
-      <div className="relative z-10 mx-auto max-w-[1380px]">
+      <div className={`relative z-10 mx-auto ${containerWidth}`}>
         <motion.div
           initial={{ y: 36, opacity: 0, scale: 0.98, filter: "blur(10px)" }}
           whileInView={{ y: 0, opacity: 1, scale: 1, filter: "blur(0px)" }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 1.35, ease }}
-          className="mx-auto max-w-[760px] text-center"
+          className="mx-auto max-w-[790px] text-center"
         >
           {eyebrow && (
             <motion.p
@@ -114,7 +111,7 @@ export default function DynamicDepartmentCards({
 
           {description && (
             <motion.p
-              className="mx-auto mt-4 max-w-[680px] text-[14px] leading-7 text-[#667085] sm:text-[15px]"
+              className="mx-auto mt-4 max-w-[830px] text-[14px] leading-7 text-[#667085] sm:text-[15px]"
               initial={{ opacity: 0, y: 22 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -177,6 +174,8 @@ export default function DynamicDepartmentCards({
                           sizes={
                             columns === 4
                               ? "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                              : columns === 2
+                              ? "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 560px"
                               : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                           }
                           className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
