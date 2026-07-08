@@ -1,0 +1,101 @@
+import Image from "next/image";
+
+import InnerBanner from "@/components/InnerBanner";
+import DynamicDepartmentDetail from "@/components/Departments/DynamicDepartmentDetail";
+
+const yogaAspects = [
+  {
+    title: "Breathing Exercises",
+    subtitle: "(Pranayama, Bastrika etc)",
+    image:
+      "/images/breathing-exercises.png",
+  },
+  {
+    title: "Physical Postures (Asanas)",
+    image:
+      "/images/physical-postures.png",
+  },
+  {
+    title: "Meditation and Relaxation",
+    image:
+      "/images/meditation-relaxation.png",
+  },
+  {
+    title: "Guided Imagery to bring healing and calmness",
+    image:
+      "/images/guided-imagery.png",
+  },
+];
+
+export default function YogaTherapyPage() {
+  return (
+    <main className="overflow-x-clip bg-[#f7fbff]">
+      <InnerBanner
+        title="Yoga Therapy"
+        bgImage="/images/page-banner-bg.png"
+      />
+
+      <DynamicDepartmentDetail
+        title="Yoga Therapy"
+        showCTA={false}
+        sections={[
+           {
+            layout: "content",
+            content:
+              "Yoga therapy is the application of yoga postures and breathing techniques in alleviating physical and mental difficulties and promoting self-care. While Yoga practices are now fairly popular and widely practices, at SPARRC, we specialize in certain yoga practices to treat specific conditions and also to promote general wellbeing.",
+          },
+
+          {
+            layout: "imageRight",
+            heading:
+              "How can Yoga Therapy help in treating specific conditions?",
+            image:
+              "/images/yoga-therapy.png",
+            imageType: "large",
+            content:
+              "What was espoused by India's ancient seers, is now being verified by science and medical practitioners – Yoga is a complete system to unify the mind and body and bring alignment in being. Yoga has been effectively used to treat several physical conditions like pain, heart conditions, asthma, hypertension, multiple sclerosis, PTSD, Autism and even side-effects of Chemotherapy. Yoga aims to bring awareness to the body and promotes emotional wellness.",
+          },
+          {
+            layout: "content",
+            content:
+              "Yoga Therapy prescribes specific asanas to treat specific conditions and also educates the patients on what asanas they should not do, given their current state of health. Yoga therapy practiced in conjunction with can physical therapy and rehabilitative therapy has proven very effective for our patients. At SPARRC, yoga therapy sessions are typically conducted in one-on-one or small group settings. Yoga therapy sessions will incorporate all of these following aspects of Yogashastra:",
+          },
+        ]}
+      />
+
+      {/* Yoga therapy aspects */}
+      <section className="relative bg-[#f7fbff] px-4 pb-14 sm:px-6 md:pb-20">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {yogaAspects.map((aspect) => (
+              <article
+                key={aspect.title}
+                className="group flex min-h-[245px] flex-col items-center justify-center rounded-[24px] border border-[#e5eaf2] bg-white px-5 py-7 text-center shadow-[0_14px_40px_rgba(28,64,117,0.07)] transition-all duration-300 hover:-translate-y-2 hover:border-[#1268d6]/20 hover:shadow-[0_22px_50px_rgba(28,64,117,0.13)]"
+              >
+                <div className="relative flex h-[120px] w-[120px] items-center justify-center">
+                  <Image
+                    src={aspect.image}
+                    alt={aspect.title}
+                    width={150}
+                    height={150}
+                    className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-110"
+                  />
+                </div>
+
+                <h2 className="mt-5 text-[16px] font-extrabold leading-[1.4] text-[#101828]">
+                  {aspect.title}
+                </h2>
+
+                {aspect.subtitle && (
+                  <p className="mt-1 text-[14px] font-semibold leading-5 text-[#344054]">
+                    {aspect.subtitle}
+                  </p>
+                )}
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
