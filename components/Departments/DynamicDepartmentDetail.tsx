@@ -1027,7 +1027,7 @@ export default function DynamicDepartmentDetail({
           </div>
 
           {title && (
-            <h1 className="max-w-4xl text-[31px] font-extrabold leading-[1.08] text-[#1268d6] md:text-[52px]">
+            <h1 className="max-w-4xl text-[31px] font-extrabold leading-[1.08] text-[#1268d6] md:text-[42px]">
               {title}
             </h1>
           )}
@@ -1334,7 +1334,7 @@ export default function DynamicDepartmentDetail({
               duration: 0.7,
               ease,
             }}
-            className="mt-10 overflow-hidden rounded-[30px] bg-gradient-to-r from-[#1268d6] via-[#2176e8] to-[#19d3a2] p-6 text-white shadow-[0_24px_70px_rgba(18,104,214,0.22)] md:p-8"
+            className="mt-10 overflow-hidden rounded-[30px] bg-[linear-gradient(180deg,#286cba_0%,#3b55a5_55%,#524095_100%)] p-6 text-white shadow-[0_24px_70px_rgba(18,104,214,0.22)] md:p-8"
           >
             <div className="grid items-center gap-6 md:grid-cols-[88px_1fr]">
               <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white/15 backdrop-blur">

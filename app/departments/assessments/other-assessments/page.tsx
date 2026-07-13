@@ -234,7 +234,7 @@ export default function OtherAssessmentsPage() {
       <section className="relative overflow-hidden bg-[#f7fbff] px-4 py-10 sm:px-6 md:py-14">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(#1268d6_1px,transparent_1px)] [background-size:26px_26px] opacity-[0.08]" />
         <div className="pointer-events-none absolute right-[-130px] top-[-100px] h-[420px] w-[420px] rounded-full bg-[#1268d6]/10 blur-3xl" />
-        <div className="pointer-events-none absolute left-[-130px] bottom-20 h-[360px] w-[360px] rounded-full bg-[#19d3a2]/10 blur-3xl" />
+        {/* <div className="pointer-events-none absolute left-[-130px] bottom-20 h-[360px] w-[360px] rounded-full bg-[#19d3a2]/10 blur-3xl" /> */}
 
         <div className="relative mx-auto max-w-6xl">
           <div className="mb-8 overflow-x-auto pb-2">
@@ -266,7 +266,7 @@ export default function OtherAssessmentsPage() {
               SPARRC Assessments
             </div>
 
-            <h1 className="max-w-4xl text-[31px] font-extrabold leading-[1.08] text-[#1268d6] md:text-[52px]">
+            <h1 className="max-w-4xl text-[31px] font-extrabold leading-[1.08] text-[#1268d6] md:text-[42px]">
               Specialised assessments for fitness, posture, movement and injury
               prevention.
             </h1>
@@ -289,11 +289,11 @@ export default function OtherAssessmentsPage() {
                   >
                     <div className="relative grid items-center gap-6 md:grid-cols-[1fr_0.95fr]">
                       <div>
-                        <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#1268d6] to-[#19d3a2] text-white shadow-[0_14px_35px_rgba(18,104,214,0.22)]">
+                        <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-[linear-gradient(180deg,#286cba_0%,#3b55a5_55%,#524095_100%)] text-white shadow-[0_14px_35px_rgba(18,104,214,0.22)]">
                           <Icon size={28} strokeWidth={2.2} />
                         </div>
 
-                        <h2 className="mb-4 text-[23px] font-extrabold leading-tight text-[#1268d6] md:text-[30px]">
+                        <h2 className="mb-4 text-[23px] font-extrabold leading-tight text-[#1268d6] md:text-[23px]">
                           {card.title}
                         </h2>
 
@@ -303,7 +303,7 @@ export default function OtherAssessmentsPage() {
                       </div>
 
                       <div className="relative">
-                        <div className="absolute -inset-3 rounded-[30px] bg-gradient-to-br from-[#1268d6]/15 to-[#19d3a2]/15 blur-xl" />
+                        <div className="absolute -inset-3 rounded-[30px] bg-[linear-gradient(180deg,#286cba_0%,#3b55a5_55%,#524095_100%)]/15 blur-xl" />
                         <div className="relative overflow-hidden rounded-[26px] bg-white p-2 shadow-[0_16px_45px_rgba(18,104,214,0.1)]">
                           <img
                             src={card.image}
@@ -344,7 +344,7 @@ export default function OtherAssessmentsPage() {
                       />
 
                       <div>
-                        <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#1268d6] to-[#19d3a2] text-white shadow-[0_14px_35px_rgba(18,104,214,0.22)]">
+                        <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-[linear-gradient(180deg,#286cba_0%,#3b55a5_55%,#524095_100%)] text-white shadow-[0_14px_35px_rgba(18,104,214,0.22)]">
                           <Icon size={28} strokeWidth={2.2} />
                         </div>
 
@@ -365,7 +365,7 @@ export default function OtherAssessmentsPage() {
             })}
           </div>
 
-          <div className="mt-10 overflow-hidden rounded-[30px] bg-gradient-to-r from-[#1268d6] via-[#2176e8] to-[#19d3a2] p-6 text-white shadow-[0_24px_70px_rgba(18,104,214,0.22)] md:p-8">
+          <div className="mt-10 overflow-hidden rounded-[30px] bg-[linear-gradient(180deg,#286cba_0%,#3b55a5_55%,#524095_100%)] p-6 text-white shadow-[0_24px_70px_rgba(18,104,214,0.22)] md:p-8">
             <div className="grid items-center gap-6 md:grid-cols-[88px_1fr]">
               <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white/15 backdrop-blur">
                 <ShieldCheck size={38} />
