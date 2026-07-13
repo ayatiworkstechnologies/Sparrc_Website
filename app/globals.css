@@ -44,3 +44,11 @@ nav,
 .font-body {
   font-family: var(--font-body), Arial, Helvetica, sans-serif;
 }
+
+p{
+  font-size: 16px !important ;
+}
+
+h2{
+  font-size: 36px !important;
+}
