@@ -93,9 +93,9 @@ export default function AboutMission() {
             </p>
 
             <div className="border-l-2 border-[#0097a9] pl-4">
-              <h2 className="max-w-[600px] text-[16px] font-bold leading-7 text-black md:text-[18px] md:leading-8">
+              <h3 className="max-w-[600px] text-[16px] font-bold leading-7 text-black md:text-[18px] md:leading-8">
                 {missionData.mission}
-              </h2>
+              </h3>
             </div>
 
             <h3 className="mt-8 max-w-[620px] text-[20px] font-extrabold leading-[1.45] text-black md:text-[23px]">

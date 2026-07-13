@@ -23,7 +23,7 @@ const ease = [0.16, 1, 0.3, 1] as const;
 
 export default function AboutSpectrum() {
   return (
-    <section className="relative overflow-hidden bg-white px-6 py-20 md:px-10 lg:px-16">
+    <section className="relative overflow-hidden bg-white px-6 py-7 md:px-10 lg:px-10">
       {/* Background Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.04)_1px,transparent_1px)] bg-[size:72px_72px]" />
 
@@ -41,7 +41,7 @@ export default function AboutSpectrum() {
             alt={spectrumData.image.alt}
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover"
+            className="object-contain"
           />
         </motion.div>
 

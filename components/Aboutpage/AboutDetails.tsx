@@ -97,9 +97,9 @@ export default function AboutDetails() {
             transition={{ duration: 1, delay: 0.22, ease }}
             className="mt-5 origin-top border-l-2 border-[#0097a9] pl-3"
           >
-            <h2 className="max-w-[540px] text-[18px] font-bold leading-[1.55] text-black md:text-[20px]">
+            <h3 className="max-w-[540px] text-[18px] font-bold leading-[1.55] text-black md:text-[20px]">
               {aboutData.intro}
-            </h2>
+            </h3>
           </motion.div>
 
           <motion.h3
