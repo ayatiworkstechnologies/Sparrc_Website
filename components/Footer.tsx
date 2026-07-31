@@ -38,11 +38,11 @@ const footerData = {
 
   discoverLinks: [
     { title: "HOME", href: "/" },
-    { title: "RESEARCH", href: "/research" },
-    { title: "PRIVACY POLICY", href: "/privacy-policy" },
+    { title: "RESEARCH", href: "/story/research" },
+    { title: "PRIVACY POLICY", href: "/story/privacy-policy" },
     {
       title: "REFUND, CANCELLATION & PACKAGE POLICY",
-      href: "/refund-cancellation-package-policy",
+      href: "/story/refund-cancellation-return-policy",
     },
     { title: "MAGAZINE", href: "/magazine" },
     { title: "EVENTS", href: "/events" },
@@ -50,10 +50,10 @@ const footerData = {
   ],
 
   serviceLinks: [
-    { title: "SPORTS MEDICINE", href: "/sports-medicine" },
-    { title: "PAIN MANAGEMENT", href: "/pain-management" },
-    { title: "WEIGHT MANAGEMENT", href: "/weight-management" },
-    { title: "TELE SERVICE", href: "/tele-service" },
+    { title: "SPORTS MEDICINE", href: "/departments/sports-medicine" },
+    { title: "PAIN MANAGEMENT", href: "/departments/pain-management" },
+    { title: "WEIGHT MANAGEMENT", href: "/departments/weight-management" },
+    { title: "TELE SERVICE", href: "/departments/teleservices" },
   ],
 
   officeDetails: [
