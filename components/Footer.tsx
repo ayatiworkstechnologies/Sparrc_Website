@@ -96,21 +96,23 @@ export default function Footer() {
               {footerData.description}
             </p>
 
-            <div className="mt-8 flex items-center gap-4">
+            {/* Social Icons */}
+            <div className="mt-8 flex items-center gap-5">
               {footerData.socialLinks.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   aria-label={item.name}
                   target="_blank"
-                  className="flex h-7 w-7 items-center justify-center rounded bg-white shadow-sm transition hover:-translate-y-1"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:scale-110"
                 >
                   <Image
                     src={item.icon}
                     alt={item.name}
-                    width={15}
-                    height={15}
-                    className="h-[15px] w-[15px] object-contain"
+                    width={22}
+                    height={22}
+                    className="h-[22px] w-[22px] object-contain transition-all duration-300 group-hover:brightness-110"
                   />
                 </Link>
               ))}

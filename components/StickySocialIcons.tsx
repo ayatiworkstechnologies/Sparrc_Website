@@ -6,11 +6,31 @@ import { ArrowUp } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const socialIcons = [
-  { name: "Facebook", icon: "/icons/facebook.svg", href: "https://www.facebook.com/SparrcInstitute/" },
-  { name: "X", icon: "/icons/x.svg", href: "https://twitter.com/sparrcinstitute" },
-  { name: "Instagram", icon: "/icons/instagram.svg", href: "https://www.instagram.com/sparrcinstitute/" },
-  { name: "LinkedIn", icon: "/icons/linkedin.svg", href: "https://www.linkedin.com/company/sparrc/" },
-  { name: "YouTube", icon: "/icons/youtube.svg", href: "https://www.youtube.com/@Sparrc" },
+  {
+    name: "Facebook",
+    icon: "/icons/facebook-1.svg",
+    href: "https://www.facebook.com/SparrcInstitute/",
+  },
+  {
+    name: "X",
+    icon: "/icons/x-1.svg",
+    href: "https://twitter.com/sparrcinstitute",
+  },
+  {
+    name: "Instagram",
+    icon: "/icons/instagram-1.svg",
+    href: "https://www.instagram.com/sparrcinstitute/",
+  },
+  {
+    name: "LinkedIn",
+    icon: "/icons/linkedin-1.svg",
+    href: "https://www.linkedin.com/company/sparrc/",
+  },
+  {
+    name: "YouTube",
+    icon: "/icons/youtube-1.svg",
+    href: "https://www.youtube.com/@Sparrc",
+  },
 ];
 
 export default function StickySocialIcons() {
@@ -22,18 +42,27 @@ export default function StickySocialIcons() {
     };
 
     handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
     <>
       {/* Right Sticky Social Icons */}
-      <div className="fixed right-2 top-1/2 z-[999] flex -translate-y-1/2 flex-col gap-2 sm:right-4 sm:gap-3 lg:right-5">
+      <div className="fixed right-3 top-1/2 z-[999] flex -translate-y-1/2 flex-col items-center gap-4 sm:right-4 lg:right-5">
         {socialIcons.map((item) => (
           <Link
             key={item.name}
@@ -41,14 +70,14 @@ export default function StickySocialIcons() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={item.name}
-            className="group flex h-9 w-9 items-center justify-center rounded-full bg-white shadow-[0_8px_24px_rgba(0,0,0,0.12)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(77,30,255,0.22)] sm:h-10 sm:w-10 lg:h-11 lg:w-11"
+            className="group flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:scale-110"
           >
             <Image
               src={item.icon}
               alt={item.name}
-              width={20}
-              height={20}
-              className="h-4 w-4 object-contain transition duration-300 group-hover:scale-110 sm:h-5 sm:w-5"
+              width={24}
+              height={24}
+              className="h-6 w-6 object-contain opacity-85 transition-all duration-300 group-hover:opacity-100 sm:h-[22px] sm:w-[22px] lg:h-7 lg:w-7"
             />
           </Link>
         ))}
@@ -65,8 +94,12 @@ export default function StickySocialIcons() {
             : "pointer-events-none translate-y-6 opacity-0"
         }`}
       >
-        <span className="absolute inset-0 rounded-full bg-white/20 animate-ping" />
-        <ArrowUp size={22} className="relative z-10" />
+        <span className="absolute inset-0 animate-ping rounded-full bg-white/20" />
+
+        <ArrowUp
+          size={22}
+          className="relative z-10"
+        />
       </button>
     </>
   );

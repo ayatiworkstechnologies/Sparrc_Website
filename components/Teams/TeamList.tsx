@@ -50,30 +50,45 @@ const teamMembers = [
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
-export default function ManagementTeam() {
+export default function TeamList() {
   return (
-    <section className="overflow-hidden bg-[#f7f7f7] px-6 py-20 md:px-10 lg:px-16">
+    <section className="overflow-hidden bg-[#f9f9f9] px-6 py-20 md:px-10 lg:px-16">
       <div className="mx-auto max-w-7xl">
         <motion.div
-          initial={{ y: 45, opacity: 0, filter: "blur(8px)" }}
-          whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 1.1, ease }}
+          initial={{  
+            y: 45,
+            opacity: 0,
+            filter: "blur(8px)",
+          }}
+          whileInView={{
+            y: 0,
+            opacity: 1,
+            filter: "blur(0px)",
+          }}
+          viewport={{
+            once: true,
+            amount: 0.4,
+          }}
+          transition={{
+            duration: 1.1,
+            ease,
+          }}
           className="text-center"
         >
-          <p className="text-[12px] font-bold uppercase text-black">
-            About Us
-          </p>
+          <motion.h1 className="mt-5 font-jost text-[30px] font-bold leading-tight tracking-[-0.035em] text-[#17141d] sm:text-[38px] lg:text-[46px]">
+            Meet Our Management Team
+          </motion.h1>
 
-          <h2 className="mt-3 text-[26px] font-extrabold text-black md:text-[36px]">
-            Management Team
-          </h2>
+          <motion.p className="mx-auto mt-4 max-w-[640px] text-[14px] leading-7 text-[#716b79] sm:text-[15px]">
+            Meet the leadership team guiding SPARRC’s mission in sports
+            medicine, rehabilitation, fitness and scientific healthcare.
+          </motion.p>
         </motion.div>
 
         <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {teamMembers.map((member, index) => (
             <motion.div
-              key={index}
+              key={member.href}
               initial={{
                 y: 70,
                 opacity: 0,
@@ -86,7 +101,10 @@ export default function ManagementTeam() {
                 scale: 1,
                 filter: "blur(0px)",
               }}
-              viewport={{ once: true, amount: 0.25 }}
+              viewport={{
+                once: true,
+                amount: 0.25,
+              }}
               transition={{
                 duration: 1,
                 delay: index * 0.12,
@@ -112,7 +130,9 @@ export default function ManagementTeam() {
                   {member.name}
                 </h3>
 
-                <p className="mt-2 text-[12px] text-gray-500">{member.role}</p>
+                <p className="mt-2 text-[12px] text-gray-500">
+                  {member.role}
+                </p>
 
                 <p className="mt-4 line-clamp-2 text-[13px] leading-6 text-black">
                   {member.description}
@@ -120,6 +140,7 @@ export default function ManagementTeam() {
 
                 <Link
                   href={member.href}
+                  aria-label={`Read more about ${member.name}`}
                   className="mt-5 inline-flex items-center gap-2 text-[13px] font-extrabold text-black transition group-hover:text-[#4D1EFF]"
                 >
                   Read more
