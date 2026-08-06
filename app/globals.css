@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @source "../components";
+@source "../mobile-src";
 
 :root {
   --background: #ffffff;
@@ -45,10 +46,3 @@ nav,
   font-family: var(--font-body), Arial, Helvetica, sans-serif;
 }
 
-p{
-  font-size: 16px !important ;
-}
-
-h2{
-  font-size: 36px !important;
-}
