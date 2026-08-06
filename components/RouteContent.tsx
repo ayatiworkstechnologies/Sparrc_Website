@@ -33,7 +33,7 @@ export default function RouteContent({ children }: { children: ReactNode }) {
   const needsMobileHeaderOffset = !hasDedicatedMobilePage(pathname);
 
   return (
-    <main className={`flex-1 ${needsMobileHeaderOffset ? "pt-[70px] md:pt-0" : ""}`}>
+    <main className={`desktop-page-content flex-1 ${needsMobileHeaderOffset ? "pt-[70px] md:pt-0" : ""}`}>
       {children}
     </main>
   );

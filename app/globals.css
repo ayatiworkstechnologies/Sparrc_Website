@@ -46,3 +46,17 @@ nav,
   font-family: var(--font-body), Arial, Helvetica, sans-serif;
 }
 
+/* Keep long-form page copy readable and consistent on laptop/desktop only. */
+@media (min-width: 1024px) {
+  .desktop-page-content p {
+    font-size: 14px !important;
+    line-height: 1.65;
+  }
+}
+
+@media (min-width: 1536px) {
+  .desktop-page-content p {
+    font-size: 15px !important;
+  }
+}
+
