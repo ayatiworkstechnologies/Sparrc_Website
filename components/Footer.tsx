@@ -44,7 +44,7 @@ const footerData = {
       title: "REFUND, CANCELLATION & PACKAGE POLICY",
       href: "/story/refund-cancellation-return-policy",
     },
-    { title: "MAGAZINE", href: "/e-magazine" },
+    { title: "E-MAGAZINE", href: "/e-magazine" },
     { title: "EVENTS", href: "/events" },
     { title: "GALLERY", href: "/gallery" },
   ],

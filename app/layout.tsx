@@ -10,6 +10,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import MobileBottomNav from "@/mobile-src/component/Bottomnav";
 import MobileFooter from "@/mobile-src/component/Footer";
 import MobileHeader from "@/mobile-src/component/Header";
+import RouteContent from "@/components/RouteContent";
 
 
 const jost = Jost({
@@ -39,14 +40,14 @@ export default function RootLayout({
     <html lang="en" className={`${jost.variable} ${circe.variable} antialiased`}>
       <body className="flex min-h-screen flex-col">
         <ScrollToTop />
-        <div className="hidden md:block">
+        <div className="hidden md:sticky md:top-0 md:z-50 md:block">
           <Header />
         </div>
         <div className="md:hidden">
           <MobileHeader />
         </div>
 
-        <main className="flex-1">{children}</main>
+        <RouteContent>{children}</RouteContent>
 
         <div className="hidden md:block">
           <StickySocialIcons />
