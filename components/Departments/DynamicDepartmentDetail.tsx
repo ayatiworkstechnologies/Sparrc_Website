@@ -919,7 +919,7 @@ function FeatureGrid({
               )}
             </div>
 
-            <p className="text-[11px] font-extrabold leading-snug text-[#172033]">
+            <p className="text-[11px] font-extrabold leading-snug text-[#172033] md:!text-[12px]">
               {item.title}
             </p>
           </div>
