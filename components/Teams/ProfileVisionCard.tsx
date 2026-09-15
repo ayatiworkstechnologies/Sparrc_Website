@@ -1,14 +1,25 @@
 "use client";
 
 import Image from "next/image";
-import { motion, type Variants } from "framer-motion";
+import {
+  Children,
+  type ReactNode,
+} from "react";
+
+import {
+  motion,
+  type Variants,
+} from "framer-motion";
 
 type ProfileVisionProps = {
   visionLabel: string;
   name: string;
   role: string;
   organization?: string;
-  paragraphs: string[];
+
+  // changed only this
+  paragraphs: ReactNode[];
+
   image: string;
   imageAlt?: string;
   designation: string;
@@ -25,11 +36,13 @@ const cardVariants: Variants = {
     scale: 0.985,
     filter: "blur(7px)",
   },
+
   visible: {
     opacity: 1,
     y: 0,
     scale: 1,
     filter: "blur(0px)",
+
     transition: {
       duration: 0.9,
       ease,
@@ -44,10 +57,12 @@ const leftVariants: Variants = {
     x: -28,
     filter: "blur(5px)",
   },
+
   visible: {
     opacity: 1,
     x: 0,
     filter: "blur(0px)",
+
     transition: {
       duration: 0.8,
       ease,
@@ -62,11 +77,13 @@ const rightVariants: Variants = {
     scale: 0.98,
     filter: "blur(5px)",
   },
+
   visible: {
     opacity: 1,
     x: 0,
     scale: 1,
     filter: "blur(0px)",
+
     transition: {
       duration: 0.85,
       ease,
@@ -79,9 +96,11 @@ const fadeUpVariants: Variants = {
     opacity: 0,
     y: 18,
   },
+
   visible: {
     opacity: 1,
     y: 0,
+
     transition: {
       duration: 0.65,
       ease,
@@ -101,6 +120,14 @@ export default function ProfileVisionCard({
   logoIcon = "/icons/logo-icon.png",
   imagePosition = "object-center",
 }: ProfileVisionProps) {
+  /*
+    React.Children.toArray()
+    gives React elements stable keys and prevents:
+
+    "Each child in a list should have a unique key prop"
+  */
+  const normalizedParagraphs = Children.toArray(paragraphs);
+
   return (
     <section className="overflow-hidden bg-white px-4 py-10 font-jost sm:px-6 sm:py-14 md:px-8 lg:px-10 lg:py-16">
       <motion.article
@@ -115,6 +142,7 @@ export default function ProfileVisionCard({
         className="relative mx-auto w-full max-w-[1160px] overflow-hidden rounded-[17px] bg-white px-5 pb-6 pt-16 shadow-[0_14px_46px_rgba(0,0,0,0.12)] sm:px-7 sm:pb-7 sm:pt-17 lg:px-5 lg:pb-5"
       >
         {/* Vision label */}
+
         <motion.div
           variants={fadeUpVariants}
           className="absolute left-5 top-5 sm:left-7 lg:left-5"
@@ -126,6 +154,7 @@ export default function ProfileVisionCard({
 
         <div className="grid items-center gap-8 lg:grid-cols-[1.55fr_0.95fr] lg:gap-12">
           {/* Left content */}
+
           <motion.div
             variants={leftVariants}
             className="order-2 min-w-0 lg:order-1"
@@ -153,19 +182,22 @@ export default function ProfileVisionCard({
               variants={fadeUpVariants}
               className="mt-5 space-y-5"
             >
-              {paragraphs.map((paragraph, index) => (
+              {normalizedParagraphs.map((paragraph, index) => (
                 <p
                   key={`${name}-paragraph-${index}`}
-                  className="m-0 text-[12px] leading-[1.75] text-[#868686] mb-5 sm:text-[13px] md:text-[14px]"
+                  className="m-0 mb-5 text-[12px] leading-[1.75] text-[#868686] sm:text-[13px] md:text-[14px]"
                 >
-                  {index === 0 && (
-                    <>
-                      <strong className="font-bold text-[#454248]">
-                        {role}
-                        {organization ? ` – ${organization}` : ""}
-                      </strong>{" "}
-                    </>
-                  )}
+                  {index === 0 &&
+                    (role || organization) && (
+                      <>
+                        <strong className="font-bold text-[#454248]">
+                          {role}
+                          {organization
+                            ? ` – ${organization}`
+                            : ""}
+                        </strong>{" "}
+                      </>
+                    )}
 
                   {paragraph}
                 </p>
@@ -174,6 +206,7 @@ export default function ProfileVisionCard({
           </motion.div>
 
           {/* Right image */}
+
           <motion.div
             variants={rightVariants}
             className="order-1 w-full min-w-0 lg:order-2"
@@ -181,6 +214,7 @@ export default function ProfileVisionCard({
             <motion.div
               whileHover={{
                 y: -5,
+
                 transition: {
                   duration: 0.3,
                   ease,
@@ -210,4 +244,4 @@ export default function ProfileVisionCard({
       </motion.article>
     </section>
   );
-}
+} 

@@ -47,6 +47,7 @@ const footerData = {
     { title: "E-MAGAZINE", href: "/e-magazine" },
     { title: "EVENTS", href: "/events" },
     { title: "GALLERY", href: "/gallery" },
+    { title: "NEWSLETTER", href: "/newsletter" },
   ],
 
   serviceLinks: [
