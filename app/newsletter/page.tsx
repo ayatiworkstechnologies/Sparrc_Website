@@ -611,9 +611,14 @@ export default function NewsletterPage() {
                 reminders that strength, balance, and movement need a little
                 attention. That is exactly where health and fitness
                 assessments step in{" "}
-                <span className="text-[#808797]">
-                  (source: pubmed.ncbi.nlm.nih)
-                </span>
+                <a
+                  href="https://pubmed.ncbi.nlm.nih.gov/22934016/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#1695D1] underline decoration-[#1695D1]/40 underline-offset-4 transition-colors hover:text-[#117FB3]"
+                >
+                  (source: pubmed.ncbi.nlm.nih.gov)
+                </a>
               </motion.p>
 
               <motion.p variants={fadeUp}>
@@ -638,9 +643,14 @@ export default function NewsletterPage() {
                 squats and hope for the best.” A proper assessment gives us
                 the information we need to personalise exercise, track
                 progress, and keep training safe and effective.
-                <span className="ml-1 text-[#777F8F]">
-                  pubmed.ncbi.nlm.nih-1
-                </span>
+                <a
+                  href="https://pubmed.ncbi.nlm.nih.gov/22934016/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ml-1 font-semibold text-[#1695D1] underline decoration-[#1695D1]/35 underline-offset-4 transition-colors hover:text-[#117FB3]"
+                >
+                  pubmed.ncbi.nlm.nih.gov
+                </a>
               </motion.p>
             </motion.div>
 
@@ -848,9 +858,14 @@ export default function NewsletterPage() {
               functional strength is quietly slipping away. In plain
               language, the engine may be losing horsepower even if the car
               still looks shiny.
-              <span className="ml-1 font-semibold text-[#1695D1]">
-                pubmed.ncbi.nlm.nih
-              </span>
+              <a
+                href="https://pubmed.ncbi.nlm.nih.gov/22934016/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-1 font-semibold text-[#1695D1] underline decoration-[#1695D1]/35 underline-offset-4 transition-colors hover:text-[#117FB3]"
+              >
+                pubmed.ncbi.nlm.nih.gov
+              </a>
             </motion.p>
           </div>
 
@@ -952,9 +967,14 @@ export default function NewsletterPage() {
               balance? How is your endurance? How much exercise does your body
               need to realise its potential? These are the questions that
               matter.
-              <span className="ml-1 text-[#777F8F]">
-                pubmed.ncbi.nlm.nih
-              </span>
+              <a
+                href="https://pubmed.ncbi.nlm.nih.gov/22934016/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-1 font-semibold text-[#1695D1] underline decoration-[#1695D1]/35 underline-offset-4 transition-colors hover:text-[#117FB3]"
+              >
+                pubmed.ncbi.nlm.nih.gov
+              </a>
             </p>
 
             <p>
@@ -1020,9 +1040,14 @@ export default function NewsletterPage() {
                 person who supposedly enjoys generic fitness plans. Then we
                 reassess, compare, and adjust. That is how progress becomes
                 visible instead of vague.
-                <span className="ml-1 font-semibold text-[#1695D1]">
-                  journals.lww
-                </span>
+                <a
+                  href="https://journals.lww.com/acsm-healthfitness/fulltext/2022/09000/a_guide_to_the_assessment_of_function_and_fitness.9.aspx"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ml-1 font-semibold text-[#1695D1] underline decoration-[#1695D1]/35 underline-offset-4 transition-colors hover:text-[#117FB3]"
+                >
+                  journals.lww.com
+                </a>
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
@@ -1221,19 +1246,51 @@ export default function NewsletterPage() {
                 difference.
               </p>
 
-              <span
-                className="
-                  relative
-                  z-10
-                  mt-3
-                  inline-block
-                  text-[14px]
-                  font-semibold
-                  text-white/65
-                "
-              >
-                pubmed.ncbi.nlm.nih-2
-              </span>
+              <div className="relative z-10 mt-5 flex flex-col items-start gap-2">
+                <a
+                  href="https://pubmed.ncbi.nlm.nih.gov/22934016/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    inline-flex
+                    items-center
+                    rounded-full
+                    border
+                    border-white/35
+                    bg-white/10
+                    px-4
+                    py-2
+                    text-[13px]
+                    font-bold
+                    text-white
+                    transition-all
+                    duration-300
+                    hover:-translate-y-0.5
+                    hover:bg-white
+                    hover:text-[#1899D3]
+                  "
+                >
+                  Click here to visit
+                </a>
+
+                {/* <a
+                  href="https://pubmed.ncbi.nlm.nih.gov/22934016/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    text-[13px]
+                    font-semibold
+                    text-white/70
+                    underline
+                    decoration-white/30
+                    underline-offset-4
+                    transition-colors
+                    hover:text-white
+                  "
+                >
+                  pubmed.ncbi.nlm.nih.gov
+                </a> */}
+              </div>
             </motion.div>
           </div>
         </div>
