@@ -1,10 +1,13 @@
 import About from "@/components/Homepage/About";
+import AssessmentExerciseLab from "@/components/Homepage/AssessmentExerciseLab";
 import FeaturedServices from "@/components/Homepage/FeaturedServices";
 import Locations from "@/components/Homepage/Locations";
 import ManagementTeam from "@/components/Homepage/ManagementTeam";
 import PatientTestimonials from "@/components/Homepage/PatientTestimonials";
 import RecoveryCTA from "@/components/Homepage/RecoveryCTA";
+import TestTreatTrain from "@/components/Homepage/TestTreatTrain";
 import WhatWeDo from "@/components/Homepage/What-we-do";
+import WhatWeBelieve from "@/components/Homepage/WhatWeBelieve";
 import Image from "next/image";
 
 export default function Home() {
@@ -38,6 +41,15 @@ export default function Home() {
       <WhatWeDo />
       {/* {About us section} */}
       <About />
+
+      {/* What we believe */}
+      <WhatWeBelieve />
+
+      {/* Methodology -Test Trest Train */}
+      <TestTreatTrain />
+
+       {/* AssessmentExerciseLab */}
+       <AssessmentExerciseLab />
 
       {/* {Featured service section} */}
       <FeaturedServices />

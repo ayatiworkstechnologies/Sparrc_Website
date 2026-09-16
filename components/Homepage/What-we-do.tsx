@@ -138,10 +138,8 @@ export default function WhatWeDo() {
                 What We Do
               </p>
 
-              <h2 className="relative max-w-[720px] text-[25px] font-extrabold leading-[1.35] tracking-[-0.03em] text-white md:text-[40px]">
-                Helping people move better, recover faster, and live healthier through
-                expert-led rehabilitation, fitness, and sports medicine programs.
-              </h2>
+              <h2 className="relative max-w-[720px] text-[25px] font-extrabold leading-[1.35] tracking-[-0.03em] text-white md:text-[40px] lg:text-[43px]">
+                Prescribing exercise, not medicine — helping over a million people move, heal, and live better.              </h2>
             </motion.div>
 
             {/* Right White Card */}
@@ -157,10 +155,7 @@ export default function WhatWeDo() {
               className="bg-white p-8 md:p-12 lg:p-14"
             >
               <p className="text-[16px] leading-8 text-black">
-                SPARRC is a pioneering Sports and Fitness Medicine Clinic. We ensure our
-                clients attain the priceless possession of health through Fitness. We
-                encourage our clients to lead an active lifestyle to be able to enjoy
-                their life to the fullest.
+                Founded in 2006, SPARRC is India's leading sports and fitness medicine network with 21 centres nationwide. Led by Dr Kannan Pugazhendi and Dr Sujatha Pugazhendi, we treat our medical guests — not patients — with a 95% success rate in resolving pain without surgery.
               </p>
 
               <motion.div
@@ -176,7 +171,7 @@ export default function WhatWeDo() {
               />
 
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                {["Rehabilitation", "Fitness", "Sports Medicine", "Active Living"].map(
+                {["Sports Medicine", "Rehabilitation", "Kinesio Health", "Breath & Movement"].map(
                   (item, index) => (
                     <motion.div
                       key={item}

@@ -6,44 +6,56 @@ import { useEffect, useMemo, useState } from "react";
 
 const services = [
   {
-    title: "Avoid Surgery",
+    title: "MTPT",
     description:
-      "SPARRC has a 95% success rate in solving chronic and acute pain without Surgery.",
-    image: "/images/featured-services/f1.png",
+      "Targeted Trigger Point Therapy for Pain Relief and Muscle Recovery.",
+    image: "/images/fs-mtpt.png",
   },
   {
-    title: "Geriatric Fitness",
+    title: "Exercise Rehabilitation",
     description:
-      "Comprehensive geriatric care – offered by Geriatrician, Physiotherapists, Nutritionists etc.",
-    image: "/images/featured-services/f2.png",
+      "Restore Strength, Mobility, and Function Through Guided Exercise.",
+    image: "/images/fs-exercise-rehabilitation.png",
   },
   {
-    title: "Clinical Pilates",
+    title: "Physiotherapy",
     description:
-      "For improving quality of physical, mental and social activities of the specially-abled.",
-    image: "/images/featured-services/f3.png",
+      "Relieve Pain, Restore Movement, and Improve Physical Function.",
+    image: "/images/fs-physiotherapy.png",
   },
   {
-    title: "Housecalls",
+    title: "Non-Surgical Care",
     description:
-      "Fitness and Sports Medicine now at your doorstep. Physios and Trainers will make Housecalls.",
-    image: "/images/featured-services/f4.png",
+      "Effective Pain Relief and Recovery Without Surgery.",
+    image: "/images/fs-non-surgical-care.png",
   },
   {
-    title: "Trigger Point Therapy",
+    title: "Acupuncture",
     description:
-      "MTPs are painful spots on the muscles that are treated by trained Physios to relieve pain.",
-    image: "/images/featured-services/f5.png",
+      "Targeted Therapy to Relieve Pain and Improve Wellbeing.",
+    image: "/images/fs-acupuncture.png",
   },
   {
-    title: "Aquatherapy",
+    title: "Aqua Therapy",
     description:
-      "Aquatherapy or exercising in water helps a variety of people with their health problems.",
-    image: "/images/featured-services/f6.png",
+      "Low-Impact Water-Based Exercise for Mobility and Recovery.",
+    image: "/images/fs-aqua-therapy.png",
+  },
+  {
+    title: "PEMF",
+    description:
+      "Pulsed Electromagnetic Therapy to Support Pain Relief and Healing.",
+    image: "/images/fs-pemf.png",
+  },
+  {
+    title: "Prescription Exercise",
+    description:
+      "Personalized Exercise Plans Designed for Safe, Effective Recovery.",
+    image: "/images/fs-prescription-exercise.png",
   },
 ];
 
-const ease = [0.16, 1, 0.3, 1] as const;
+const ease: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 type SliderConfig = {
   stageHeight: number;
@@ -62,158 +74,137 @@ export default function FeaturedServices() {
   const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
-    const updateWidth = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
+    const updateWidth = () => setWindowWidth(window.innerWidth);
     updateWidth();
-
     window.addEventListener("resize", updateWidth);
-
-    return () => {
-      window.removeEventListener("resize", updateWidth);
-    };
+    return () => window.removeEventListener("resize", updateWidth);
   }, []);
 
   useEffect(() => {
     if (isPaused) return;
 
     const timer = window.setInterval(() => {
-      setActive((previous) => (previous + 1) % services.length);
+      setActive((prev) => (prev + 1) % services.length);
     }, 4000);
 
-    return () => {
-      window.clearInterval(timer);
-    };
+    return () => window.clearInterval(timer);
   }, [isPaused]);
 
   const config = useMemo<SliderConfig>(() => {
-    // Small mobile: show only active landscape image
+    // mobile
     if (windowWidth < 480) {
       return {
-        stageHeight: 178,
+        stageHeight: 180,
         stageWidth: 320,
         gap: 0,
-        activeWidth: 250,
-        activeHeight: 178,
+        activeWidth: 240,
+        activeHeight: 160,
         sideWidth: 0,
         sideHeight: 0,
         visibleRange: 0,
       };
     }
 
-    // Large mobile: show only active landscape image
+    // large mobile
     if (windowWidth < 640) {
       return {
         stageHeight: 200,
         stageWidth: 420,
         gap: 0,
         activeWidth: 280,
-        activeHeight: 200,
+        activeHeight: 180,
         sideWidth: 0,
         sideHeight: 0,
         visibleRange: 0,
       };
     }
 
-    // Tablet portrait: active + one card each side
+    // tablet portrait
     if (windowWidth < 768) {
       return {
-        stageHeight: 210,
-        stageWidth: 680,
+        stageHeight: 215,
+        stageWidth: 700,
         gap: 205,
-        activeWidth: 270,
-        activeHeight: 192,
-        sideWidth: 145,
-        sideHeight: 103,
+        activeWidth: 290,
+        activeHeight: 190,
+        sideWidth: 120,
+        sideHeight: 82,
         visibleRange: 1,
       };
     }
 
-    // Tablet landscape
+    // tablet landscape
     if (windowWidth < 1024) {
       return {
-        stageHeight: 225,
-        stageWidth: 880,
-        gap: 230,
-        activeWidth: 290,
-        activeHeight: 207,
-        sideWidth: 160,
-        sideHeight: 114,
+        stageHeight: 230,
+        stageWidth: 900,
+        gap: 225,
+        activeWidth: 330,
+        activeHeight: 210,
+        sideWidth: 140,
+        sideHeight: 94,
         visibleRange: 1,
       };
     }
 
-    // Laptop
+    // laptop
     if (windowWidth < 1440) {
       return {
-        stageHeight: 250,
+        stageHeight: 255,
         stageWidth: 1120,
-        gap: 270,
-        activeWidth: 330,
-        activeHeight: 235,
-        sideWidth: 185,
-        sideHeight: 132,
+        gap: 265,
+        activeWidth: 390,
+        activeHeight: 250,
+        sideWidth: 160,
+        sideHeight: 106,
         visibleRange: 2,
       };
     }
 
-    // Large desktop
+    // desktop
     return {
-      stageHeight: 275,
+      stageHeight: 270,
       stageWidth: 1320,
-      gap: 315,
-      activeWidth: 370,
-      activeHeight: 264,
-      sideWidth: 205,
-      sideHeight: 146,
+      gap: 310,
+      activeWidth: 430,
+      activeHeight: 275,
+      sideWidth: 175,
+      sideHeight: 116,
       visibleRange: 2,
     };
   }, [windowWidth]);
 
   const getPosition = (index: number) => {
     const total = services.length;
-    let difference = index - active;
+    let diff = index - active;
 
-    if (difference > total / 2) {
-      difference -= total;
-    }
+    if (diff > total / 2) diff -= total;
+    if (diff < -total / 2) diff += total;
 
-    if (difference < -total / 2) {
-      difference += total;
-    }
-
-    return difference;
+    return diff;
   };
 
   return (
-    <section className="overflow-hidden bg-[#fbfbfb] px-4 py-14 sm:px-6 md:px-10 md:py-20 lg:px-16">
+    <section className="overflow-hidden bg-[#fbfbfb] px-4 py-14 sm:px-6 sm:py-16 md:px-10 md:py-20 lg:px-16 lg:py-24">
       <motion.div
-        initial={{
-          y: 60,
-          opacity: 0,
-          filter: "blur(10px)",
-        }}
-        whileInView={{
-          y: 0,
-          opacity: 1,
-          filter: "blur(0px)",
-        }}
-        viewport={{
-          once: true,
-          amount: 0.2,
-        }}
-        transition={{
-          duration: 1.1,
-          ease,
-        }}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 0.9, ease }}
         className="mx-auto max-w-[1440px] text-center"
       >
-        <h2 className="text-[28px] font-extrabold text-black sm:text-[34px] md:text-[40px]">
-          Featured Services
-        </h2>
+        {/* top heading */}
+        <div className="mx-auto max-w-[700px]">
+          <p className="text-[11px] font-[600] uppercase tracking-[0.06em] text-[#4b4b4b] sm:text-[12px]">
+            TREAT
+          </p>
 
-        {/* Responsive image slider */}
+          <h2 className="mt-3 text-[30px] font-[700] leading-[1.05] tracking-[-0.03em] text-black sm:text-[36px] md:text-[42px]">
+            Featured Services
+          </h2>
+        </div>
+
+        {/* image slider stage */}
         <div
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
@@ -227,13 +218,9 @@ export default function FeaturedServices() {
           {services.map((service, index) => {
             const position = getPosition(index);
             const isActive = position === 0;
-            const isVisible =
-              Math.abs(position) <= config.visibleRange;
+            const isVisible = Math.abs(position) <= config.visibleRange;
 
-            const cardWidth = isActive
-              ? config.activeWidth
-              : config.sideWidth;
-
+            const cardWidth = isActive ? config.activeWidth : config.sideWidth;
             const cardHeight = isActive
               ? config.activeHeight
               : config.sideHeight;
@@ -255,12 +242,21 @@ export default function FeaturedServices() {
                       : isVisible
                         ? isActive
                           ? 1
-                          : 0.68
+                          : 0.72
                         : 0,
-                  scale: isActive ? 1 : 0.92,
-                  zIndex: isActive
-                    ? 30
-                    : 20 - Math.abs(position),
+                  scale: isActive ? 1 : 0.93,
+                }}
+                transition={{
+                  duration: 0.85,
+                  ease,
+                }}
+                className="absolute left-1/2 top-1/2 overflow-hidden rounded-[14px] border border-[#e4e7ef] bg-white outline-none"
+                style={{
+                  width: `${cardWidth}px`,
+                  height: `${cardHeight}px`,
+                  marginLeft: `-${cardWidth / 2}px`,
+                  marginTop: `-${cardHeight / 2}px`,
+                  zIndex: isActive ? 30 : 20 - Math.abs(position),
                   pointerEvents:
                     windowWidth < 640
                       ? isActive
@@ -269,21 +265,17 @@ export default function FeaturedServices() {
                       : isVisible
                         ? "auto"
                         : "none",
-                }}
-                transition={{
-                  duration: 0.85,
-                  ease,
-                }}
-                className="absolute left-1/2 top-1/2 cursor-pointer overflow-hidden rounded-[12px] border border-[#d7dde7] bg-white outline-none"
-                style={{
-                  width: `${cardWidth}px`,
-                  height: `${cardHeight}px`,
-                  marginLeft: `-${cardWidth / 2}px`,
-                  marginTop: `-${cardHeight / 2}px`,
                   boxShadow: isActive
-                    ? "0 20px 50px rgba(0,0,0,0.14)"
-                    : "0 8px 22px rgba(0,0,0,0.07)",
+                    ? "0 20px 40px rgba(15, 23, 42, 0.12)"
+                    : "0 10px 22px rgba(15, 23, 42, 0.05)",
                 }}
+                whileHover={
+                  windowWidth >= 640
+                    ? {
+                        y: isActive ? -4 : -2,
+                      }
+                    : {}
+                }
               >
                 {cardWidth > 0 && cardHeight > 0 && (
                   <div className="relative h-full w-full">
@@ -294,14 +286,14 @@ export default function FeaturedServices() {
                       priority={index === 0}
                       sizes={
                         isActive
-                          ? "(max-width: 480px) 250px, (max-width: 640px) 280px, (max-width: 768px) 270px, (max-width: 1024px) 290px, (max-width: 1440px) 330px, 370px"
-                          : "(max-width: 768px) 145px, (max-width: 1024px) 160px, (max-width: 1440px) 185px, 205px"
+                          ? "(max-width: 480px) 240px, (max-width: 640px) 280px, (max-width: 768px) 290px, (max-width: 1024px) 330px, (max-width: 1440px) 390px, 430px"
+                          : "(max-width: 768px) 120px, (max-width: 1024px) 140px, (max-width: 1440px) 160px, 175px"
                       }
                       className="object-cover object-center"
                     />
 
                     {!isActive && (
-                      <div className="absolute inset-0 bg-white/10" />
+                      <div className="absolute inset-0 bg-white/20" />
                     )}
                   </div>
                 )}
@@ -310,46 +302,38 @@ export default function FeaturedServices() {
           })}
         </div>
 
-        {/* Active content */}
-        <div className="mt-8 min-h-[175px] px-2 sm:min-h-[165px] md:mt-10">
+        {/* content area */}
+        <div className="mt-8 min-h-[170px] px-2 sm:min-h-[165px] md:mt-10">
           <AnimatePresence mode="wait">
             <motion.div
               key={services[active].title}
-              initial={{
-                y: 30,
-                opacity: 0,
-                filter: "blur(8px)",
-              }}
-              animate={{
-                y: 0,
-                opacity: 1,
-                filter: "blur(0px)",
-              }}
-              exit={{
-                y: -20,
-                opacity: 0,
-                filter: "blur(8px)",
-              }}
-              transition={{
-                duration: 0.7,
-                ease,
-              }}
+              initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              exit={{ opacity: 0, y: -20, filter: "blur(8px)" }}
+              transition={{ duration: 0.65, ease }}
             >
-              <h3 className="text-[23px] font-extrabold leading-tight text-black sm:text-[27px] md:text-[30px]">
+              <h3 className="text-[24px] font-[700] leading-tight tracking-[-0.02em] text-black sm:text-[28px] md:text-[32px]">
                 {services[active].title}
               </h3>
 
-              <div className="mx-auto mt-5 h-px w-[160px] bg-[#d7dde7] sm:w-[220px] md:w-[260px]" />
-
-              <p className="mx-auto mt-6 max-w-[760px] text-[14px] leading-7 text-[#222] sm:text-[16px] sm:leading-8 md:text-[17px]">
+              <p className="mx-auto mt-5 max-w-[760px] text-[14px] leading-7 text-[#666f7d] sm:text-[15px] md:text-[16px]">
                 {services[active].description}
               </p>
+
+              <motion.a
+                href="/contact"
+                whileHover={{ scale: 1.04, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                className="mt-6 inline-flex h-[46px] items-center justify-center rounded-full bg-[#5633ff] px-8 text-[13px] font-[600] text-white shadow-[0_10px_24px_rgba(86,51,255,0.18)] transition-colors duration-300 hover:bg-[#4a28f0] sm:h-[48px] sm:px-9 sm:text-[14px]"
+              >
+                Book Now
+              </motion.a>
             </motion.div>
           </AnimatePresence>
         </div>
 
-        {/* Progress bar */}
-        <div className="relative mx-auto mt-7 h-[3px] w-full max-w-[240px] overflow-hidden bg-[#d7dde7] sm:max-w-[320px] md:max-w-[380px]">
+        {/* progress line */}
+        <div className="relative mx-auto mt-8 h-[3px] w-full max-w-[200px] overflow-hidden bg-[#d8dde6] sm:max-w-[240px] md:max-w-[260px]">
           <motion.div
             animate={{
               x: `${active * 100}%`,
@@ -358,25 +342,23 @@ export default function FeaturedServices() {
               duration: 0.8,
               ease,
             }}
-            className="absolute left-0 top-0 h-full bg-[#4D1EFF]"
+            className="absolute left-0 top-0 h-full bg-[#5633ff]"
             style={{
               width: `${100 / services.length}%`,
             }}
           />
         </div>
 
-        {/* Mobile dots */}
-        <div className="mt-6 flex items-center justify-center gap-2 sm:hidden">
+        {/* mobile dots */}
+        <div className="mt-5 flex items-center justify-center gap-2 sm:hidden">
           {services.map((service, index) => (
             <button
               key={service.title}
               type="button"
               onClick={() => setActive(index)}
-              aria-label={`Show ${service.title}`}
+              aria-label={`Go to ${service.title}`}
               className={`h-2 rounded-full transition-all duration-300 ${
-                active === index
-                  ? "w-6 bg-[#4D1EFF]"
-                  : "w-2 bg-[#cfd5df]"
+                active === index ? "w-6 bg-[#5633ff]" : "w-2 bg-[#cfd6e2]"
               }`}
             />
           ))}
