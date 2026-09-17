@@ -5,9 +5,12 @@ import Locations from "@/components/Homepage/Locations";
 import ManagementTeam from "@/components/Homepage/ManagementTeam";
 import PatientTestimonials from "@/components/Homepage/PatientTestimonials";
 import RecoveryCTA from "@/components/Homepage/RecoveryCTA";
+import SparrcMovementMatrix from "@/components/Homepage/SparrcMovementMatrix";
+import SportsFitnessMedicineTraining from "@/components/Homepage/SportsFitnessMedicineTraining";
 import TestTreatTrain from "@/components/Homepage/TestTreatTrain";
 import WhatWeDo from "@/components/Homepage/What-we-do";
 import WhatWeBelieve from "@/components/Homepage/WhatWeBelieve";
+import WomanBehindSparrc from "@/components/Homepage/WomanBehindSparrc";
 import Image from "next/image";
 
 export default function Home() {
@@ -53,6 +56,15 @@ export default function Home() {
 
       {/* {Featured service section} */}
       <FeaturedServices />
+
+      {/* SportsFitnessMedicineTraining */}
+       <SportsFitnessMedicineTraining />
+
+       {/* WomanBehindSparrc */}
+       <WomanBehindSparrc />
+
+       {/* SparrcMovementMatrix */}
+       <SparrcMovementMatrix />
 
       {/* {Patient Testimonials Section} */}
       <PatientTestimonials />

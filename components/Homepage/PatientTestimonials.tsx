@@ -16,14 +16,14 @@ const testimonials = [
   {
     name: "Alagammai Muthiah",
     role: "Avoided Surgery",
-    image: "/images/patient-2.png",
+    image: "/images/alagammai-muthiah.png",
     message:
       "Following a road traffic accident, I had injured my knees and had an open wound in the right leg. I thank Doc and entire SPARRC team, that I could avoid surgeries. All of the staff were really good and helpful.",
   },
   {
     name: "Mrs Anandhi",
     role: "Multiple Problems",
-    image: "/images/patient-1.png",
+    image: "/images/anandhi.png",
     message:
       "I had suffered with low back pain, hip and toe pain and also shoulder pain for more than 10 long years. 2 years ago, I was detected with breast cancer and underwent radical mastectomy. After treatment and rehabilitation at SPARRC, I am now able to do all my activities independently.",
   },
