@@ -1,5 +1,6 @@
 import OurTeamSlider from "../component/Homepage/OurTeamSlider";
 import RecoveryJourneySection from "../component/Homepage/Recoveryjourneysection";
+import TestTreatTrainJourney from "../component/Homepage/TestTreatTrainJourney";
 import TherapiesSection from "../component/Homepage/TherapiesSection";
 
 export default function Home() {
@@ -8,6 +9,8 @@ export default function Home() {
       <TherapiesSection />
 
       <RecoveryJourneySection />
+
+      <TestTreatTrainJourney />
 
       <OurTeamSlider />
     </main>

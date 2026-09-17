@@ -277,6 +277,73 @@ export default function RecoveryJourneySection() {
 
   return (
     <section className="w-full bg-white px-4 py-6">
+
+      {/* ------------------------------------------------------------ */}
+      {/* New SPARRC heading                                            */}
+      {/* ------------------------------------------------------------ */}
+
+      <motion.div
+        initial={
+          prefersReducedMotion
+            ? undefined
+            : {
+                opacity: 0,
+                y: 18,
+              }
+        }
+        whileInView={
+          prefersReducedMotion
+            ? undefined
+            : {
+                opacity: 1,
+                y: 0,
+              }
+        }
+        viewport={{
+          once: true,
+          amount: 0.4,
+        }}
+        transition={{
+          duration: 0.6,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+        className="mb-10"
+      >
+        <h1
+          className="
+            max-w-[620px]
+            text-[29px]
+            font-[700]
+            leading-[1.1]
+            tracking-[-0.035em]
+            text-black
+            sm:text-[42px]
+            md:text-[48px]
+          "
+        >
+          We Are SPARRC
+          <br />
+          The Better Answer
+        </h1>
+
+        <p
+          className="
+            mt-5
+            max-w-[760px]
+            text-[15px]
+            font-[400]
+            leading-[1.65]
+            text-[#A1A8B5]
+            sm:text-[19px]
+            md:text-[21px]
+          "
+        >
+          We prescribe tailored movement to heal and restore. Across 21
+          centres, we&apos;ve helped over a million people move, heal and live
+          better – with a 95% success rate in resolving pain without surgery.
+        </p>
+      </motion.div>
+
       {/* Heading, filters and subtitle */}
 
       <div>

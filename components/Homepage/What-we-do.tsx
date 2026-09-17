@@ -135,7 +135,7 @@ export default function WhatWeDo() {
               {/* <div className="absolute left-0 top-0 h-40 w-50 rounded-full bg-[#ffff]/0 blur-2xl" /> */}
 
               <p className="mb-10 text-[14px] font-bold uppercase tracking-[0.22em] text-[#f3efef]">
-                What We Do
+               Who we are
               </p>
 
               <h2 className="relative max-w-[720px] text-[25px] font-extrabold leading-[1.35] tracking-[-0.03em] text-white md:text-[40px] lg:text-[43px]">
