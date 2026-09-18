@@ -3,60 +3,182 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-const smoothEase: [number, number, number, number] = [0.16, 1, 0.3, 1];
+const smoothEase: [number, number, number, number] = [
+  0.16,
+  1,
+  0.3,
+  1,
+];
 
 const assessmentItems = [
   {
+    number: "1",
     title: "Musculoskeletal (MSK) Assessment",
-    description:
-      "Analyzing joint mobility, muscular balance, and structural symmetry.",
   },
   {
+    number: "2",
     title: "Fitness Testing",
-    description:
-      "Evaluating baseline strength, endurance, flexibility, and aerobic limits.",
   },
   {
+    number: "3",
     title: "Biomechanical Analysis",
-    description:
-      "Assessing sports technique and active walking/running mechanics in motion.",
   },
   {
-    title: "Assessment & Exercise Lab",
-    description:
-      "Scientific testing utilizing cardiovascular and metabolic diagnostics.",
+    number: "4",
+    title: "SPARRC Exercise Lab",
   },
 ];
 
 export default function AssessmentExerciseLab() {
   return (
-    <section className="w-full overflow-hidden bg-white">
-      <div className="mx-auto w-full max-w-[1440px] px-5 py-14 sm:px-7 sm:py-16 md:px-10 md:py-20 lg:px-12 lg:py-5">
-        {/* =========================
-            TOP CONTENT
-        ========================== */}
+    <section className="w-full overflow-hidden bg-[#F5F7FC]">
+      <div
+        className="
+          mx-auto
+          grid
+          w-full
+          max-w-[1440px]
+          grid-cols-1
+          gap-10
+          px-5
+          py-14
+
+          sm:px-7
+          sm:py-16
+
+          md:px-10
+          md:py-20
+
+          lg:grid-cols-[minmax(0,1fr)_minmax(460px,1fr)]
+          lg:items-start
+          lg:gap-12
+          lg:px-14
+          lg:py-20
+
+          xl:grid-cols-[minmax(0,650px)_minmax(0,1fr)]
+          xl:gap-14
+          xl:px-16
+        "
+      >
+        {/* =====================================================
+            LEFT CONTENT
+        ====================================================== */}
+
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          initial={{
+            opacity: 0,
+            x: -40,
+            y: 12,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.18,
+          }}
           transition={{
-            duration: 0.75,
+            duration: 0.8,
             ease: smoothEase,
           }}
-          className="max-w-[1320px]"
+          className="w-full"
         >
-          <p className="text-[11px] font-[500] uppercase tracking-[0.02em] text-[#171717] sm:text-[12px]">
+          {/* TEST LABEL */}
+
+          <motion.p
+            initial={{
+              opacity: 0,
+              y: 12,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.55,
+              ease: smoothEase,
+            }}
+            className="
+              text-[10px]
+              font-[500]
+              uppercase
+              tracking-[0.02em]
+              text-[#20242C]
+
+              sm:text-[11px]
+            "
+          >
             TEST
-          </p>
+          </motion.p>
 
-          <h2 className="mt-4 text-[30px] font-[700] leading-[1.1] tracking-[-0.03em] text-[#050505] sm:text-[34px] md:text-[38px] lg:text-[40px]">
-            Assessment &amp; Exercise Lab
-          </h2>
+          {/* HEADING */}
 
-          <p className="mt-4 max-w-[1320px] text-[13px] leading-[1.55] text-[#7B8494] sm:text-[14px] md:text-[15px]">
+          <motion.h2
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.65,
+              delay: 0.05,
+              ease: smoothEase,
+            }}
+            className="
+              mt-8
+              text-[31px]
+              font-[700]
+              leading-[1.05]
+              tracking-[-0.035em]
+              text-[#050505]
+
+              sm:text-[35px]
+              md:text-[38px]
+              lg:text-[40px]
+            "
+          >
+            SPARRC Exercise Lab
+          </motion.h2>
+
+          {/* MAIN DESCRIPTION */}
+
+          <motion.p
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.7,
+              delay: 0.1,
+              ease: smoothEase,
+            }}
+            className="
+              mt-5
+              max-w-[640px]
+              text-[13px]
+              font-[400]
+              leading-[1.8]
+              text-[#657083]
+
+              sm:text-[14px]
+              md:text-[14px]
+            "
+          >
             SPARRC Exercise Lab is where exercise science meets individualised
             practice. We assess how your body moves, performs and responds to
-            exercise — bringing together musculoskeletal capacity, movement
+            exercise - bringing together musculoskeletal capacity, movement
             quality, strength, endurance, balance, body composition and
             cardiorespiratory fitness to understand what your body needs. Using
             this insight, our team develops evidence-informed exercise
@@ -64,209 +186,260 @@ export default function AssessmentExerciseLab() {
             level and stage of life. Whether you are beginning your fitness
             journey, managing a health condition, recovering from injury,
             returning to sport or seeking better performance, the Exercise Lab
-            helps turn assessment into action—and exercise into a purposeful
+            helps turn assessment into action - and exercise into a purposeful
             prescription.
-          </p>
+          </motion.p>
 
-          <motion.a
-            href="/contact"
-            whileHover={{
-              scale: 1.04,
-              y: -2,
-            }}
-            whileTap={{
-              scale: 0.98,
-            }}
-            transition={{
-              duration: 0.2,
-            }}
-            className="
-              mt-5
-              inline-flex
-              h-[48px]
-              items-center
-              justify-center
-              rounded-full
-              bg-[#5031FF]
-              px-7
-              text-[13px]
-              font-[700]
-              text-white
-              shadow-[0_10px_24px_rgba(80,49,255,0.18)]
-              transition-colors
-              duration-300
-              hover:bg-[#4426F2]
-              sm:h-[50px]
-              sm:px-8
-              sm:text-[14px]
-            "
-          >
-            Book Now
-          </motion.a>
-        </motion.div>
+          {/* =====================================================
+              TREATMENT PRIORITIES
+          ====================================================== */}
 
-        {/* =========================
-            MAIN GRID
-        ========================== */}
-        <div className="mt-9 grid grid-cols-1 gap-8 lg:mt-12 lg:grid-cols-[minmax(0,632px)_minmax(0,1fr)] lg:items-start lg:gap-10 xl:gap-12">
-          {/* =========================
-              LEFT SIDE
-          ========================== */}
           <motion.div
-            initial={{ opacity: 0, x: -45 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
+            initial={{
+              opacity: 0,
+              y: 16,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{ once: true }}
             transition={{
-              duration: 0.8,
+              duration: 0.6,
+              delay: 0.16,
               ease: smoothEase,
             }}
-            className="w-full"
+            className="mt-8"
           >
-            {/* Image */}
-            <div
+            <p
               className="
-                relative
-                h-[230px]
-                w-full
-                overflow-hidden
-                rounded-[18px]
-                sm:h-[280px]
-                md:h-[320px]
-                lg:h-[320px]
-                lg:w-[632px]
-                lg:max-w-full
+                text-[9px]
+                font-[600]
+                uppercase
+                tracking-[0.22em]
+                text-[#4A84CF]
+
+                sm:text-[10px]
               "
             >
-              <Image
-                src="/images/assessment-exercise-lab.png"
-                alt="SPARRC Assessment and Exercise Lab"
-                fill
-                priority
-                className="object-cover"
-                sizes="
-                  (max-width: 640px) 100vw,
-                  (max-width: 1024px) 90vw,
-                  632px
-                "
-              />
-
-              {/* Subtle image overlay */}
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/[0.04] via-transparent to-transparent" />
-            </div>
-
-            {/* Precision Diagnoses */}
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.65,
-                delay: 0.12,
-                ease: smoothEase,
-              }}
-              className="mt-5 flex items-stretch gap-3"
-            >
-              <div className="w-[3px] shrink-0 bg-[#5834FF]" />
-
-              <div className="py-[1px]">
-                <h3 className="text-[16px] font-[700] leading-[1.25] tracking-[-0.02em] text-[#0A0A0A] sm:text-[17px]">
-                  Precision Diagnoses
-                </h3>
-
-                <p className="mt-1 max-w-[600px] text-[12px] leading-[1.5] text-[#7D8697] sm:text-[13px]">
-                  By measuring muscular power discrepancies, cardiorespiratory
-                  capacity, and joint range deficits, we eliminate all guesswork.
-                </p>
-              </div>
-            </motion.div>
+              TREATMENT PRIORITIES
+            </p>
           </motion.div>
 
-          {/* =========================
-              RIGHT SIDE CARDS
-          ========================== */}
+          {/* PRIORITY LIST */}
+
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{
               once: true,
-              amount: 0.18,
+              amount: 0.1,
             }}
             variants={{
               hidden: {},
               visible: {
                 transition: {
-                  staggerChildren: 0.11,
-                  delayChildren: 0.12,
+                  staggerChildren: 0.08,
+                  delayChildren: 0.16,
                 },
               },
             }}
-            className="grid gap-4"
+            className="mt-4 space-y-3"
           >
             {assessmentItems.map((item) => (
               <motion.div
-                key={item.title}
+                key={item.number}
                 variants={{
                   hidden: {
                     opacity: 0,
-                    x: 40,
-                    y: 10,
+                    y: 20,
+                    scale: 0.99,
                   },
                   visible: {
                     opacity: 1,
-                    x: 0,
                     y: 0,
+                    scale: 1,
                     transition: {
-                      duration: 0.68,
+                      duration: 0.55,
                       ease: smoothEase,
                     },
                   },
                 }}
                 whileHover={{
-                  y: -4,
+                  y: -2,
                   transition: {
-                    duration: 0.25,
+                    duration: 0.22,
                   },
                 }}
                 className="
                   group
-                  rounded-[14px]
+                  flex
+                  min-h-[76px]
+                  items-center
+                  gap-4
+                  rounded-[13px]
                   border
-                  border-[#E3E6EC]
+                  border-[#D7DDE7]
                   bg-white
-                  px-5
-                  py-5
-                  shadow-[0_4px_20px_rgba(20,30,50,0.015)]
-                  transition-shadow
+                  px-4
+                  py-3
+                  transition-all
                   duration-300
-                  hover:shadow-[0_12px_30px_rgba(20,30,50,0.055)]
-                  sm:px-6
-                  sm:py-6
-                  lg:min-h-[82px]
-                  lg:px-5
-                  lg:py-5
-                  xl:px-6
+
+                  hover:border-[#CAC2FF]
+                  hover:shadow-[0_8px_24px_rgba(35,50,90,0.045)]
+
+                  sm:px-5
                 "
               >
-                <h3
+                {/* NUMBER */}
+
+                <div
                   className="
+                    flex
+                    h-[42px]
+                    w-[42px]
+                    shrink-0
+                    items-center
+                    justify-center
+                    rounded-[10px]
+                    bg-[#EAF2FF]
+                    text-[13px]
+                    font-[700]
+                    text-[#3574D2]
+                  "
+                >
+                  {item.number}
+                </div>
+
+                {/* TITLE */}
+
+                <p
+                  className="
+                    min-w-0
+                    flex-1
                     text-[14px]
                     font-[700]
-                    leading-[1.25]
-                    tracking-[-0.02em]
-                    text-[#111111]
+                    leading-[1.3]
+                    tracking-[-0.015em]
+                    text-[#121212]
+
                     sm:text-[15px]
                   "
                 >
                   {item.title}
-                </h3>
-
-                <p className="mt-1 text-[12px] leading-[1.5] text-[#7F8796] sm:text-[13px]">
-                  {item.description}
                 </p>
+
+                {/* ARROW */}
+
+                <span
+                  className="
+                    shrink-0
+                    text-[18px]
+                    font-[400]
+                    text-[#6B54DA]
+                    transition-transform
+                    duration-300
+
+                    group-hover:translate-x-1
+                  "
+                >
+                  ↗
+                </span>
               </motion.div>
             ))}
           </motion.div>
-        </div>
+        </motion.div>
+
+        {/* =====================================================
+            RIGHT IMAGE
+        ====================================================== */}
+
+        <motion.div
+          initial={{
+            opacity: 0,
+            x: 45,
+            scale: 0.98,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+            scale: 1,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.18,
+          }}
+          transition={{
+            duration: 0.9,
+            delay: 0.08,
+            ease: smoothEase,
+          }}
+          className="
+            relative
+            mx-auto
+            h-[330px]
+            w-full
+            overflow-hidden
+            rounded-[14px]
+
+            sm:h-[430px]
+
+            md:h-[500px]
+
+            lg:mt-[74px]
+            lg:h-[570px]
+
+            xl:h-[575px]
+          "
+        >
+          <motion.div
+            initial={{
+              scale: 1.05,
+            }}
+            whileInView={{
+              scale: 1,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              duration: 1.3,
+              ease: smoothEase,
+            }}
+            className="relative h-full w-full"
+          >
+            <Image
+              src="/images/assessment-exercise-lab-01.png"
+              alt="SPARRC Exercise Lab"
+              fill
+              priority
+              sizes="
+                (max-width: 768px) 100vw,
+                (max-width: 1024px) 90vw,
+                50vw
+              "
+              className="
+                object-cover
+                object-center
+              "
+            />
+          </motion.div>
+
+          {/* very subtle overlay */}
+
+          <div
+            className="
+              pointer-events-none
+              absolute
+              inset-0
+              bg-gradient-to-t
+              from-black/[0.025]
+              via-transparent
+              to-transparent
+            "
+          />
+        </motion.div>
       </div>
     </section>
   );

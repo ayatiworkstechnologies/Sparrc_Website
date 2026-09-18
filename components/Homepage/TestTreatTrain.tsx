@@ -2,38 +2,66 @@
 
 import { motion } from "framer-motion";
 
-const steps = [
+const smoothEase: [number, number, number, number] = [
+  0.16,
+  1,
+  0.3,
+  1,
+];
+
+const sparrcForYou = [
   {
-    number: "01",
-    label: "TEST",
-    title: "Assessment & Exercise Lab",
+    title: "You are in pain.",
     description:
-      "Before we prescribe, we measure. We evaluate your musculoskeletal capacity, movement quality, joint mechanics, strength balance, and aerobic fitness to map your baseline accurately.",
+      "We help you understand it and rebuild capacity.",
   },
   {
-    number: "02",
-    label: "TREAT",
-    title: "How We Help",
+    title: "You have a chronic health condition.",
     description:
-      "Through Myofascial Trigger Point Therapy (MTPT), expert physiotherapy, acupuncture, and precise hands-on interventions, we relieve immediate acute pain and initiate real recovery.",
+      "We help you use exercise safely and effectively.",
   },
   {
-    number: "03",
-    label: "TRAIN",
-    title: "Sports & Fitness Medicine",
+    title: "You haven’t exercised for years.",
     description:
-      "Once pain is resolved, we build lasting capacity. Our customized performance, metabolic fitness, and healthy ageing training programs protect you from future injury and optimize longevity.",
+      "We help you start at the right level.",
+  },
+  {
+    title: "You want to lose weight.",
+    description:
+      "We combine movement, exercise, nutrition and behaviour.",
+  },
+  {
+    title: "You’re an athlete.",
+    description:
+      "We measure and develop performance.",
+  },
+  {
+    title: "You’re getting older.",
+    description:
+      "We build strength, balance, fitness and independence.",
+  },
+  {
+    title: "You spend your life at a desk.",
+    description:
+      "We assess your workplace movement and MSK risk.",
+  },
+  {
+    title: "You simply want to stay healthy.",
+    description:
+      "You don’t need to wait until something hurts.",
   },
 ];
 
-const smoothEase: [number, number, number, number] = [0.16, 1, 0.3, 1];
+/* =========================================================
+   MOTION
+========================================================= */
 
 const containerVariants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.12,
+      staggerChildren: 0.08,
+      delayChildren: 0.1,
     },
   },
 };
@@ -41,15 +69,17 @@ const containerVariants = {
 const cardVariants = {
   hidden: {
     opacity: 0,
-    y: 45,
-    scale: 0.97,
+    y: 24,
+    scale: 0.985,
   },
+
   visible: {
     opacity: 1,
     y: 0,
     scale: 1,
+
     transition: {
-      duration: 0.75,
+      duration: 0.6,
       ease: smoothEase,
     },
   },
@@ -69,45 +99,56 @@ export default function TestTreatTrain() {
           sm:py-16
           md:px-10
           md:py-20
-          lg:px-14
-          lg:py-24
+          lg:px-12
+          lg:py-20
+          xl:px-14
         "
       >
-        {/* =========================
-            HEADING
-        ========================== */}
+        {/* =====================================================
+            TOP CONTENT
+        ====================================================== */}
+
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{
+            opacity: 0,
+            y: 28,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
           viewport={{
             once: true,
             amount: 0.35,
           }}
           transition={{
-            duration: 0.75,
+            duration: 0.72,
             ease: smoothEase,
           }}
-          className="max-w-[650px]"
+          className="max-w-[690px]"
         >
+          {/* Eyebrow */}
+
           <p
             className="
               text-[11px]
-              font-medium
+              font-[500]
               uppercase
               tracking-[0.02em]
               text-[#252525]
               sm:text-[12px]
-              md:text-[13px]
             "
           >
-            Our Methodology
+            OUR METHODOLOGY
           </p>
+
+          {/* Heading */}
 
           <h2
             className="
-              mt-4
+              mt-5
               text-[30px]
-              font-extrabold
+              font-[700]
               leading-[1.05]
               tracking-[-0.035em]
               text-[#050505]
@@ -119,162 +160,156 @@ export default function TestTreatTrain() {
             Test. Treat. Train.
           </h2>
 
+          {/* Description */}
+
           <p
             className="
               mt-3
-              max-w-[590px]
+              max-w-[650px]
               text-[13px]
-              leading-[1.5]
-              text-[#7C8495]
+              font-[400]
+              leading-[1.55]
+              text-[#7B8495]
               sm:text-[14px]
               md:text-[15px]
             "
           >
             An integrated clinical cycle that identifies structural issues,
-            relieves physical pain mechanically, and restores functional fitness
-            for long-term health.
+            relieves physical pain mechanically, and restores functional
+            fitness for long-term health.
           </p>
         </motion.div>
 
-        {/* =========================
-            CARDS
-        ========================== */}
+        {/* =====================================================
+            SPARRC IS FOR YOU IF
+        ====================================================== */}
+
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 18,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.4,
+          }}
+          transition={{
+            duration: 0.65,
+            delay: 0.08,
+            ease: smoothEase,
+          }}
+          className="mt-7 sm:mt-8"
+        >
+          <h3
+            className="
+              text-[13px]
+              font-[700]
+              uppercase
+              tracking-[0.01em]
+              text-[#171717]
+              sm:text-[14px]
+              md:text-[15px]
+            "
+          >
+            SPARRC IS FOR YOU IF
+          </h3>
+        </motion.div>
+
+        {/* =====================================================
+            8 CARDS
+        ====================================================== */}
+
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{
             once: true,
-            amount: 0.18,
+            amount: 0.12,
           }}
           className="
-            mt-10
+            mt-6
             grid
             grid-cols-1
-            gap-5
-            sm:mt-12
-            md:grid-cols-3
-            md:gap-5
-            lg:mt-14
-            lg:gap-7
+            gap-4
+            sm:mt-7
+            md:grid-cols-2
+            md:gap-x-6
+            md:gap-y-5
+            lg:gap-x-7
+            lg:gap-y-6
           "
         >
-          {steps.map((step) => (
-            <motion.article
-              key={step.number}
+          {sparrcForYou.map((item) => (
+            <motion.div
+              key={item.title}
               variants={cardVariants}
               whileHover={{
-                y: -7,
+                y: -3,
                 transition: {
-                  duration: 0.28,
+                  duration: 0.23,
                   ease: "easeOut",
                 },
               }}
               className="
                 group
-                relative
-                overflow-hidden
+                flex
+                min-h-[128px]
+                flex-col
+                justify-center
                 rounded-[18px]
-                bg-[#F6F7FB]
+                border
+                border-[#E0E5ED]
+                bg-[#F5F7FB]
                 px-6
-                py-8
+                py-6
+                transition-all
+                duration-300
+                hover:border-[#D8DDE8]
+                hover:bg-[#F8F9FC]
+                hover:shadow-[0_10px_28px_rgba(30,45,75,0.045)]
+                sm:min-h-[132px]
                 sm:px-7
-                sm:py-9
-                md:min-h-[285px]
-                md:px-6
-                md:py-8
-                lg:min-h-[275px]
+                md:min-h-[140px]
                 lg:px-8
-                lg:py-9
-                xl:px-10
-                xl:py-10
               "
             >
-              {/* Top row */}
-              <div className="flex items-start justify-between gap-6">
-                <span
-                  className="
-                    text-[11px]
-                    font-[800]
-                    uppercase
-                    tracking-[-0.01em]
-                    text-[#563BFF]
-                    sm:text-[14px]
-                  "
-                >
-                  {step.label}
-                </span>
+              {/* Title */}
 
-                <span
-                  className="
-                    select-none
-                    text-[32px]
-                    font-extrabold
-                    leading-none
-                    tracking-[-0.04em]
-                    text-[#C8CCD5]
-                    transition-all
-                    duration-300
-                    group-hover:text-[#B8BDCA]
-                    sm:text-[34px]
-                    lg:text-[36px]
-                  "
-                >
-                  {step.number}
-                </span>
-              </div>
-
-              {/* Content */}
-              <div className="mt-7 sm:mt-8">
-                <h3
-                  className="
-                    text-[17px]
-                    font-extrabold
-                    leading-[1.25]
-                    tracking-[-0.025em]
-                    text-[#080808]
-                    sm:text-[18px]
-                    md:text-[17px]
-                    lg:text-[18px]
-                  "
-                >
-                  {step.title}
-                </h3>
-
-                <p
-                  className="
-                    mt-3
-                    text-[13px]
-                    font-normal
-                    leading-[1.7]
-                    text-[#747D8E]
-                    sm:text-[13.5px]
-                    md:text-[12.5px]
-                    lg:text-[13.5px]
-                  "
-                >
-                  {step.description}
-                </p>
-              </div>
-
-              {/* Very subtle hover glow */}
-              <div
+              <h4
                 className="
-                  pointer-events-none
-                  absolute
-                  -bottom-20
-                  -right-20
-                  h-44
-                  w-44
-                  rounded-full
-                  bg-[#563BFF]/0
-                  blur-3xl
-                  transition-all
-                  duration-500
-                  group-hover:bg-[#563BFF]/[0.035]
+                  text-[16px]
+                  font-[700]
+                  leading-[1.3]
+                  tracking-[-0.02em]
+                  text-[#0C0C0D]
+                  sm:text-[17px]
+                  md:text-[18px]
                 "
-              />
-            </motion.article>
+              >
+                {item.title}
+              </h4>
+
+              {/* Description */}
+
+              <p
+                className="
+                  mt-4
+                  text-[12px]
+                  font-[400]
+                  leading-[1.6]
+                  text-[#737D8F]
+                  sm:text-[13px]
+                  md:text-[13.5px]
+                "
+              >
+                {item.description}
+              </p>
+            </motion.div>
           ))}
         </motion.div>
       </div>

@@ -8,9 +8,11 @@ import RecoveryCTA from "@/components/Homepage/RecoveryCTA";
 import SparrcMovementMatrix from "@/components/Homepage/SparrcMovementMatrix";
 import SportsFitnessMedicineTraining from "@/components/Homepage/SportsFitnessMedicineTraining";
 import TestTreatTrain from "@/components/Homepage/TestTreatTrain";
-import WhatWeDo from "@/components/Homepage/What-we-do";
-import WhatWeBelieve from "@/components/Homepage/WhatWeBelieve";
+import WhatWeBelieves from "@/components/Homepage/What-we-believe";
+import WhatWeDo from "@/components/Homepage/What-we-believe";
+import WhoWeAreSparrc from "@/components/Homepage/WhoWeAreSparrc";
 import WomanBehindSparrc from "@/components/Homepage/WomanBehindSparrc";
+import WhoWeAreSection from "@/mobile-src/component/Aboutpage/WhoWeAreSection";
 import Image from "next/image";
 
 export default function Home() {
@@ -40,13 +42,16 @@ export default function Home() {
         />
       </section>
 
-      {/* {What we do section} */}
-      <WhatWeDo />
+      {/* Who we are */}
+      <WhoWeAreSparrc />
+
+      
       {/* {About us section} */}
       <About />
 
-      {/* What we believe */}
-      <WhatWeBelieve />
+      {/* {What we do section} */}
+      <WhatWeBelieves />  
+
 
       {/* Methodology -Test Trest Train */}
       <TestTreatTrain />
