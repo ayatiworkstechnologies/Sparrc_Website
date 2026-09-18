@@ -222,9 +222,7 @@ export default function SparrcMovementMatrix() {
               md:text-[15px]
             "
           >
-            SPARRC Kinesio-Health is screened, assessed, and engineered by unified
-            Bio-Psychosocial concepts. We optimize human wellness through two
-            complementary systems.
+           The SPARRC Kinesio-Health is screened and engineered by bio-Psychosocial concepts. We integrate two complementary processes to understand and treat the whole person.
           </p>
         </motion.div>
 
@@ -308,10 +306,10 @@ export default function SparrcMovementMatrix() {
                   uppercase
                   tracking-[0.01em]
                   text-[#77DFFF]
-                  sm:text-[12px]
+                  sm:text-[11px]
                 "
               >
-                PHYSICAL FACTORS INFLUENCING FUNCTION &amp; PERFORMANCE
+                We examine the physical factors that influence movement, function and performance:
               </p>
 
               <motion.div
