@@ -15,7 +15,8 @@ type TabId = "test" | "treat" | "train";
 
 interface JourneyItem {
   number: string;
-  text: string;
+  title: string;
+  description: string;
 }
 
 interface ServiceItem {
@@ -44,78 +45,62 @@ const ease: [number, number, number, number] = [
 ];
 
 /* =========================================================
-   EXACT 16 SEPARATE POINTS
+   SPARRC IS FOR YOU IF...
 ========================================================= */
 
 const journeyItems: JourneyItem[] = [
   {
     number: "01",
-    text: "You are in pain.",
+    title: "You are in pain",
+    description:
+      "We help you understand it and rebuild capacity.",
   },
   {
     number: "02",
-    text: "We help you understand it and rebuild capacity.",
+    title: "You have a chronic health condition",
+    description:
+      "We help you use exercise safely and effectively.",
   },
   {
     number: "03",
-    text: "You have a chronic health condition.",
+    title: "You haven't exercised for years",
+    description:
+      "We help you start at the right level.",
   },
   {
     number: "04",
-    text: "We help you use exercise safely and effectively.",
+    title: "You want to lose weight",
+    description:
+      "We combine movement, exercise, nutrition and behaviour.",
   },
   {
     number: "05",
-    text: "You haven’t exercised for years.",
+    title: "You're an athlete",
+    description:
+      "We measure and develop performance.",
   },
   {
     number: "06",
-    text: "We help you start at the right level.",
+    title: "You're getting older",
+    description:
+      "We build strength, balance, fitness and independence.",
   },
   {
     number: "07",
-    text: "You want to lose weight.",
+    title: "You spend your life at a desk",
+    description:
+      "We assess your workplace movement and MSK risk.",
   },
   {
     number: "08",
-    text: "We combine movement, exercise, nutrition and behaviour.",
-  },
-  {
-    number: "09",
-    text: "You’re an athlete.",
-  },
-  {
-    number: "10",
-    text: "We measure and develop performance.",
-  },
-  {
-    number: "11",
-    text: "You’re getting older.",
-  },
-  {
-    number: "12",
-    text: "We build strength, balance, fitness and independence.",
-  },
-  {
-    number: "13",
-    text: "You spend your life at a desk.",
-  },
-  {
-    number: "14",
-    text: "We assess your workplace movement and MSK risk.",
-  },
-  {
-    number: "15",
-    text: "You simply want to stay healthy.",
-  },
-  {
-    number: "16",
-    text: "You don’t need to wait until something hurts.",
+    title: "You simply want to stay healthy",
+    description:
+      "You don't need to wait until something hurts.",
   },
 ];
 
 /* =========================================================
-   TEST / TREAT / TRAIN
+   TEST / TREAT / TRAIN CONTENT
 ========================================================= */
 
 const tabs: TabContent[] = [
@@ -221,7 +206,7 @@ const tabs: TabContent[] = [
 ];
 
 /* =========================================================
-   SERVICE BULLET
+   BULLET ICON
 ========================================================= */
 
 function ServiceBullet() {
@@ -238,12 +223,13 @@ function ServiceBullet() {
         bg-[#EAF1FD]
       "
     >
-      <span
+      <div
         className="
           h-[8px]
           w-[8px]
           rounded-full
           bg-[#5435FF]
+          shadow-[0_2px_7px_rgba(84,53,255,0.25)]
         "
       />
     </div>
@@ -261,8 +247,7 @@ export default function TestTreatTrainJourney() {
   const [activeJourney, setActiveJourney] =
     useState(0);
 
-  const [paused, setPaused] =
-    useState(false);
+  const [paused, setPaused] = useState(false);
 
   const prefersReducedMotion =
     useReducedMotion();
@@ -272,29 +257,22 @@ export default function TestTreatTrainJourney() {
       (tab) => tab.id === activeTab,
     ) ?? tabs[0];
 
-  const currentJourney =
-    journeyItems[activeJourney];
-
   /* =======================================================
      AUTO SLIDE
   ======================================================= */
 
   useEffect(() => {
-    if (
-      paused ||
-      prefersReducedMotion
-    ) {
+    if (paused || prefersReducedMotion) {
       return;
     }
 
-    const interval =
-      window.setInterval(() => {
-        setActiveJourney(
-          (previous) =>
-            (previous + 1) %
-            journeyItems.length,
-        );
-      }, 3000);
+    const interval = window.setInterval(() => {
+      setActiveJourney(
+        (previous) =>
+          (previous + 1) %
+          journeyItems.length,
+      );
+    }, 3200);
 
     return () => {
       window.clearInterval(interval);
@@ -302,7 +280,7 @@ export default function TestTreatTrainJourney() {
   }, [paused, prefersReducedMotion]);
 
   /* =======================================================
-     NEXT / PREVIOUS
+     SWIPE
   ======================================================= */
 
   const nextJourney = () => {
@@ -329,7 +307,6 @@ export default function TestTreatTrainJourney() {
         bg-[#F5F7FB]
         px-4
         py-8
-
         sm:px-6
         sm:py-10
       "
@@ -369,7 +346,6 @@ export default function TestTreatTrainJourney() {
           bg-white
           p-4
           shadow-[0_18px_50px_rgba(25,40,75,0.06)]
-
           sm:p-6
         "
       >
@@ -384,7 +360,6 @@ export default function TestTreatTrainJourney() {
             leading-[1.2]
             tracking-[-0.03em]
             text-[#141A2B]
-
             sm:text-[26px]
           "
         >
@@ -418,7 +393,8 @@ export default function TestTreatTrainJourney() {
                   border
                   text-[11px]
                   font-[600]
-
+                  transition-colors
+                  duration-300
                   sm:h-[42px]
                   sm:text-[12px]
 
@@ -503,12 +479,13 @@ export default function TestTreatTrainJourney() {
                   leading-[1.25]
                   tracking-[-0.025em]
                   text-[#111827]
-
                   sm:text-[22px]
                 "
               >
                 {selectedTab.heading}
               </h3>
+
+              {/* TEST LONG DESCRIPTION */}
 
               {selectedTab.description && (
                 <p
@@ -517,7 +494,6 @@ export default function TestTreatTrainJourney() {
                     text-[12px]
                     leading-[1.75]
                     text-[#737D90]
-
                     sm:text-[13px]
                   "
                 >
@@ -526,7 +502,7 @@ export default function TestTreatTrainJourney() {
               )}
 
               {/* =================================================
-                  SERVICES
+                  CLEAN BULLET ITEMS
               ================================================== */}
 
               <motion.div
@@ -534,7 +510,6 @@ export default function TestTreatTrainJourney() {
                 animate="visible"
                 variants={{
                   hidden: {},
-
                   visible: {
                     transition: {
                       staggerChildren: 0.055,
@@ -574,7 +549,6 @@ export default function TestTreatTrainJourney() {
                         bg-[#F7F9FC]
                         px-4
                         py-4
-
                         sm:min-h-[70px]
                         sm:px-5
                       "
@@ -587,8 +561,8 @@ export default function TestTreatTrainJourney() {
                             text-[14px]
                             font-[700]
                             leading-[1.4]
+                            tracking-[-0.015em]
                             text-[#101827]
-
                             sm:text-[15px]
                           "
                         >
@@ -602,7 +576,6 @@ export default function TestTreatTrainJourney() {
                               text-[11px]
                               leading-[1.55]
                               text-[#7A8496]
-
                               sm:text-[12px]
                             "
                           >
@@ -630,7 +603,6 @@ export default function TestTreatTrainJourney() {
             rounded-[24px]
             bg-[#F4F7FB]
             p-3
-
             sm:p-4
           "
           onMouseEnter={() =>
@@ -649,7 +621,7 @@ export default function TestTreatTrainJourney() {
             setPaused(false)
           }
         >
-          {/* HEADER */}
+          {/* Header */}
 
           <div
             className="
@@ -658,7 +630,7 @@ export default function TestTreatTrainJourney() {
               justify-between
               gap-4
               px-1
-              pb-3
+              pb-4
             "
           >
             <p
@@ -668,23 +640,27 @@ export default function TestTreatTrainJourney() {
                 uppercase
                 tracking-[0.08em]
                 text-[#62718A]
-
                 sm:text-[11px]
               "
             >
               SPARRC IS FOR YOU IF...
             </p>
 
+            {/* Counter remains */}
+
             <p
               className="
                 text-[10px]
                 font-[700]
                 text-[#A1A8B8]
-
                 sm:text-[11px]
               "
             >
-              {currentJourney.number}
+              {
+                journeyItems[
+                  activeJourney
+                ].number
+              }
               {" / "}
               {String(
                 journeyItems.length,
@@ -693,7 +669,7 @@ export default function TestTreatTrainJourney() {
           </div>
 
           {/* =================================================
-              ACTIVE SLIDE
+              AUTO SLIDER
           ================================================== */}
 
           <div className="overflow-hidden">
@@ -712,7 +688,7 @@ export default function TestTreatTrainJourney() {
                   left: 0,
                   right: 0,
                 }}
-                dragElastic={0.1}
+                dragElastic={0.12}
                 onDragEnd={(_, info) => {
                   if (
                     info.offset.x < -50
@@ -747,46 +723,33 @@ export default function TestTreatTrainJourney() {
                       }
                 }
                 transition={{
-                  duration: 0.45,
+                  duration: 0.48,
                   ease,
                 }}
                 className="
                   flex
-                  min-h-[118px]
+                  min-h-[180px]
                   cursor-grab
-                  items-center
-                  gap-5
+                  items-start
+                  gap-4
                   rounded-[22px]
                   bg-white
                   px-5
-                  py-5
-                  shadow-[0_6px_20px_rgba(30,45,80,0.035)]
+                  py-6
+                  shadow-[0_7px_20px_rgba(30,45,80,0.035)]
                   active:cursor-grabbing
-
-                  sm:min-h-[124px]
+                  sm:min-h-[188px]
                   sm:px-6
-                  sm:py-6
+                  sm:py-7
                 "
               >
-                {/* NUMBER */}
+                {/* Number circle remains */}
 
-                <motion.div
-                  initial={{
-                    opacity: 0,
-                    scale: 0.88,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    scale: 1,
-                  }}
-                  transition={{
-                    duration: 0.35,
-                    ease,
-                  }}
+                <div
                   className="
                     flex
-                    h-[54px]
-                    w-[54px]
+                    h-[50px]
+                    w-[50px]
                     shrink-0
                     items-center
                     justify-center
@@ -795,49 +758,59 @@ export default function TestTreatTrainJourney() {
                     text-[12px]
                     font-[700]
                     text-[#242D3B]
-
-                    sm:h-[58px]
-                    sm:w-[58px]
-                    sm:text-[13px]
                   "
                 >
-                  {currentJourney.number}
-                </motion.div>
+                  {
+                    journeyItems[
+                      activeJourney
+                    ].number
+                  }
+                </div>
 
-                {/* =================================================
-                    ALL 16 TEXTS SAME STYLE
-                ================================================== */}
+                {/* Content */}
 
-                <motion.p
-                  initial={{
-                    opacity: 0,
-                    y: 8,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  transition={{
-                    duration: 0.4,
-                    delay: 0.06,
-                    ease,
-                  }}
-                  className="
-                    max-w-[410px]
-                    text-[15px]
-                    font-[500]
-                    leading-[1.65]
-                    tracking-[-0.01em]
-                    text-[#55637A]
+                <div className="pt-[2px]">
+                  <h4
+                    className="
+                      text-[17px]
+                      font-[700]
+                      leading-[1.35]
+                      tracking-[-0.02em]
+                      text-[#0F1728]
+                      sm:text-[18px]
+                    "
+                  >
+                    {
+                      journeyItems[
+                        activeJourney
+                      ].title
+                    }
+                  </h4>
 
-                    sm:text-[16px]
-                  "
-                >
-                  {currentJourney.text}
-                </motion.p>
+                  <p
+                    className="
+                      mt-2
+                      max-w-[390px]
+                      text-[14px]
+                      leading-[1.65]
+                      text-[#647087]
+                      sm:text-[15px]
+                    "
+                  >
+                    {
+                      journeyItems[
+                        activeJourney
+                      ].description
+                    }
+                  </p>
+                </div>
               </motion.div>
             </AnimatePresence>
           </div>
+
+          {/* ================================================
+              NO 01–08 BOTTOM BUTTONS
+          ================================================= */}
         </div>
       </motion.div>
     </section>

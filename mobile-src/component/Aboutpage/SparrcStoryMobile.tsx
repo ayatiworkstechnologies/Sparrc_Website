@@ -22,10 +22,6 @@ type NavId =
   | "what-we-believe"
   | "what-we-do"
   | "woman-behind-sparrc"
-  | "clinical-foundation"
-  | "whole-person"
-  | "breath-story"
-  | "recognition"
   | "movement-matrix";
 
 interface NavItem {
@@ -76,26 +72,6 @@ const navItems: NavItem[] = [
     shortLabel: "The Woman",
   },
   {
-    id: "clinical-foundation",
-    label: "The Clinical Foundation",
-    shortLabel: "Clinical Foundation",
-  },
-  {
-    id: "whole-person",
-    label: "Looking at the Whole Person",
-    shortLabel: "Whole Person",
-  },
-  {
-    id: "breath-story",
-    label: "Where Breath Enters the Story",
-    shortLabel: "Breath Story",
-  },
-  {
-    id: "recognition",
-    label: "Recognition",
-    shortLabel: "Recognition",
-  },
-  {
     id: "movement-matrix",
     label: "The SPARRC Movement Matrix",
     shortLabel: "Movement Matrix",
@@ -103,7 +79,7 @@ const navItems: NavItem[] = [
 ];
 
 /* =========================================================
-   WHAT WE DO SLIDER
+   WHAT WE DO
 ========================================================= */
 
 const journeyItems: JourneyItem[] = [
@@ -150,7 +126,7 @@ const journeyItems: JourneyItem[] = [
 ];
 
 /* =========================================================
-   SHARED WHITE CARD
+   SHARED CARD
 ========================================================= */
 
 function ContentCard({
@@ -177,8 +153,98 @@ function ContentCard({
 }
 
 /* =========================================================
+   INNER STORY SECTION
+========================================================= */
+
+function StorySection({
+  eyebrow,
+  title,
+  image,
+  imageAlt,
+  children,
+}: {
+  eyebrow: string;
+  title: string;
+  image?: string;
+  imageAlt?: string;
+  children: ReactNode;
+}) {
+  return (
+    <motion.section
+      initial={{
+        opacity: 0,
+        y: 18,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      viewport={{
+        once: true,
+        amount: 0.12,
+      }}
+      transition={{
+        duration: 0.55,
+        ease,
+      }}
+      className="
+        mt-7
+        border-t
+        border-[#E6EAF0]
+        pt-7
+      "
+    >
+      {image && imageAlt && (
+        <StoryImage
+          src={image}
+          alt={imageAlt}
+        />
+      )}
+
+      <p
+        className={`
+          text-[9px]
+          font-[700]
+          uppercase
+          tracking-[0.11em]
+          text-[#6588B8]
+
+          ${image ? "mt-5" : ""}
+        `}
+      >
+        {eyebrow}
+      </p>
+
+      <h3
+        className="
+          mt-2
+          text-[22px]
+          font-[700]
+          leading-[1.2]
+          tracking-[-0.035em]
+          text-[#171824]
+        "
+      >
+        {title}
+      </h3>
+
+      <div
+        className="
+          mt-4
+          space-y-5
+          text-[14px]
+          leading-[1.8]
+          text-[#68758A]
+        "
+      >
+        {children}
+      </div>
+    </motion.section>
+  );
+}
+
+/* =========================================================
    IMAGE
-   332 × 220
 ========================================================= */
 
 function StoryImage({
@@ -256,11 +322,7 @@ function AwardIcon() {
         strokeWidth="1.8"
         aria-hidden="true"
       >
-        <circle
-          cx="12"
-          cy="9"
-          r="4"
-        />
+        <circle cx="12" cy="9" r="4" />
 
         <path
           d="M9.8 12.7 9 19l3-1.8 3 1.8-.8-6.3"
@@ -273,7 +335,7 @@ function AwardIcon() {
 }
 
 /* =========================================================
-   MAIN COMPONENT
+   MAIN
 ========================================================= */
 
 export default function SparrcStoryMobile() {
@@ -290,16 +352,11 @@ export default function SparrcStoryMobile() {
     useRef<HTMLDivElement | null>(null);
 
   const chipRefs = useRef<
-    Partial<
-      Record<
-        NavId,
-        HTMLButtonElement | null
-      >
-    >
+    Partial<Record<NavId, HTMLButtonElement | null>>
   >({});
 
   /* =======================================================
-     WHAT WE DO AUTO SLIDER
+     AUTO SLIDER
   ======================================================= */
 
   useEffect(() => {
@@ -331,10 +388,7 @@ export default function SparrcStoryMobile() {
     const activeChip =
       chipRefs.current[activeNav];
 
-    if (
-      !container ||
-      !activeChip
-    ) {
+    if (!container || !activeChip) {
       return;
     }
 
@@ -349,23 +403,14 @@ export default function SparrcStoryMobile() {
     });
   }, [activeNav]);
 
-  /* =======================================================
-     ACTIVE SECTION INDEX
-  ======================================================= */
-
   const activeIndex =
     navItems.findIndex(
-      (item) =>
-        item.id === activeNav,
+      (item) => item.id === activeNav,
     );
 
   const activeNumber = String(
     activeIndex + 1,
   ).padStart(2, "0");
-
-  /* =======================================================
-     CLICK CHIP
-  ======================================================= */
 
   const handleSectionChange = (
     id: NavId,
@@ -386,6 +431,7 @@ export default function SparrcStoryMobile() {
         px-2
         pb-[120px]
         pt-3
+
         sm:px-4
       "
     >
@@ -394,6 +440,7 @@ export default function SparrcStoryMobile() {
           mx-auto
           w-full
           max-w-[390px]
+
           sm:max-w-[430px]
         "
       >
@@ -428,8 +475,7 @@ export default function SparrcStoryMobile() {
               text-[#151421]
             "
           >
-            We prescribe movement, not
-            medicine.
+            We prescribe movement, not medicine.
           </h1>
 
           <p
@@ -440,12 +486,11 @@ export default function SparrcStoryMobile() {
               text-[#68758A]
             "
           >
-            SPARRC is a sports and fitness
-            medicine network built on the belief
-            that the body was made to move - and
-            that most pain, illness, and decline
-            is a movement problem before it is a
-            medicine problem.
+            SPARRC is a sports and fitness medicine
+            network built on the belief that the
+            body was made to move - and that most
+            pain, illness, and decline is a movement
+            problem before it is a medicine problem.
           </p>
 
           {/* STATS */}
@@ -461,18 +506,15 @@ export default function SparrcStoryMobile() {
             {[
               {
                 value: "21",
-                label:
-                  "Centres\nacross India",
+                label: "Centres\nacross India",
               },
               {
                 value: "1M+",
-                label:
-                  "People\nhelped",
+                label: "People\nhelped",
               },
               {
                 value: "95%",
-                label:
-                  "Surgery\navoidance",
+                label: "Surgery\navoidance",
               },
             ].map((stat, index) => (
               <motion.div
@@ -563,8 +605,6 @@ export default function SparrcStoryMobile() {
             shadow-[0_7px_24px_rgba(25,40,70,0.035)]
           "
         >
-          {/* TITLE */}
-
           <div
             className="
               flex
@@ -609,16 +649,14 @@ export default function SparrcStoryMobile() {
                 text-[#9EA7B6]
               "
             >
-              9 sections
+              5 sections
             </span>
           </div>
 
           {/* CHIPS */}
 
           <div
-            ref={
-              chipsContainerRef
-            }
+            ref={chipsContainerRef}
             className="
               mt-4
               flex
@@ -634,8 +672,7 @@ export default function SparrcStoryMobile() {
             {navItems.map(
               (item, index) => {
                 const active =
-                  activeNav ===
-                  item.id;
+                  activeNav === item.id;
 
                 return (
                   <motion.button
@@ -682,12 +719,8 @@ export default function SparrcStoryMobile() {
                           `
                       }
                     `}
-                    aria-pressed={
-                      active
-                    }
+                    aria-pressed={active}
                   >
-                    {/* ACTIVE BACKGROUND */}
-
                     {active && (
                       <motion.span
                         layoutId="sparrc-active-chip"
@@ -707,8 +740,6 @@ export default function SparrcStoryMobile() {
                       />
                     )}
 
-                    {/* NUMBER */}
-
                     <span
                       className={`
                         relative
@@ -725,13 +756,8 @@ export default function SparrcStoryMobile() {
                     >
                       {String(
                         index + 1,
-                      ).padStart(
-                        2,
-                        "0",
-                      )}
+                      ).padStart(2, "0")}
                     </span>
-
-                    {/* LABEL */}
 
                     <span
                       className="
@@ -742,12 +768,8 @@ export default function SparrcStoryMobile() {
                         font-[650]
                       "
                     >
-                      {
-                        item.shortLabel
-                      }
+                      {item.shortLabel}
                     </span>
-
-                    {/* ACTIVE DOT */}
 
                     {active && (
                       <motion.span
@@ -775,7 +797,7 @@ export default function SparrcStoryMobile() {
         </motion.section>
 
         {/* =================================================
-            ACTIVE CONTENT ONLY
+            ACTIVE CONTENT
         ================================================== */}
 
         <AnimatePresence
@@ -819,8 +841,7 @@ export default function SparrcStoryMobile() {
                 WHO WE ARE
             ================================================ */}
 
-            {activeNav ===
-              "who-we-are" && (
+            {activeNav === "who-we-are" && (
               <section
                 className="
                   rounded-[24px]
@@ -865,9 +886,7 @@ export default function SparrcStoryMobile() {
                       text-white/80
                     "
                   >
-                    {activeNumber}
-                    {" / "}
-                    09
+                    {activeNumber} / 05
                   </span>
                 </div>
 
@@ -891,28 +910,17 @@ export default function SparrcStoryMobile() {
                     text-white/92
                   "
                 >
-                  We are SPARRC -
-                  Sports Performance
-                  Assessment
-                  Rehabilitation
-                  Research Counseling
-                  Institute - one of
-                  India&apos;s leading
-                  sports and fitness
-                  medicine networks.
-                  Since 2006, we have
-                  believed in
-                  prescribing exercise,
-                  not medicine,
-                  wherever it is the
-                  better answer. Across
-                  21 centres, we have
-                  helped over a million
-                  people move, heal and
-                  live better, with a
-                  95% success rate in
-                  resolving pain without
-                  surgery.
+                  We are SPARRC - Sports Performance
+                  Assessment Rehabilitation Research
+                  Counseling Institute - one of
+                  India&apos;s leading sports and fitness
+                  medicine networks. Since 2006, we have
+                  believed in prescribing exercise, not
+                  medicine, wherever it is the better
+                  answer. Across 21 centres, we have
+                  helped over a million people move, heal
+                  and live better, with a 95% success
+                  rate in resolving pain without surgery.
                 </p>
               </section>
             )}
@@ -955,9 +963,7 @@ export default function SparrcStoryMobile() {
                       text-[#8794A6]
                     "
                   >
-                    {activeNumber}
-                    {" / "}
-                    09
+                    {activeNumber} / 05
                   </span>
                 </div>
 
@@ -981,22 +987,15 @@ export default function SparrcStoryMobile() {
                     text-[#68758A]
                   "
                 >
-                  We believe the body
-                  was built to move and
-                  that most pain,
-                  illness, and most of
-                  what ages us badly is a
-                  movement problem before
-                  it&apos;s a medicine
-                  problem. So when
-                  someone comes to us
-                  hurting, our first
-                  instinct isn&apos;t a
-                  prescription pad.
-                  It&apos;s an exercise
-                  plan, built for their
-                  body, their life, their
-                  goals.
+                  We believe the body was built to move
+                  and that most pain, illness, and most
+                  of what ages us badly is a movement
+                  problem before it&apos;s a medicine
+                  problem. So when someone comes to us
+                  hurting, our first instinct isn&apos;t
+                  a prescription pad. It&apos;s an
+                  exercise plan, built for their body,
+                  their life, their goals.
                 </p>
 
                 <p
@@ -1007,22 +1006,15 @@ export default function SparrcStoryMobile() {
                     text-[#68758A]
                   "
                 >
-                  That&apos;s what
-                  &quot;We Prescribe
-                  Exercises - Not
-                  Medicines&quot; has
-                  meant since 2006: not a
-                  rejection of medicine,
-                  but a refusal to let it
-                  be the first or only
-                  answer. Healing works
-                  better as a
-                  relationship than a
-                  transaction. Over a
-                  million of them have
-                  walked, run, danced,
-                  and lived better
-                  because of it.
+                  That&apos;s what &quot;We Prescribe
+                  Exercises - Not Medicines&quot; has
+                  meant since 2006: not a rejection of
+                  medicine, but a refusal to let it be
+                  the first or only answer. Healing
+                  works better as a relationship than a
+                  transaction. Over a million of them
+                  have walked, run, danced, and lived
+                  better because of it.
                 </p>
               </ContentCard>
             )}
@@ -1031,8 +1023,7 @@ export default function SparrcStoryMobile() {
                 WHAT WE DO
             ================================================ */}
 
-            {activeNav ===
-              "what-we-do" && (
+            {activeNav === "what-we-do" && (
               <ContentCard>
                 <div
                   className="
@@ -1065,9 +1056,7 @@ export default function SparrcStoryMobile() {
                       text-[#8794A6]
                     "
                   >
-                    {activeNumber}
-                    {" / "}
-                    09
+                    {activeNumber} / 05
                   </span>
                 </div>
 
@@ -1081,8 +1070,7 @@ export default function SparrcStoryMobile() {
                     text-[#252636]
                   "
                 >
-                  What We Do: Test.
-                  Treat. Train.
+                  What We Do: Test. Treat. Train.
                 </h2>
 
                 <p
@@ -1098,8 +1086,6 @@ export default function SparrcStoryMobile() {
                   SPARRC IS FOR YOU IF...
                 </p>
 
-                {/* SLIDER */}
-
                 <div
                   className="
                     mt-4
@@ -1111,9 +1097,7 @@ export default function SparrcStoryMobile() {
                     initial={false}
                   >
                     <motion.div
-                      key={
-                        activeJourney
-                      }
+                      key={activeJourney}
                       initial={{
                         opacity: 0,
                         x: 25,
@@ -1159,8 +1143,7 @@ export default function SparrcStoryMobile() {
                           font-[700]
                         "
                       >
-                        {activeJourney +
-                          1}
+                        {activeJourney + 1}
                       </div>
 
                       <div>
@@ -1196,8 +1179,6 @@ export default function SparrcStoryMobile() {
                     </motion.div>
                   </AnimatePresence>
                 </div>
-
-                {/* DOTS */}
 
                 <div
                   className="
@@ -1255,17 +1236,28 @@ export default function SparrcStoryMobile() {
             )}
 
             {/* ===============================================
-                WOMAN BEHIND SPARRC
+                THE WOMAN BEHIND SPARRC
+
+                ALL SUJATHA CONTENT IS NOW INSIDE HERE:
+                - Main story
+                - Clinical Foundation
+                - Whole Person
+                - Breath Story
+                - Recognition
             ================================================ */}
 
             {activeNav ===
               "woman-behind-sparrc" && (
               <ContentCard>
+                {/* MAIN IMAGE */}
+
                 <StoryImage
                   src="/mobile/images/woman-behind-sparrc.png"
                   alt="The Woman Behind SPARRC"
                 />
 
+                {/* HEADER */}
+
                 <div
                   className="
                     mt-5
@@ -1284,8 +1276,7 @@ export default function SparrcStoryMobile() {
                       text-[#7190BB]
                     "
                   >
-                    LEADERSHIP &amp;
-                    VISION
+                    LEADERSHIP &amp; VISION
                   </p>
 
                   <span
@@ -1299,24 +1290,21 @@ export default function SparrcStoryMobile() {
                       text-[#8794A6]
                     "
                   >
-                    {activeNumber}
-                    {" / "}
-                    09
+                    {activeNumber} / 05
                   </span>
                 </div>
 
                 <h2
                   className="
                     mt-4
-                    text-[24px]
+                    text-[25px]
                     font-[700]
-                    leading-[1.22]
-                    tracking-[-0.035em]
+                    leading-[1.2]
+                    tracking-[-0.04em]
                     text-[#1B1C28]
                   "
                 >
-                  The Woman Behind
-                  SPARRC
+                  The Woman Behind SPARRC
                 </h2>
 
                 <p
@@ -1327,550 +1315,300 @@ export default function SparrcStoryMobile() {
                     text-[#68758A]
                   "
                 >
-                  Long before she became
-                  Dr Sujatha Pugazhendi,
-                  she was a dancer and an
-                  athlete. Movement was
-                  how she first learnt to
-                  understand her own
-                  body. Later, while
-                  teaching aerobics and
-                  Zumba, she began to
-                  notice something else:
-                  telling people that
-                  exercise was good for
-                  them was rarely enough.
-                  They were far more
-                  likely to keep moving
-                  when movement itself
-                  felt good, achievable
-                  and worth coming back
-                  to.
+                  Long before she became Dr Sujatha
+                  Pugazhendi, she was a dancer and an
+                  athlete. Movement was how she first
+                  learnt to understand her own body.
+                  Later, while teaching aerobics and
+                  Zumba, she began to notice something
+                  else: telling people that exercise
+                  was good for them was rarely enough.
+                  They were far more likely to keep
+                  moving when movement itself felt
+                  good, achievable and worth coming
+                  back to.
                 </p>
-              </ContentCard>
-            )}
 
-            {/* ===============================================
-                CLINICAL FOUNDATION
-            ================================================ */}
-
-            {activeNav ===
-              "clinical-foundation" && (
-              <ContentCard>
-                <StoryImage
-                  src="/mobile/images/clinical-foundation.png"
-                  alt="The Clinical Foundation"
-                />
-
-                <div
-                  className="
-                    mt-5
-                    flex
-                    items-center
-                    justify-between
-                    gap-3
-                  "
-                >
-                  <p
-                    className="
-                      text-[9px]
-                      font-[700]
-                      uppercase
-                      tracking-[0.1em]
-                      text-[#7190BB]
-                    "
-                  >
+                {/* ===========================================
                     CLINICAL FOUNDATION
+                ============================================ */}
+
+                <StorySection
+                  eyebrow="THE CLINICAL FOUNDATION"
+                  title="The Clinical Foundation"
+                  image="/mobile/images/clinical-foundation.png"
+                  imageAlt="The Clinical Foundation"
+                >
+                  <p>
+                    A Master&apos;s in Sports
+                    Physiotherapy gave that instinct a
+                    clinical grounding. She learnt to
+                    look beyond where it hurt and ask
+                    why it hurt: why one joint was
+                    compensating for another, why the
+                    same pain kept returning, and why
+                    rest was not always the answer.
                   </p>
 
-                  <span
-                    className="
-                      rounded-full
-                      bg-[#F1F4F8]
-                      px-3
-                      py-1.5
-                      text-[9px]
-                      font-[700]
-                      text-[#8794A6]
-                    "
-                  >
-                    {activeNumber}
-                    {" / "}
-                    09
-                  </span>
-                </div>
+                  <p>
+                    In 2006, that thinking helped shape
+                    SPARRC, which she founded with her
+                    husband, Dr Kannan Pugazhendi. At
+                    its heart was a straightforward
+                    idea they continue to work with
+                    today: prescribe exercise instead
+                    of medicine when exercise is
+                    genuinely the better answer.
+                  </p>
+                </StorySection>
 
-                <h2
-                  className="
-                    mt-4
-                    text-[24px]
-                    font-[700]
-                    tracking-[-0.035em]
-                    text-[#171824]
-                  "
-                >
-                  The Clinical Foundation
-                </h2>
-
-                <p
-                  className="
-                    mt-4
-                    text-[14px]
-                    leading-[1.8]
-                    text-[#68758A]
-                  "
-                >
-                  A Master&apos;s in
-                  Sports Physiotherapy
-                  gave that instinct a
-                  clinical grounding. She
-                  learnt to look beyond
-                  where it hurt and ask
-                  why it hurt: why one
-                  joint was compensating
-                  for another, why the
-                  same pain kept
-                  returning, and why rest
-                  was not always the
-                  answer.
-                </p>
-
-                <p
-                  className="
-                    mt-5
-                    text-[14px]
-                    leading-[1.8]
-                    text-[#68758A]
-                  "
-                >
-                  In 2006, that thinking
-                  helped shape SPARRC,
-                  which she founded with
-                  her husband, Dr Kannan
-                  Pugazhendi. At its
-                  heart was a
-                  straightforward idea
-                  they continue to work
-                  with today: prescribe
-                  exercise instead of
-                  medicine when exercise
-                  is genuinely the better
-                  answer.
-                </p>
-              </ContentCard>
-            )}
-
-            {/* ===============================================
-                WHOLE PERSON
-            ================================================ */}
-
-            {activeNav ===
-              "whole-person" && (
-              <ContentCard>
-                <StoryImage
-                  src="/mobile/images/looking-at-whole-person.png"
-                  alt="Looking at the Whole Person"
-                />
-
-                <div
-                  className="
-                    mt-5
-                    flex
-                    items-center
-                    justify-between
-                    gap-3
-                  "
-                >
-                  <p
-                    className="
-                      text-[9px]
-                      font-[700]
-                      uppercase
-                      tracking-[0.1em]
-                      text-[#7190BB]
-                    "
-                  >
+                {/* ===========================================
                     WHOLE PERSON
-                  </p>
+                ============================================ */}
 
-                  <span
-                    className="
-                      rounded-full
-                      bg-[#F1F4F8]
-                      px-3
-                      py-1.5
-                      text-[9px]
-                      font-[700]
-                      text-[#8794A6]
-                    "
-                  >
-                    {activeNumber}
-                    {" / "}
-                    09
-                  </span>
-                </div>
-
-                <h2
-                  className="
-                    mt-4
-                    text-[24px]
-                    font-[700]
-                    tracking-[-0.035em]
-                    text-[#171824]
-                  "
-                >
-                  Looking at the Whole
-                  Person
-                </h2>
-
-                <p
-                  className="
-                    mt-4
-                    text-[14px]
-                    leading-[1.8]
-                    text-[#68758A]
-                  "
-                >
-                  Building SPARRC from
-                  the ground up gradually
-                  changed the way Sujatha
-                  looked at health. An
-                  injury could rarely be
-                  separated neatly from
-                  the person living with
-                  it. So her own learning
-                  widened too. She
-                  trained in yoga and
-                  acupuncture, qualified
-                  as an Integrative
-                  Nutrition Health Coach
-                  through IIN, and
-                  studied entrepreneurship
-                  at London Business
-                  School and leadership
-                  at Harvard Business
-                  School.
-                </p>
-
-                <p
-                  className="
-                    mt-5
-                    text-[14px]
-                    leading-[1.8]
-                    text-[#68758A]
-                  "
-                >
-                  The business education
-                  had a practical
-                  purpose. If the idea
-                  behind SPARRC was going
-                  to reach more people,
-                  the institution
-                  carrying it had to grow
-                  with it. Under her
-                  leadership, a single
-                  clinic expanded into a
-                  network of centres
-                  across India, treating
-                  more than a million
-                  people and reporting a
-                  95% success rate in
-                  resolving pain without
-                  surgery.
-                </p>
-              </ContentCard>
-            )}
-
-            {/* ===============================================
-                BREATH STORY
-            ================================================ */}
-
-            {activeNav ===
-              "breath-story" && (
-              <ContentCard>
-                <StoryImage
-                  src="/mobile/images/breath-enters-story.png"
-                  alt="Where Breath Enters the Story"
-                />
-
-                <div
-                  className="
-                    mt-5
-                    flex
-                    items-center
-                    justify-between
-                    gap-3
-                  "
-                >
-                  <p
-                    className="
-                      text-[9px]
-                      font-[700]
-                      uppercase
-                      tracking-[0.1em]
-                      text-[#7190BB]
-                    "
-                  >
-                    BREATH &amp;
-                    MOVEMENT
-                  </p>
-
-                  <span
-                    className="
-                      rounded-full
-                      bg-[#F1F4F8]
-                      px-3
-                      py-1.5
-                      text-[9px]
-                      font-[700]
-                      text-[#8794A6]
-                    "
-                  >
-                    {activeNumber}
-                    {" / "}
-                    09
-                  </span>
-                </div>
-
-                <h2
-                  className="
-                    mt-4
-                    text-[24px]
-                    font-[700]
-                    leading-[1.2]
-                    tracking-[-0.035em]
-                    text-[#171824]
-                  "
-                >
-                  Where Breath Enters the
-                  Story
-                </h2>
-
-                <div
-                  className="
-                    mt-4
-                    space-y-5
-                    text-[14px]
-                    leading-[1.8]
-                    text-[#68758A]
-                  "
+                <StorySection
+                  eyebrow="WHOLE PERSON"
+                  title="Looking at the Whole Person"
+                  image="/mobile/images/looking-at-whole-person.png"
+                  imageAlt="Looking at the Whole Person"
                 >
                   <p>
-                    Throughout these
-                    years, Sujatha
-                    maintained a practice
-                    that was much more
-                    personal: breathwork.
+                    Building SPARRC from the ground up
+                    gradually changed the way Sujatha
+                    looked at health. An injury could
+                    rarely be separated neatly from
+                    the person living with it. So her
+                    own learning widened too. She
+                    trained in yoga and acupuncture,
+                    qualified as an Integrative
+                    Nutrition Health Coach through
+                    IIN, and studied entrepreneurship
+                    at London Business School and
+                    leadership at Harvard Business
+                    School.
                   </p>
 
                   <p>
-                    Over time, she began
-                    paying closer
-                    attention to the
-                    relationship between
-                    breathing and
-                    movement. How we
-                    breathe, she came to
-                    believe, can
-                    influence how we
-                    move, recover and
-                    experience pain. A
-                    muscle or joint
-                    therefore tells only
-                    part of the story.
+                    The business education had a
+                    practical purpose. If the idea
+                    behind SPARRC was going to reach
+                    more people, the institution
+                    carrying it had to grow with it.
+                    Under her leadership, a single
+                    clinic expanded into a network of
+                    centres across India, treating
+                    more than a million people and
+                    reporting a 95% success rate in
+                    resolving pain without surgery.
                   </p>
+                </StorySection>
 
-                  <p>
-                    That thinking is now
-                    developing into
-                    Kinesio Health, her
-                    approach to bringing
-                    breath and movement
-                    into the same
-                    conversation. Rather
-                    than treating them as
-                    separate areas of
-                    wellness, it looks at
-                    how the two work
-                    together within the
-                    body.
-                  </p>
+                {/* ===========================================
+                    BREATH STORY
+                ============================================ */}
 
-                  <p>
-                    It is also at the
-                    heart of the book she
-                    is currently writing,
-                    The Superpower of
-                    Doing a Little
-                    Everyday. The title
-                    reflects an idea that
-                    has followed her from
-                    her earliest years in
-                    sport and dance
-                    through
-                    physiotherapy,
-                    SPARRC and now
-                    Kinesio Health:
-                    meaningful change in
-                    the body rarely comes
-                    from doing something
-                    extraordinary once.
-                    More often, it comes
-                    from doing something
-                    small, and continuing
-                    to do it.
-                  </p>
-
-                  <p>
-                    For Sujatha, that
-                    ultimately means
-                    helping people
-                    understand their
-                    bodies well enough to
-                    trust them again.
-                  </p>
-                </div>
-              </ContentCard>
-            )}
-
-            {/* ===============================================
-                RECOGNITION
-            ================================================ */}
-
-            {activeNav ===
-              "recognition" && (
-              <ContentCard>
-                <div
-                  className="
-                    flex
-                    items-center
-                    justify-between
-                    gap-3
-                  "
+                <StorySection
+                  eyebrow="BREATH & MOVEMENT"
+                  title="Where Breath Enters the Story"
+                  image="/mobile/images/breath-enters-story.png"
+                  imageAlt="Where Breath Enters the Story"
                 >
-                  <p
-                    className="
-                      text-[9px]
-                      font-[700]
-                      uppercase
-                      tracking-[0.1em]
-                      text-[#7190BB]
-                    "
-                  >
-                    HONOURS &amp;
+                  <p>
+                    Throughout these years, Sujatha
+                    maintained a practice that was
+                    much more personal: breathwork.
+                  </p>
+
+                  <p>
+                    Over time, she began paying closer
+                    attention to the relationship
+                    between breathing and movement.
+                    How we breathe, she came to
+                    believe, can influence how we
+                    move, recover and experience
+                    pain. A muscle or joint therefore
+                    tells only part of the story.
+                  </p>
+
+                  <p>
+                    That thinking is now developing
+                    into Kinesio Health, her approach
+                    to bringing breath and movement
+                    into the same conversation.
+                    Rather than treating them as
+                    separate areas of wellness, it
+                    looks at how the two work
+                    together within the body.
+                  </p>
+
+                  <p>
+                    It is also at the heart of the
+                    book she is currently writing,
+                    The Superpower of Doing a Little
+                    Everyday. The title reflects an
+                    idea that has followed her from
+                    her earliest years in sport and
+                    dance through physiotherapy,
+                    SPARRC and now Kinesio Health:
+                    meaningful change in the body
+                    rarely comes from doing something
+                    extraordinary once. More often,
+                    it comes from doing something
+                    small, and continuing to do it.
+                  </p>
+
+                  <p>
+                    For Sujatha, that ultimately
+                    means helping people understand
+                    their bodies well enough to trust
+                    them again.
+                  </p>
+                </StorySection>
+
+                {/* ===========================================
                     RECOGNITION
-                  </p>
+                ============================================ */}
 
-                  <span
-                    className="
-                      rounded-full
-                      bg-[#F1F4F8]
-                      px-3
-                      py-1.5
-                      text-[9px]
-                      font-[700]
-                      text-[#8794A6]
-                    "
-                  >
-                    {activeNumber}
-                    {" / "}
-                    09
-                  </span>
-                </div>
-
-                <h2
+                <motion.section
+                  initial={{
+                    opacity: 0,
+                    y: 18,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  viewport={{
+                    once: true,
+                    amount: 0.2,
+                  }}
+                  transition={{
+                    duration: 0.55,
+                    ease,
+                  }}
                   className="
-                    mt-5
-                    text-[25px]
-                    font-[700]
-                    tracking-[-0.035em]
-                    text-[#1A1C28]
+                    mt-7
+                    border-t
+                    border-[#E6EAF0]
+                    pt-7
                   "
                 >
-                  Recognition
-                </h2>
+                  <p
+                    className="
+                      text-[9px]
+                      font-[700]
+                      uppercase
+                      tracking-[0.11em]
+                      text-[#6588B8]
+                    "
+                  >
+                    HONOURS &amp; RECOGNITION
+                  </p>
 
-                <div className="mt-6">
-                  {/* AWARD 1 */}
+                  <h3
+                    className="
+                      mt-2
+                      text-[22px]
+                      font-[700]
+                      tracking-[-0.035em]
+                      text-[#171824]
+                    "
+                  >
+                    Recognition
+                  </h3>
 
                   <div
                     className="
-                      flex
-                      items-start
-                      gap-4
-                      border-b
-                      border-[#E5E8ED]
-                      pb-5
+                      mt-5
+                      overflow-hidden
+                      rounded-[17px]
+                      border
+                      border-[#E4E8EE]
+                      bg-[#F8FAFC]
+                      px-4
                     "
                   >
-                    <AwardIcon />
+                    {/* AWARD 1 */}
 
-                    <div>
-                      <p
-                        className="
-                          text-[14px]
-                          font-[700]
-                          leading-[1.4]
-                          text-[#273044]
-                        "
-                      >
-                        Best Entrepreneur
-                        Award, 2013
-                      </p>
+                    <div
+                      className="
+                        flex
+                        items-start
+                        gap-4
+                        border-b
+                        border-[#E4E8EE]
+                        py-5
+                      "
+                    >
+                      <AwardIcon />
 
-                      <p
-                        className="
-                          mt-2
-                          text-[12px]
-                          leading-[1.5]
-                          text-[#788397]
-                        "
-                      >
-                        MSME, Government
-                        of Tamil Nadu
-                      </p>
+                      <div>
+                        <p
+                          className="
+                            text-[14px]
+                            font-[700]
+                            leading-[1.4]
+                            text-[#273044]
+                          "
+                        >
+                          Best Entrepreneur Award,
+                          2013
+                        </p>
+
+                        <p
+                          className="
+                            mt-2
+                            text-[12px]
+                            leading-[1.5]
+                            text-[#788397]
+                          "
+                        >
+                          MSME, Government of Tamil
+                          Nadu
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* AWARD 2 */}
+
+                    <div
+                      className="
+                        flex
+                        items-start
+                        gap-4
+                        py-5
+                      "
+                    >
+                      <AwardIcon />
+
+                      <div>
+                        <p
+                          className="
+                            text-[14px]
+                            font-[700]
+                            leading-[1.4]
+                            text-[#273044]
+                          "
+                        >
+                          Best Entrepreneur Award,
+                          2025
+                        </p>
+
+                        <p
+                          className="
+                            mt-2
+                            text-[12px]
+                            leading-[1.5]
+                            text-[#788397]
+                          "
+                        >
+                          Award body/title to be
+                          verified
+                        </p>
+                      </div>
                     </div>
                   </div>
-
-                  {/* AWARD 2 */}
-
-                  <div
-                    className="
-                      flex
-                      items-start
-                      gap-4
-                      pt-5
-                    "
-                  >
-                    <AwardIcon />
-
-                    <div>
-                      <p
-                        className="
-                          text-[14px]
-                          font-[700]
-                          leading-[1.4]
-                          text-[#273044]
-                        "
-                      >
-                        Best Entrepreneur
-                        Award, 2025
-                      </p>
-
-                      <p
-                        className="
-                          mt-2
-                          text-[12px]
-                          leading-[1.5]
-                          text-[#788397]
-                        "
-                      >
-                        Award body/title
-                        to be verified
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                </motion.section>
               </ContentCard>
             )}
 
@@ -1912,9 +1650,7 @@ export default function SparrcStoryMobile() {
                       text-[#8794A6]
                     "
                   >
-                    {activeNumber}
-                    {" / "}
-                    09
+                    {activeNumber} / 05
                   </span>
                 </div>
 
@@ -1928,8 +1664,7 @@ export default function SparrcStoryMobile() {
                     text-[#171824]
                   "
                 >
-                  The SPARRC Movement
-                  Matrix
+                  The SPARRC Movement Matrix
                 </h2>
 
                 <p
@@ -1940,13 +1675,10 @@ export default function SparrcStoryMobile() {
                     text-[#67758A]
                   "
                 >
-                  The SPARRC
-                  Kinesio-Health is
-                  screened and
-                  engineered by
-                  bio-Psychosocial
-                  concepts. We integrate
-                  two complementary
+                  The SPARRC Kinesio-Health is
+                  screened and engineered by
+                  bio-Psychosocial concepts. We
+                  integrate two complementary
                   processes:
                 </p>
 
@@ -1986,8 +1718,7 @@ export default function SparrcStoryMobile() {
                       leading-[1.3]
                     "
                   >
-                    1. SPARRC Movement
-                    Matrix
+                    1. SPARRC Movement Matrix
                   </h3>
 
                   <p
@@ -1998,11 +1729,9 @@ export default function SparrcStoryMobile() {
                       text-white/90
                     "
                   >
-                    We examine the
-                    physical factors
-                    that influence
-                    movement, function
-                    and performance.
+                    We examine the physical factors
+                    that influence movement,
+                    function and performance.
                   </p>
 
                   <ul
@@ -2020,8 +1749,7 @@ export default function SparrcStoryMobile() {
                     </li>
 
                     <li className="list-disc">
-                      Fascia &amp; muscle
-                      health
+                      Fascia &amp; muscle health
                     </li>
 
                     <li className="list-disc">
@@ -2029,8 +1757,7 @@ export default function SparrcStoryMobile() {
                     </li>
 
                     <li className="list-disc">
-                      Performance /
-                      Activity load
+                      Performance / Activity load
                     </li>
                   </ul>
                 </motion.div>
@@ -2071,8 +1798,7 @@ export default function SparrcStoryMobile() {
                       leading-[1.3]
                     "
                   >
-                    2. SPARRC Lifestyle
-                    Levers
+                    2. SPARRC Lifestyle Levers
                   </h3>
 
                   <ul
