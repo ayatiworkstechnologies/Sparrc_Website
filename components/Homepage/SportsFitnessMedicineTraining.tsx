@@ -308,7 +308,7 @@ export default function SportsFitnessMedicineTraining() {
             onClick={handlePrevious}
             aria-label="Previous training programs"
             className="
-              absolute
+              absolute cursor-pointer
               left-0
               top-1/2
               z-30
@@ -352,7 +352,7 @@ export default function SportsFitnessMedicineTraining() {
             onClick={handleNext}
             aria-label="Next training programs"
             className="
-              absolute
+              absolute cursor-pointer
               right-0
               top-1/2
               z-30

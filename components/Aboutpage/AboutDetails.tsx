@@ -22,7 +22,7 @@ const aboutData = {
   ],
   closing: "Our offering is unique — We Prescribe Exercises — Not Medicines",
   image: {
-    src: "/images/about-detail.png",
+    src: "/images/about-detail-1.png",
     alt: "About SPARRC",
   },
   stats: [
