@@ -1,3 +1,4 @@
+import SparrcStoryMobile from "@/mobile-src/component/Aboutpage/SparrcStoryMobile";
 import AboutBanner from "../../component/Aboutpage/AboutBanner";
 import OurImpactSection from "../../component/Aboutpage/OurImpactSection";
 import WhatWeDoSection from "../../component/Aboutpage/WhatWeDoSection";
@@ -14,11 +15,13 @@ export default function Aboutpage() {
 
        <AboutBanner />
 
-       <WhoWeAreSection />
+       <SparrcStoryMobile />
+
+       {/* <WhoWeAreSection />
 
        <OurImpactSection />
 
-       <WhatWeDoSection />
+       <WhatWeDoSection /> */}
 
     </main>
   );

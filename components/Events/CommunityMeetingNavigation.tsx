@@ -11,7 +11,6 @@ import {
 import {
   ArrowUpRight,
   ImageIcon,
-  Newspaper,
   Sparkles,
 } from "lucide-react";
 
@@ -46,12 +45,6 @@ const defaultDescription =
   "60% of the world population suffering from cardiac diseases are Indians. It is of utmost importance that people understand that most of the cardiac diseases that are diagnosed and treated with surgeries like coronary artery bypass graft or stents, can be prevented by a regular exercise program. It is also possible for those that have already undergone such surgeries to get back to their pre-surgery levels of activity by joining the SPARRC prescription exercise program. Our program has enabled people to even run a marathon after cardiac bypass surgeries.";
 
 const defaultImages: CommunityImage[] = [
-  {
-    src: "/images/community-news-coverage.png",
-    alt: "SPARRC community awareness event featured in DT Next newspaper",
-    eyebrow: "Media Coverage",
-    title: "SPARRC in the news",
-  },
   {
     src: "/images/sparrc-centre-inauguration.png",
     alt: "Invitation for the inauguration of the nineteenth SPARRC centre",
@@ -119,48 +112,7 @@ const headingVariants: Variants = {
   },
 };
 
-/* Desktop-only creative movement */
-const desktopLeftImageVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    x: -55,
-    y: 30,
-    rotate: -5,
-  },
-  visible: {
-    opacity: 1,
-    x: 0,
-    y: 0,
-    rotate: -2,
-    transition: {
-      duration: 0.85,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
-
-const desktopRightImageVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    x: 55,
-    y: 20,
-    scale: 0.96,
-  },
-  visible: {
-    opacity: 1,
-    x: 0,
-    y: 0,
-    scale: 1,
-    transition: {
-      duration: 0.85,
-      delay: 0.08,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
-
-/* Mobile and tablet cards remain straight */
-const mobileTabletCardVariants: Variants = {
+const imageVariants: Variants = {
   hidden: {
     opacity: 0,
     y: 35,
@@ -170,20 +122,9 @@ const mobileTabletCardVariants: Variants = {
     opacity: 1,
     y: 0,
     scale: 1,
-    rotate: 0,
     transition: {
-      duration: 0.72,
+      duration: 0.8,
       ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
-
-const mobileTabletContainerVariants: Variants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.16,
-      delayChildren: 0.08,
     },
   },
 };
@@ -195,8 +136,15 @@ export default function CommunityMeetingNavigation({
   const pathname = usePathname();
   const shouldReduceMotion = useReducedMotion();
 
-  const firstImage = images[0] ?? defaultImages[0];
-  const secondImage = images[1] ?? defaultImages[1];
+  /*
+   * Supports both:
+   * 1. New single-image array
+   * 2. Old two-image array
+   */
+  const milestoneImage =
+    images.length > 1
+      ? images[1]
+      : images[0] ?? defaultImages[0];
 
   return (
     <section className="relative overflow-hidden bg-white px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
@@ -217,7 +165,9 @@ export default function CommunityMeetingNavigation({
         variants={containerVariants}
         className="relative mx-auto max-w-[1280px]"
       >
-        {/* Navigation */}
+        {/* =========================
+            NAVIGATION
+        ========================== */}
         <nav aria-label="Community meeting navigation">
           <div className="community-scrollbar-hidden overflow-x-auto pb-5">
             <div className="mx-auto flex w-max min-w-full items-center justify-start sm:justify-center">
@@ -283,7 +233,9 @@ export default function CommunityMeetingNavigation({
           <div className="mx-auto mt-1 h-[2px] w-14 rounded-full bg-[#e8eaf0] sm:hidden" />
         </nav>
 
-        {/* Description */}
+        {/* =========================
+            DESCRIPTION
+        ========================== */}
         <motion.div
           variants={descriptionVariants}
           className="mx-auto mt-8 max-w-[1120px] text-center sm:mt-9 lg:mt-10"
@@ -293,7 +245,9 @@ export default function CommunityMeetingNavigation({
           </p>
         </motion.div>
 
-        {/* Gallery */}
+        {/* =========================
+            SPARRC MOMENTS
+        ========================== */}
         <motion.div
           initial={shouldReduceMotion ? false : "hidden"}
           whileInView={shouldReduceMotion ? undefined : "visible"}
@@ -304,10 +258,10 @@ export default function CommunityMeetingNavigation({
           }}
           className="mt-12 sm:mt-14 lg:mt-16"
         >
-          {/* Gallery heading */}
+          {/* Heading */}
           <motion.div
             variants={headingVariants}
-            className="mx-auto mb-8 flex max-w-[1220px] flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"
+            className="mx-auto mb-8 flex max-w-[1220px] flex-col gap-4 sm:flex-row sm:items-end sm:justify-between lg:mb-10"
           >
             <div>
               <div className="inline-flex items-center gap-2 rounded-full bg-[#f0edf9] px-4 py-2">
@@ -332,188 +286,83 @@ export default function CommunityMeetingNavigation({
             </p>
           </motion.div>
 
-          {/* Desktop collage */}
-          <div className="relative mx-auto hidden min-h-[660px] max-w-[1180px] lg:block">
-            <div className="absolute inset-x-10 bottom-0 top-12 rounded-[36px] bg-[linear-gradient(135deg,#f5f2fa_0%,#eef7fa_52%,#f7f4fb_100%)]" />
+          {/* =========================
+              SINGLE MILESTONE LAYOUT
+          ========================== */}
+          <motion.div
+            variants={imageVariants}
+            className="relative mx-auto max-w-[980px]"
+          >
+            {/* Main soft background */}
+            <div className="relative overflow-hidden rounded-[28px] bg-[linear-gradient(135deg,#f4f1f9_0%,#eef7f9_50%,#f4f2f9_100%)] p-4 sm:p-6 lg:rounded-[36px] lg:p-8">
+              
+              {/* Decorative circles */}
+              <div className="pointer-events-none absolute -left-12 -top-12 h-36 w-36 rounded-full border border-[#6e5bb1]/10" />
 
-            <div className="absolute left-[7%] top-[4%] h-28 w-28 rounded-full border border-[#6e5bb1]/10" />
+              <div className="pointer-events-none absolute -bottom-16 -right-10 h-44 w-44 rounded-full border border-[#4ca9bf]/10" />
 
-            <div className="absolute bottom-[8%] right-[5%] h-40 w-40 rounded-full border border-[#4ca9bf]/10" />
+              {/* Community Archive badge */}
+              <motion.div
+                variants={headingVariants}
+                className="relative z-20 mb-5 inline-block rounded-[18px] border border-white/70 bg-white/90 px-5 py-4 shadow-[0_15px_40px_rgba(45,48,75,0.10)] backdrop-blur-md sm:mb-6"
+              >
+                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#6251a7] sm:text-[11px]">
+                  Community Archive
+                </p>
 
-            {/* Right image */}
-            <motion.figure
-              variants={desktopRightImageVariants}
-              whileHover={{
-                y: -8,
-              }}
-              transition={{
-                duration: 0.3,
-              }}
-              className="group absolute right-[4%] top-0 h-[590px] w-[63%] overflow-hidden rounded-[30px] border-[10px] border-white bg-white shadow-[0_30px_80px_rgba(39,43,72,0.16)]"
-            >
-              <div className="relative h-full w-full overflow-hidden rounded-[21px] bg-[#eef5f7]">
-                <Image
-                  src={secondImage.src}
-                  alt={secondImage.alt}
-                  fill
-                  priority
-                  sizes="760px"
-                  className="object-contain p-3 transition-transform duration-700 group-hover:scale-[1.025]"
-                />
-              </div>
+                <p className="mt-1 text-[12px] text-[#747984] sm:text-[13px]">
+                  Media & milestones
+                </p>
+              </motion.div>
 
-              <figcaption className="absolute bottom-5 right-5 flex max-w-[420px] items-center gap-4 rounded-[18px] border border-white/60 bg-white/90 px-5 py-4 shadow-[0_12px_35px_rgba(38,42,67,0.15)] backdrop-blur-md">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[14px] bg-[#eeeaf8] text-[#5f4ba3]">
-                  <ImageIcon size={19} />
+              {/* Main image card */}
+              <motion.figure
+                whileHover={
+                  shouldReduceMotion
+                    ? undefined
+                    : {
+                        y: -6,
+                      }
+                }
+                transition={{
+                  duration: 0.3,
+                }}
+                className="group relative z-10 mx-auto overflow-hidden rounded-[24px] border-[7px] border-white bg-white shadow-[0_24px_65px_rgba(39,43,72,0.14)] sm:rounded-[28px] sm:border-[9px]"
+              >
+                {/* Image area */}
+                <div className="relative mx-auto aspect-[16/10] w-full overflow-hidden rounded-[17px] bg-[#eef5f7] sm:rounded-[20px] lg:aspect-[16/9]">
+                  <Image
+                    src={milestoneImage.src}
+                    alt={milestoneImage.alt}
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 900px"
+                    className="object-contain p-2 transition-transform duration-700 ease-out group-hover:scale-[1.015] sm:p-3 lg:p-4"
+                  />
                 </div>
 
-                <div className="min-w-0">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#6c5bb0]">
-                    {secondImage.eyebrow}
-                  </p>
-
-                  <h3 className="mt-1 truncate text-[16px] font-bold text-[#1e2128]">
-                    {secondImage.title}
-                  </h3>
-                </div>
-
-                <ArrowUpRight
-                  size={17}
-                  className="ml-auto shrink-0 text-[#6552a6]"
-                />
-              </figcaption>
-            </motion.figure>
-
-            {/* Left overlapping image */}
-            <motion.figure
-              variants={desktopLeftImageVariants}
-              whileHover={{
-                rotate: 0,
-                y: -8,
-              }}
-              transition={{
-                duration: 0.3,
-              }}
-              className="group absolute bottom-2 left-[3%] z-10 h-[505px] w-[40%] overflow-hidden rounded-[26px] border-[9px] border-white bg-white shadow-[0_28px_70px_rgba(35,39,65,0.18)]"
-            >
-              <div className="relative h-full w-full overflow-hidden rounded-[18px] bg-[#f7f7f8]">
-                <Image
-                  src={firstImage.src}
-                  alt={firstImage.alt}
-                  fill
-                  sizes="480px"
-                  className="object-contain p-2 transition-transform duration-700 group-hover:scale-[1.025]"
-                />
-              </div>
-
-              <figcaption className="absolute inset-x-4 bottom-4 rounded-[16px] border border-white/60 bg-white/92 p-4 shadow-[0_10px_30px_rgba(38,42,67,0.13)] backdrop-blur-md">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[13px] bg-[#eaf6f8] text-[#3e99ad]">
-                    <Newspaper size={18} />
+                {/* Milestone information */}
+                <figcaption className="flex items-center gap-3 bg-white px-4 py-4 sm:gap-4 sm:px-6 sm:py-5">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[13px] bg-[#eeeaf8] text-[#5f4ba3] sm:h-12 sm:w-12 sm:rounded-[15px]">
+                    <ImageIcon size={19} />
                   </div>
 
-                  <div>
-                    <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#4b99aa]">
-                      {firstImage.eyebrow}
+                  <div className="min-w-0 flex-1">
+                    <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-[#6c5bb0] sm:text-[10px]">
+                      {milestoneImage.eyebrow}
                     </p>
 
-                    <h3 className="mt-1 text-[15px] font-bold text-[#1f2229]">
-                      {firstImage.title}
+                    <h3 className="mt-1 text-[14px] font-bold leading-snug text-[#1e2128] sm:text-[16px]">
+                      {milestoneImage.title}
                     </h3>
                   </div>
-                </div>
-              </figcaption>
-            </motion.figure>
 
-            <motion.div
-              variants={headingVariants}
-              className="absolute left-[4%] top-[3%] z-20 rounded-[18px] border border-white/70 bg-white/90 px-5 py-4 shadow-[0_15px_40px_rgba(45,48,75,0.13)] backdrop-blur-md"
-            >
-              <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#6251a7]">
-                Community Archive
-              </p>
-
-              <p className="mt-1 text-[13px] text-[#747984]">
-                Media & milestones
-              </p>
-            </motion.div>
-          </div>
-
-          {/* Straight mobile and tablet layout */}
-          <motion.div
-            variants={mobileTabletContainerVariants}
-            className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:hidden"
-          >
-            {[firstImage, secondImage].map((image, index) => {
-              const isNewsImage = index === 0;
-
-              return (
-                <motion.figure
-                  key={`${image.src}-${index}`}
-                  variants={mobileTabletCardVariants}
-                  whileHover={{
-                    y: -6,
-                  }}
-                  transition={{
-                    duration: 0.3,
-                  }}
-                  className="group relative flex min-w-0 flex-col overflow-hidden rounded-[24px] border border-[#e7e9ef] bg-white p-3 shadow-[0_18px_48px_rgba(37,42,68,0.12)] sm:p-4"
-                >
-                  {/* Straight image frame */}
-                  <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[18px] bg-[linear-gradient(145deg,#f5f2fa,#eef7f9)]">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      fill
-                      priority={index === 0}
-                      sizes="(max-width: 767px) 100vw, 50vw"
-                      className="object-contain p-2 transition-transform duration-700 ease-out group-hover:scale-[1.025] sm:p-3"
-                    />
-
-                    <span className="absolute left-3 top-3 rounded-full border border-white/70 bg-white/90 px-3 py-1.5 text-[10px] font-bold tracking-[0.12em] text-[#6552a6] shadow-sm backdrop-blur-md sm:left-4 sm:top-4">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                  </div>
-
-                  {/* Content below the image */}
-                  <figcaption className="flex min-h-[92px] items-center gap-3 px-2 pb-2 pt-5">
-                    <div
-                      className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-[14px] ${
-                        isNewsImage
-                          ? "bg-[#eaf6f8] text-[#3e99ad]"
-                          : "bg-[#eeeaf8] text-[#5f4ba3]"
-                      }`}
-                    >
-                      {isNewsImage ? (
-                        <Newspaper size={18} />
-                      ) : (
-                        <ImageIcon size={18} />
-                      )}
-                    </div>
-
-                    <div className="min-w-0 flex-1">
-                      <p
-                        className={`text-[9px] font-bold uppercase tracking-[0.15em] sm:text-[10px] ${
-                          isNewsImage
-                            ? "text-[#4b99aa]"
-                            : "text-[#6c5bb0]"
-                        }`}
-                      >
-                        {image.eyebrow}
-                      </p>
-
-                      <h3 className="mt-1.5 text-[15px] font-bold leading-snug text-[#1f2229] sm:text-[16px]">
-                        {image.title}
-                      </h3>
-                    </div>
-
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#f5f3fa] text-[#6552a6] transition-all duration-300 group-hover:bg-[#6552a6] group-hover:text-white">
-                      <ArrowUpRight size={17} />
-                    </span>
-                  </figcaption>
-                </motion.figure>
-              );
-            })}
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#f5f3fa] text-[#6552a6] transition-all duration-300 group-hover:bg-[#6552a6] group-hover:text-white sm:h-10 sm:w-10">
+                    <ArrowUpRight size={17} />
+                  </span>
+                </figcaption>
+              </motion.figure>
+            </div>
           </motion.div>
         </motion.div>
       </motion.div>

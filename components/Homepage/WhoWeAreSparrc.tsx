@@ -107,7 +107,7 @@ export default function WhoWeAreSparrc() {
               uppercase
               tracking-[0.20em]
               text-[#3483D5]
-              sm:text-[11px]
+              sm:text-[10px]
             "
           >
             WHO WE ARE
@@ -140,8 +140,8 @@ export default function WhoWeAreSparrc() {
               text-[#050505]
               sm:text-[40px]
               md:text-[46px]
-              lg:text-[48px]
-              xl:text-[50px]
+              lg:text-[46px]
+              xl:text-[46px]
             "
           >
             We Are SPARRC

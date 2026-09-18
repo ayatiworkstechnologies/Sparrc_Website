@@ -7,6 +7,7 @@ export default function Home() {
   return (
     <main className="pt-[55px]">
       <TherapiesSection />
+      
 
       <RecoveryJourneySection />
 

@@ -27,7 +27,7 @@ const missionData = {
     "irrespective of age, gender and ability thereby improving the quality of life.",
 
   image: {
-    src: "/images/mission.png",
+    src: "/images/1-mission.png",
     alt: "SPARRC Mission",
   },
 };
