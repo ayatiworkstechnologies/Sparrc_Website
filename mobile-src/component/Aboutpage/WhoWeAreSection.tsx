@@ -89,7 +89,7 @@ export default function WhoWeAreSection() {
           className="mt-3 text-[13px] font-medium leading-[1.48] text-[#718096] sm:text-[14px]"
         >
           SPARRC (Sports Performance Assessment Rehabilitation Research
-          Counselling) is India&apos;s pioneering Sports &amp; Fitness Medicine
+          Mind, Behaviour & Recovery) is India&apos;s pioneering Sports &amp; Fitness Medicine
           institute, founded in 2006 by Dr. Kannan Pugazhendi.
         </motion.p>
 

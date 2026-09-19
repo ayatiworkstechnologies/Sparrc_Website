@@ -80,77 +80,77 @@ const THERAPY_PAGES: TherapySearchItem[] = [
     name: "MTPT",
     description: "Myofascial Trigger Point Therapy",
     keywords: ["Trigger Point Therapy", "Myofascial Therapy"],
-    href: "/therapies/mtpt",
+    href: "/how-we-help/mtpt",
   },
   {
     id: 2,
-    name: "Prescription Exercise",
+    name: "Exercise Prescription",
     description: "Exercise Prescription and Rehabilitation",
     keywords: ["Exercise Therapy", "Rehabilitation Exercise"],
-    href: "/therapies/prescription-exercise",
+    href: "/how-we-help/exercise-prescription",
   },
   {
     id: 3,
     name: "PEMF",
     description: "Pulsed Electromagnetic Field Therapy",
     keywords: ["Electromagnetic Therapy"],
-    href: "/therapies/pemf",
+    href: "/how-we-help/pemf",
   },
   {
     id: 4,
     name: "Sports Massage",
     description: "Sports Massage Therapy",
     keywords: ["Massage", "Recovery"],
-    href: "/therapies/sports-massage",
+    href: "/how-we-help/sports-massage",
   },
   {
     id: 5,
     name: "Physiotherapy",
     description: "Physiotherapy and Rehabilitation",
     keywords: ["Physical Therapy", "Rehabilitation"],
-    href: "/therapies/physiotherapy",
+    href: "/how-we-help/physiotherapy",
   },
   {
     id: 6,
     name: "Aquatherapy",
     description: "Water-Based Rehabilitation Therapy",
     keywords: ["Aqua Therapy", "Hydrotherapy"],
-    href: "/therapies/aquatherapy",
+    href: "/how-we-help/aquatherapy",
   },
   {
     id: 7,
     name: "Group Therapy",
     description: "Supervised Group Rehabilitation",
     keywords: ["Group Exercise"],
-    href: "/therapies/group-therapy",
+    href: "/how-we-help/group-therapy",
   },
   {
     id: 8,
     name: "Kalaripayattu",
     description: "Traditional Movement Therapy",
     keywords: ["Kalari Therapy"],
-    href: "/therapies/kalaripayattu",
+    href: "/how-we-help/kalaripayattu",
   },
   {
     id: 9,
     name: "Yoga Therapy",
     description: "Therapeutic Yoga and Rehabilitation",
     keywords: ["Yoga Rehabilitation"],
-    href: "/therapies/yoga-therapy",
+    href: "/how-we-help/yoga-therapy",
   },
   {
     id: 10,
     name: "Alternate Therapy",
     description: "Alternative Therapeutic Treatments",
     keywords: ["Alternative Therapy"],
-    href: "/therapies/alternate-therapy",
+    href: "/how-we-help/alternate-therapy",
   },
   {
     id: 11,
     name: "Functional Training",
     description: "Functional Strength and Mobility Training",
     keywords: ["Fitness Therapy", "Functional Exercise"],
-    href: "/therapies/functional-training",
+    href: "/how-we-help/functional-training",
   },
   {
   id: 12,
@@ -161,7 +161,7 @@ const THERAPY_PAGES: TherapySearchItem[] = [
     "Craniosacral Therapy",
     "CST",
   ],
-  href: "/therapies/cranio-sacral",
+  href: "/how-we-help/cranio-sacral",
 },
 {
   id: 13,
@@ -172,7 +172,7 @@ const THERAPY_PAGES: TherapySearchItem[] = [
     "Breathing Therapy",
     "Sound Therapy",
   ],
-  href: "/therapies/six-healing-sounds",
+  href: "/how-we-help/six-healing-sounds",
 },
 ];
 
@@ -188,7 +188,7 @@ const SEARCHABLE_PAGES: SearchableItem[] = [
   },
   {
     title: "Therapy",
-    href: "/therapies",
+    href: "/how-we-help",
     description: "Browse all therapies",
   },
   {
@@ -234,7 +234,7 @@ const NAV_ITEMS: NavItem[] = [
     id: "therapy",
     label: "Therapy",
     icon: Plus,
-    href: "/therapies",
+    href: "/how-we-help",
   },
   {
     id: "about",
@@ -372,8 +372,8 @@ export default function BottomNav({
   const NAV_CLEARANCE = 88;
 
   const isTherapyInnerPage =
-    pathname.startsWith("/therapies/") &&
-    pathname !== "/therapies";
+    pathname.startsWith("/how-we-help/") &&
+    pathname !== "/how-we-help";
 
   const currentTherapy = useMemo(
     () => getCurrentTherapy(pathname),
@@ -566,10 +566,10 @@ export default function BottomNav({
 
     if (item.id === "therapy") {
       return (
-        pathname === "/therapies" ||
-        pathname === "/therapies" ||
-        pathname.startsWith("/therapies/") ||
-        pathname.startsWith("/therapies/")
+        pathname === "/how-we-help" ||
+        pathname === "/how-we-help" ||
+        pathname.startsWith("/how-we-help/") ||
+        pathname.startsWith("/how-we-help/")
       );
     }
 
@@ -593,7 +593,7 @@ export default function BottomNav({
       return;
     }
 
-    router.push("/therapies");
+    router.push("/how-we-help");
   };
 
   const openAppointment = () => {

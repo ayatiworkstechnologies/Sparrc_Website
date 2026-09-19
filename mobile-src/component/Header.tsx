@@ -16,8 +16,8 @@ const NAV_ITEMS = [
     href: "/about",
   },
   {
-    label: "Therapies",
-    href: "/therapies",
+    label: "How We Help",
+    href: "/how-we-help",
   },
   {
     label: "Contact",

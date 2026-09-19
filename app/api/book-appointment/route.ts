@@ -20,7 +20,7 @@ const APPOINTMENT_API_KEY =
 const ALLOWED_THERAPIES =
   new Set([
     "MTPT",
-    "Prescription Exercise",
+    "Exercise Prescription",
     "PEMF",
     "Sports Massage",
     "Physiotherapy",

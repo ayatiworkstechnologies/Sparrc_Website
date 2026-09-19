@@ -65,7 +65,7 @@ const infrastructureLeft = [
   "Biomechanics Lab",
   "Exercise physiology Lab",
   "Emergency First aid",
-  "Departments",
+  "Programs & Care",
   "Rehabilitation & Fitness",
   "Kalari pit",
   "Meditation hall",

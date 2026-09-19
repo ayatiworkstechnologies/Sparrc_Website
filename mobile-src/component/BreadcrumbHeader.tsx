@@ -10,12 +10,12 @@ type BreadcrumbHeaderProps = {
 };
 
 const PAGE_TITLES: Record<string, string> = {
-  "/therapies": "All Therapies",
+  "/how-we-help": "How We Help",
   "/about": "About Us",
   "/contact": "Contact Us",
   "/gallery": "Gallery",
   "/events": "Events",
-  "/departments": "All Departments",
+  "/programs-care": "All Programs & Care",
   "/story": "Our Story",
   "/e-magazine": "E-Magazine",
 };

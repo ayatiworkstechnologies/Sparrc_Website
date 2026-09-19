@@ -16,7 +16,7 @@ const footerLinks = [
   },
   {
     label: "Therapy",
-    href: "/therapies",
+    href: "/how-we-help",
   },
 ];
 

@@ -158,7 +158,7 @@ const tabs: TabContent[] = [
         title: "PEMF",
       },
       {
-        title: "Prescription Exercise",
+        title: "Exercise Prescription",
       },
     ],
   },

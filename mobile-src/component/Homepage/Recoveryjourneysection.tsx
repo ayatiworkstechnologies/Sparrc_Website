@@ -38,7 +38,7 @@ export const THERAPIES: TherapyItem[] = [
     tag: "Therapy",
     image: "/mobile/images/physiotherapy.png",
     icon: "/mobile/icons/theraphy.svg",
-    href: "/therapies/physiotherapy",
+    href: "/how-we-help/physiotherapy",
   },
   {
     id: "mtpt",
@@ -46,7 +46,7 @@ export const THERAPIES: TherapyItem[] = [
     tag: "Therapy",
     image: "/mobile/images/mtpt-1.png",
     icon: "/mobile/icons/theraphy.svg",
-    href: "/therapies/mtpt",
+    href: "/how-we-help/mtpt",
   },
   {
     id: "pemf",
@@ -54,7 +54,7 @@ export const THERAPIES: TherapyItem[] = [
     tag: "Therapy",
     image: "/mobile/images/pemf.png",
     icon: "/mobile/icons/theraphy.svg",
-    href: "/therapies/pemf",
+    href: "/how-we-help/pemf",
   },
   {
     id: "group-therapy",
@@ -62,7 +62,7 @@ export const THERAPIES: TherapyItem[] = [
     tag: "Therapy",
     image: "/mobile/images/group-therapy.png",
     icon: "/mobile/icons/theraphy.svg",
-    href: "/therapies/group-therapy",
+    href: "/how-we-help/group-therapy",
   },
   {
     id: "yoga-therapy",
@@ -70,7 +70,7 @@ export const THERAPIES: TherapyItem[] = [
     tag: "Therapy",
     image: "/mobile/images/yoga-therapy.png",
     icon: "/mobile/icons/theraphy.svg",
-    href: "/therapies/yoga-therapy",
+    href: "/how-we-help/yoga-therapy",
   },
   {
     id: "functional-training",
@@ -78,15 +78,15 @@ export const THERAPIES: TherapyItem[] = [
     tag: "Therapy",
     image: "/mobile/images/functional-training.png",
     icon: "/mobile/icons/theraphy.svg",
-    href: "/therapies/functional-training",
+    href: "/how-we-help/functional-training",
   },
   {
-    id: "prescription-exercise",
-    title: "Prescription Exercise",
+    id: "exercise-prescription",
+    title: "Exercise Prescription",
     tag: "Therapy",
     image: "/mobile/images/prescription-exercise.png",
     icon: "/mobile/icons/theraphy.svg",
-    href: "/therapies/prescription-exercise",
+    href: "/how-we-help/exercise-prescription",
   },
   {
     id: "sports-massage",
@@ -94,7 +94,7 @@ export const THERAPIES: TherapyItem[] = [
     tag: "Therapy",
     image: "/mobile/images/sports-massage.png",
     icon: "/mobile/icons/theraphy.svg",
-    href: "/therapies/sports-massage",
+    href: "/how-we-help/sports-massage",
   },
   {
     id: "aquatherapy",
@@ -102,7 +102,7 @@ export const THERAPIES: TherapyItem[] = [
     tag: "Therapy",
     image: "/mobile/images/aquatherapy.png",
     icon: "/mobile/icons/theraphy.svg",
-    href: "/therapies/aquatherapy",
+    href: "/how-we-help/aquatherapy",
   },
   {
     id: "kalaripayattu",
@@ -110,7 +110,7 @@ export const THERAPIES: TherapyItem[] = [
     tag: "Therapy",
     image: "/mobile/images/kalaripayattu.png",
     icon: "/mobile/icons/theraphy.svg",
-    href: "/therapies/kalaripayattu",
+    href: "/how-we-help/kalaripayattu",
   },
   {
     id: "cranio-sacral",
@@ -118,7 +118,7 @@ export const THERAPIES: TherapyItem[] = [
     tag: "Therapy",
     image: "/mobile/images/cranio-sacral.png",
     icon: "/mobile/icons/theraphy.svg",
-    href: "/therapies/cranio-sacral",
+    href: "/how-we-help/cranio-sacral",
   },
   {
     id: "six-healing-sounds",
@@ -126,7 +126,7 @@ export const THERAPIES: TherapyItem[] = [
     tag: "Therapy",
     image: "/mobile/images/six-healing-sounds.png",
     icon: "/mobile/icons/theraphy.svg",
-    href: "/therapies/six-healing-sounds",
+    href: "/how-we-help/six-healing-sounds",
   },
 ];
 

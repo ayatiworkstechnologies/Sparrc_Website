@@ -77,7 +77,7 @@ const programPoints: ProgramPoint[] = [
 ];
 
 const teleInternshipContent =
-    "Observatory Tele Internship for Teleservices can be done separately. It includes training in all the Teleservices – Consultation, Therapy, Rehab, Fitness, Neuro Rehab, etc. This internship can be done from anywhere and is not restricted only to the locations of our branches";
+    "Observatory Tele Internship for Digital Care can be done separately. It includes training in all the Digital Care – Consultation, Therapy, Rehab, Fitness, Neuro Rehab, etc. This internship can be done from anywhere and is not restricted only to the locations of our branches";
 
 const sectionContainerVariants: Variants = {
     hidden: {},
@@ -405,7 +405,7 @@ export default function SeniorInternshipProgram() {
                             </div>
 
                             <p className="mt-7 text-[11px] font-bold uppercase tracking-[0.18em] text-white/65">
-                                Teleservices
+                                Digital Care
                             </p>
 
                             <h2 className="mt-3 text-[27px] font-extrabold leading-tight sm:text-[34px]">
@@ -423,8 +423,8 @@ export default function SeniorInternshipProgram() {
                                 <strong className="font-bold text-[#101828]">
                                     Observatory Tele Internship
                                 </strong>{" "}
-                                for Teleservices can be done separately. It includes training in
-                                all the Teleservices – Consultation, Therapy, Rehab, Fitness,
+                                for Digital Care can be done separately. It includes training in
+                                all the Digital Care – Consultation, Therapy, Rehab, Fitness,
                                 Neuro Rehab, etc. This internship can be done from anywhere and
                                 is not restricted only to the locations of our branches
                             </p>

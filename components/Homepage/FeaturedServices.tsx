@@ -15,42 +15,42 @@ const services = [
   {
     title: "MTPT",
     image: "/images/fs-mtpt.png",
-    href: "/therapies/mtpt",
+    href: "/how-we-help/mtpt",
   },
   {
     title: "Exercise Rehabilitation",
     image: "/images/fs-exercise-rehabilitation.png",
-    href: "/departments/rehabilitation",
+    href: "/programs-care/rehabilitation",
   },
   {
     title: "Physiotherapy",
     image: "/images/fs-physiotherapy.png",
-    href: "/therapies/physiotherapy",
+    href: "/how-we-help/physiotherapy",
   },
   {
     title: "Non Surgical Care",
     image: "/images/fs-non-surgical-care.png",
-    href: "/departments/avoid-surgery-programs",
+    href: "/programs-care/non-surgical-care",
   },
   {
     title: "Acupuncture",
     image: "/images/fs-acupuncture.png",
-    href: "/therapies/sports-massage",
+    href: "/how-we-help/sports-massage",
   },
   {
     title: "Aqua Therapy",
     image: "/images/fs-aqua-therapy.png",
-    href: "/therapies/aquatherapy",
+    href: "/how-we-help/aquatherapy",
   },
   {
     title: "PEMF",
     image: "/images/fs-pemf.png",
-    href: "/therapies/pemf",
+    href: "/how-we-help/pemf",
   },
   {
-    title: "Prescription Exercise",
+    title: "Exercise Prescription",
     image: "/images/fs-prescription-exercise.png",
-    href: "/therapies/prescription-exercise",
+    href: "/how-we-help/exercise-prescription",
   },
 ];
 

@@ -81,7 +81,7 @@ const THERAPIES: TherapyItem[] = [
     description:
       "Trigger point therapy to relieve chronic muscle pain",
     image: "/mobile/images/mtpt-01.png",
-    href: "/therapies/mtpt",
+    href: "/how-we-help/mtpt",
     keywords: [
       "MTPT",
       "myofascial",
@@ -97,7 +97,7 @@ const THERAPIES: TherapyItem[] = [
     description:
       "Pulsed electromagnetic field therapy for healing",
     image: "/mobile/images/pemf-01.png",
-    href: "/therapies/pemf",
+    href: "/how-we-help/pemf",
     keywords: [
       "PEMF",
       "electromagnetic",
@@ -113,7 +113,7 @@ const THERAPIES: TherapyItem[] = [
     description:
       "Core physical therapy for movement restoration",
     image: "/mobile/images/physiotherapy-01.png",
-    href: "/therapies/physiotherapy",
+    href: "/how-we-help/physiotherapy",
     keywords: [
       "physical therapy",
       "movement",
@@ -128,7 +128,7 @@ const THERAPIES: TherapyItem[] = [
     description:
       "Therapeutic exercises in a supervised group setting",
     image: "/mobile/images/group-therapy-01.png",
-    href: "/therapies/group-therapy",
+    href: "/how-we-help/group-therapy",
     keywords: [
       "group exercise",
       "rehabilitation",
@@ -143,7 +143,7 @@ const THERAPIES: TherapyItem[] = [
     description:
       "Yoga-based interventions for rehab and wellness",
     image: "/mobile/images/yoga-therapy-01.png",
-    href: "/therapies/yoga-therapy",
+    href: "/how-we-help/yoga-therapy",
     keywords: ["yoga", "wellness", "rehabilitation"],
   },
   {
@@ -154,7 +154,7 @@ const THERAPIES: TherapyItem[] = [
     description:
       "Improving movement patterns for daily life",
     image: "/mobile/images/functional-training-01.png",
-    href: "/therapies/functional-training",
+    href: "/how-we-help/functional-training",
     keywords: [
       "fitness",
       "movement",
@@ -164,13 +164,13 @@ const THERAPIES: TherapyItem[] = [
   },
   {
     id: 7,
-    title: "Prescription Exercise",
+    title: "Exercise Prescription",
     category: "Physical",
     rating: 4.7,
     description:
       "Tailor-made exercise plans for specific conditions",
     image: "/mobile/images/prescription-exercise-01.png",
-    href: "/therapies/prescription-exercise",
+    href: "/how-we-help/exercise-prescription",
     keywords: [
       "exercise",
       "prescription",
@@ -186,7 +186,7 @@ const THERAPIES: TherapyItem[] = [
     description:
       "Massage therapy for athletes and sportspersons",
     image: "/mobile/images/sports-massage-01.png",
-    href: "/therapies/sports-massage",
+    href: "/how-we-help/sports-massage",
     keywords: [
       "sports",
       "massage",
@@ -202,7 +202,7 @@ const THERAPIES: TherapyItem[] = [
     description:
       "Water-based therapeutic exercises for recovery",
     image: "/mobile/images/aquatherapy-01.png",
-    href: "/therapies/aquatherapy",
+    href: "/how-we-help/aquatherapy",
     keywords: [
       "aqua therapy",
       "hydrotherapy",
@@ -218,7 +218,7 @@ const THERAPIES: TherapyItem[] = [
     description:
       "Ancient Indian martial art as therapeutic movement",
     image: "/mobile/images/kalaripayattu-01.png",
-    href: "/therapies/kalaripayattu",
+    href: "/how-we-help/kalaripayattu",
     keywords: [
       "kalari",
       "martial art",
@@ -234,7 +234,7 @@ const THERAPIES: TherapyItem[] = [
     description:
       "Gentle manipulation of the craniosacral system",
     image: "/mobile/images/cranio-sacral-01.png",
-    href: "/therapies/cranio-sacral",
+    href: "/how-we-help/cranio-sacral",
     keywords: [
       "craniosacral",
       "relaxation",
@@ -249,7 +249,7 @@ const THERAPIES: TherapyItem[] = [
     description:
       "Breathing and sound practice for body relaxation",
     image: "/mobile/images/six-healing-sounds-01.png",
-    href: "/therapies/six-healing-sounds",
+    href: "/how-we-help/six-healing-sounds",
     keywords: [
       "healing sounds",
       "breathing",
@@ -1023,7 +1023,7 @@ export default function AllTherapiesSection() {
               <div className="mt-4 flex items-center justify-between">
                 <div>
                   <h3 className="text-[21px] font-extrabold text-[#151c2b]">
-                    Filter Therapies
+                    Filter How We Help
                   </h3>
 
                   <p className="mt-0.5 text-[12px] text-[#8a94a4]">

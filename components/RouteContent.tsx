@@ -4,19 +4,19 @@ import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 
 const mobileTherapyRoutes = new Set([
-  "/therapies",
-  "/therapies/aquatherapy",
-  "/therapies/cranio-sacral",
-  "/therapies/functional-training",
-  "/therapies/group-therapy",
-  "/therapies/kalaripayattu",
-  "/therapies/mtpt",
-  "/therapies/pemf",
-  "/therapies/physiotherapy",
-  "/therapies/prescription-exercise",
-  "/therapies/six-healing-sounds",
-  "/therapies/sports-massage",
-  "/therapies/yoga-therapy",
+  "/how-we-help",
+  "/how-we-help/aquatherapy",
+  "/how-we-help/cranio-sacral",
+  "/how-we-help/functional-training",
+  "/how-we-help/group-therapy",
+  "/how-we-help/kalaripayattu",
+  "/how-we-help/mtpt",
+  "/how-we-help/pemf",
+  "/how-we-help/physiotherapy",
+  "/how-we-help/exercise-prescription",
+  "/how-we-help/six-healing-sounds",
+  "/how-we-help/sports-massage",
+  "/how-we-help/yoga-therapy",
 ]);
 
 function hasDedicatedMobilePage(pathname: string) {

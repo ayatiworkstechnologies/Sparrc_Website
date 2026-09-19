@@ -7,7 +7,7 @@ const lotusData = {
   title: "The Blue Lotus",
   logo: "/images/blue-lotus.png",
   description:
-    "Lotus, the national flower of India, signifies the journey rather progress of the soul from the primeval mud of materialism or tamas, through the waters of experience or rajas, into the bright sunshine of enlightenment or sattva. Blue and purple are colors of calmness and ambition. The Blue lotus has immense healing properties. It is anti-spasmodic, anti-inflammatory, and also boosts metabolism. It is considered as a cure for the general wellbeing of the body and mind. The five petals of blue lotus represent the five elements of nature which constitute not only the earth but also the human body. To connect it to SPARRC, it denotes the five areas of work viz., Different Assessments, Pain Management, Prescribed Exercise, Counselling and Research.",
+    "Lotus, the national flower of India, signifies the journey rather progress of the soul from the primeval mud of materialism or tamas, through the waters of experience or rajas, into the bright sunshine of enlightenment or sattva. Blue and purple are colors of calmness and ambition. The Blue lotus has immense healing properties. It is anti-spasmodic, anti-inflammatory, and also boosts metabolism. It is considered as a cure for the general wellbeing of the body and mind. The five petals of blue lotus represent the five elements of nature which constitute not only the earth but also the human body. To connect it to SPARRC, it denotes the five areas of work viz., Different Assessments, Pain Management, Prescribed Exercise, Mind, Behaviour & Recovery and Research.",
 };
 
 const depthLayers = [

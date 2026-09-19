@@ -51,10 +51,10 @@ const footerData = {
   ],
 
   serviceLinks: [
-    { title: "SPORTS MEDICINE", href: "/departments/sports-medicine" },
-    { title: "PAIN MANAGEMENT", href: "/departments/pain-management" },
-    { title: "WEIGHT MANAGEMENT", href: "/departments/weight-management" },
-    { title: "TELE SERVICE", href: "/departments/teleservices" },
+    { title: "SPORTS MEDICINE", href: "/programs-care/sports-medicine" },
+    { title: "PAIN MANAGEMENT", href: "/programs-care/pain-management" },
+    { title: "WEIGHT MANAGEMENT", href: "/programs-care/weight-metabolic-health" },
+    { title: "DIGITAL CARE", href: "/programs-care/digital-care" },
   ],
 
   officeDetails: [

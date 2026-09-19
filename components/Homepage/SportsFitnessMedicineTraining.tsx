@@ -41,11 +41,11 @@ const trainingItems = [
   },
   {
     title: "Workplace Health",
-    image: "/images/workplace-health.png",
+    image: "/images/professional-health-program.png",
   },
   {
     title: "Healthy Ageing & Longevity",
-    image: "/images/healthy-ageing-longevity.png",
+    image: "/images/geriatric-fitness-medicine.png",
   },
   {
     title: "Geriatric / Pediatric Fitness Training",
