@@ -86,42 +86,42 @@ const journeyItems: JourneyItem[] = [
   {
     title: "You are in pain",
     description:
-      "We help you understand it and rebuild capacity.",
+      "We assess and alleviate pain through myofascial and exercise intervention",
   },
   {
-    title: "You have a chronic health condition",
+    title: "You havent exercised for years",
+    description:
+      "We evaluate current fitness levels and design your fitness journey based on your goals.",
+  },
+  {
+    title: "You are an athlete",
+    description:
+      "We analyse injury causation, biomechanical and exercise physiological demand of the sport and maximise performance",
+  },
+  {
+    title: "You spend your life at the desk",
+    description:
+      "We correct poor ergonomics and improve postural health and functional capacity.",
+  },
+  {
+    title: "You have a chronic musculoskeletal health condition",
     description:
       "We help you use exercise safely and effectively.",
   },
   {
-    title: "You haven’t exercised for years",
-    description:
-      "We help you start at the right level.",
-  },
-  {
     title: "You want to lose weight",
     description:
-      "We combine movement, exercise, nutrition and behaviour.",
+      "We integrate exercise, nutrition and behavioral modification",
   },
   {
-    title: "You’re an athlete",
+    title: "You are getting older",
     description:
-      "We measure and develop performance.",
-  },
-  {
-    title: "You’re getting older",
-    description:
-      "We build strength, balance, fitness and independence.",
-  },
-  {
-    title: "You spend your life at a desk",
-    description:
-      "We assess your workplace movement and MSK risk.",
+      "We help you beat sarcopenia and dynapenia through exercise intervention",
   },
   {
     title: "You simply want to stay healthy",
     description:
-      "You don’t need to wait until something hurts.",
+      "We keep the healthy population healthy and prevent lifestyle diseases through fitness medicine concepts.",
   },
 ];
 

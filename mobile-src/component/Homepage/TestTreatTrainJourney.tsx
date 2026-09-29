@@ -53,49 +53,49 @@ const journeyItems: JourneyItem[] = [
     number: "01",
     title: "You are in pain",
     description:
-      "We help you understand it and rebuild capacity.",
+      "We assess and alleviate pain through myofascial and exercise intervention",
   },
   {
     number: "02",
-    title: "You have a chronic health condition",
+    title: "You havent exercised for years",
+    description:
+      "We evaluate current fitness levels and design your fitness journey based on your goals.",
+  },
+  {
+    number: "03",
+    title: "You are an athlete",
+    description:
+      "We analyse injury causation, biomechanical and exercise physiological demand of the sport and maximise performance",
+  },
+  {
+    number: "04",
+    title: "You spend your life at the desk",
+    description:
+      "We correct poor ergonomics and improve postural health and functional capacity.",
+  },
+  {
+    number: "05",
+    title: "You have a chronic musculoskeletal health condition",
     description:
       "We help you use exercise safely and effectively.",
   },
   {
-    number: "03",
-    title: "You haven't exercised for years",
-    description:
-      "We help you start at the right level.",
-  },
-  {
-    number: "04",
+    number: "06",
     title: "You want to lose weight",
     description:
-      "We combine movement, exercise, nutrition and behaviour.",
-  },
-  {
-    number: "05",
-    title: "You're an athlete",
-    description:
-      "We measure and develop performance.",
-  },
-  {
-    number: "06",
-    title: "You're getting older",
-    description:
-      "We build strength, balance, fitness and independence.",
+      "We integrate exercise, nutrition and behavioral modification",
   },
   {
     number: "07",
-    title: "You spend your life at a desk",
+    title: "You are getting older",
     description:
-      "We assess your workplace movement and MSK risk.",
+      "We help you beat sarcopenia and dynapenia through exercise intervention",
   },
   {
     number: "08",
     title: "You simply want to stay healthy",
     description:
-      "You don't need to wait until something hurts.",
+      "We keep the healthy population healthy and prevent lifestyle diseases through fitness medicine concepts.",
   },
 ];
 
@@ -118,13 +118,29 @@ const tabs: TabContent[] = [
         title: "Musculoskeletal (MSK) Assessment",
       },
       {
-        title: "Fitness Testing",
+        title: "Health Related Fitness Testing ",
       },
       {
-        title: "Biomechanical Analysis",
+        title: "Skill Related Fitness Testing ",
       },
       {
-        title: "SPARRC Exercise Lab",
+        title: "Sports Specific Fitness Performance Evaluation",
+      },
+      
+      {
+        title: "Ergonomic assessment ",
+      },
+      {
+        title: "Neuromovement Analysis ",
+      },
+      {
+        title: " Gait Assessment ",
+      },
+      {
+        title: "Running Analysis",
+      },
+      {
+        title: " Cardio-pulmonary Exercise Testing (CPET) ",
       },
     ],
   },
