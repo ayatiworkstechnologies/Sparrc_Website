@@ -17,15 +17,39 @@ const assessmentItems = [
   },
   {
     number: "2",
-    title: "Fitness Testing",
+    title: "Health Related Fitness Testing",
   },
   {
     number: "3",
-    title: "Biomechanical Analysis",
+    title: "Skill Related Fitness Testing",
   },
   {
     number: "4",
-    title: "SPARRC Exercise Lab",
+    title: "Sports Specific Fitness Performance Evaluation",
+  },
+  {
+    number: "5",
+    title: "Ergonomic Assessment",
+  },
+  {
+    number: "6",
+    title: "Neuromovement Analysis",
+  },
+  {
+    number: "7",
+    title: "Gait Assessment",
+  },
+  {
+    number: "8",
+    title: "Running Analysis",
+  },
+  {
+    number: "9",
+    title: "Cardio-pulmonary Exercise Testing (CPET)",
+  },
+  {
+    number: "10",
+    title: "Body Composition Assessment",
   },
 ];
 
@@ -49,13 +73,13 @@ export default function AssessmentExerciseLab() {
           md:px-10
           md:py-20
 
-          lg:grid-cols-[minmax(0,1fr)_minmax(460px,1fr)]
+          lg:grid-cols-[minmax(0,1.15fr)_minmax(400px,0.85fr)]
           lg:items-start
           lg:gap-12
           lg:px-14
           lg:py-20
 
-          xl:grid-cols-[minmax(0,650px)_minmax(0,1fr)]
+          xl:grid-cols-[minmax(0,760px)_minmax(0,1fr)]
           xl:gap-14
           xl:px-16
         "
@@ -107,7 +131,6 @@ export default function AssessmentExerciseLab() {
               uppercase
               tracking-[0.02em]
               text-[#20242C]
-
               sm:text-[11px]
             "
           >
@@ -166,7 +189,7 @@ export default function AssessmentExerciseLab() {
             }}
             className="
               mt-5
-              max-w-[640px]
+              max-w-[720px]
               text-[13px]
               font-[400]
               leading-[1.8]
@@ -176,18 +199,16 @@ export default function AssessmentExerciseLab() {
               md:text-[14px]
             "
           >
-            SPARRC Exercise Lab is where exercise science meets individualised
-            practice. We assess how your body moves, performs and responds to
-            exercise - bringing together musculoskeletal capacity, movement
-            quality, strength, endurance, balance, body composition and
-            cardiorespiratory fitness to understand what your body needs. Using
-            this insight, our team develops evidence-informed exercise
-            prescriptions that are appropriate to your health, goals, fitness
-            level and stage of life. Whether you are beginning your fitness
-            journey, managing a health condition, recovering from injury,
-            returning to sport or seeking better performance, the Exercise Lab
-            helps turn assessment into action - and exercise into a purposeful
-            prescription.
+            We assess how your body moves, performs and responds to exercise -
+            bringing together musculoskeletal capacity, movement quality,
+            strength, endurance, balance, body composition and
+            cardiorespiratory fitness to understand what your body needs.
+            Using this insight, our team develops evidence-based exercise
+            prescriptions that are appropriate to your fitness level. Whether
+            you are beginning your fitness journey, managing a health
+            condition, recovering from injury, returning to sport or seeking
+            better performance, our analysis report helps design a precise
+            scientific exercise prescription.
           </motion.p>
 
           {/* =====================================================
@@ -218,7 +239,6 @@ export default function AssessmentExerciseLab() {
                 uppercase
                 tracking-[0.22em]
                 text-[#4A84CF]
-
                 sm:text-[10px]
               "
             >
@@ -226,7 +246,9 @@ export default function AssessmentExerciseLab() {
             </p>
           </motion.div>
 
-          {/* PRIORITY LIST */}
+          {/* =====================================================
+              2 COLUMN PRIORITY CARDS
+          ====================================================== */}
 
           <motion.div
             initial="hidden"
@@ -239,12 +261,18 @@ export default function AssessmentExerciseLab() {
               hidden: {},
               visible: {
                 transition: {
-                  staggerChildren: 0.08,
+                  staggerChildren: 0.07,
                   delayChildren: 0.16,
                 },
               },
             }}
-            className="mt-4 space-y-3"
+            className="
+              mt-4
+              grid
+              grid-cols-1
+              gap-3
+              md:grid-cols-2
+            "
           >
             {assessmentItems.map((item) => (
               <motion.div
@@ -274,14 +302,14 @@ export default function AssessmentExerciseLab() {
                 className="
                   group
                   flex
-                  min-h-[76px]
+                  min-h-[72px]
                   items-center
-                  gap-4
+                  gap-3
                   rounded-[13px]
                   border
                   border-[#D7DDE7]
                   bg-white
-                  px-4
+                  px-3
                   py-3
                   transition-all
                   duration-300
@@ -289,7 +317,7 @@ export default function AssessmentExerciseLab() {
                   hover:border-[#CAC2FF]
                   hover:shadow-[0_8px_24px_rgba(35,50,90,0.045)]
 
-                  sm:px-5
+                  sm:px-4
                 "
               >
                 {/* NUMBER */}
@@ -297,14 +325,14 @@ export default function AssessmentExerciseLab() {
                 <div
                   className="
                     flex
-                    h-[42px]
-                    w-[42px]
+                    h-[40px]
+                    w-[40px]
                     shrink-0
                     items-center
                     justify-center
                     rounded-[10px]
                     bg-[#EAF2FF]
-                    text-[13px]
+                    text-[12px]
                     font-[700]
                     text-[#3574D2]
                   "
@@ -318,13 +346,13 @@ export default function AssessmentExerciseLab() {
                   className="
                     min-w-0
                     flex-1
-                    text-[14px]
+                    text-[12px]
                     font-[700]
-                    leading-[1.3]
+                    leading-[1.35]
                     tracking-[-0.015em]
                     text-[#121212]
 
-                    sm:text-[15px]
+                    sm:text-[13px]
                   "
                 >
                   {item.title}
@@ -335,12 +363,11 @@ export default function AssessmentExerciseLab() {
                 <span
                   className="
                     shrink-0
-                    text-[18px]
+                    text-[16px]
                     font-[400]
                     text-[#6B54DA]
                     transition-transform
                     duration-300
-
                     group-hover:translate-x-1
                   "
                 >
@@ -384,7 +411,6 @@ export default function AssessmentExerciseLab() {
             rounded-[14px]
 
             sm:h-[430px]
-
             md:h-[500px]
 
             lg:mt-[74px]
@@ -417,7 +443,7 @@ export default function AssessmentExerciseLab() {
               sizes="
                 (max-width: 768px) 100vw,
                 (max-width: 1024px) 90vw,
-                50vw
+                42vw
               "
               className="
                 object-cover
@@ -426,7 +452,7 @@ export default function AssessmentExerciseLab() {
             />
           </motion.div>
 
-          {/* very subtle overlay */}
+          {/* Very subtle image overlay */}
 
           <div
             className="

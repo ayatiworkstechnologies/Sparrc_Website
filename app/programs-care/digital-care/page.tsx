@@ -6,24 +6,24 @@ import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {
-    q: "1. What is SPARRC Teleservice?",
-    a: "Teleservice is an initiative form SPARRC where clients can directly talk to our doctors and physiotherapists through a video link",
+    q: "1. What is SPARRC online consultation and services?",
+    a: "Online consultation and services is an initiative form SPARRC where clients can directly talk to our doctors and physiotherapists through a video link",
   },
   {
     q: "2. Why through video chat why not in-person?",
-    a: "Our Teleservice program is aimed for clients who are located in remote places or who cannot come to our centre in-person. No matter where you are, you can still stay connected with our doctors or physiotherapists.",
+    a: "Our Online consultation and services program is aimed for clients who are located in remote places or who cannot come to our centre in-person. No matter where you are, you can still stay connected with our doctors or physiotherapists.",
   },
   {
-    q: "3. What are the services covered here under Teleservice program?",
-    a: "Teleservice program here refers to remote non-clinical services like : Exercise management, patient queries, education, remote assistance etc.",
+    q: "3. What are the services covered here under online consultation and services program?",
+    a: "Online consultation and services program here refers to remote non-clinical services like : Exercise management, patient queries, education, remote assistance etc.",
   },
   {
     q: "4. Does the program covers clinical activities like rehabilitation etc?",
-    a: "No, Teleservice program is aimed in addressing only the non-clinical activities.",
+    a: "No, Online consultation and services program is aimed in addressing only the non-clinical activities.",
   },
   {
-    q: "5. Ok, how does Sparrc Teleservice work for me?",
-    a: "SPARRC Teleservice Program enables the clients to continue their exercise prescription through a video-conference call with their Physical therapist / Fitness Advisor / Sports Physician from any part of the world.",
+    q: "5. Ok, how does Sparrc online consultation and services work for me?",
+    a: "SPARRC Online consultation and services Program enables the clients to continue their exercise prescription through a video-conference call with their Physical therapist / Fitness Advisor / Sports Physician from any part of the world.",
   },
   {
     q: "6. Do I need to install any apps to avail the service?",
@@ -46,7 +46,7 @@ const faqs = [
     a: "Yes! We can assess and understand the current medical / musculoskeletal / exercise training history to redesign the prescription of exercise and nutrition to resume the Tele-Rehab Program.",
   },
   {
-    q: "11. Can SPARRC Teleservice help me lose weight?",
+    q: "11. Can SPARRC online consultation and services help me lose weight?",
     a: "Yes! We analyse the need of your musculoskeletal health and physical fitness to plan your exercise program. Weight management is crucial and adds to prognosis of a good musculoskeletal health. Therefore the prescription of exercise would include a healthy weight loss plan that also aims in improvement of general health and fitness.",
   },
 ];

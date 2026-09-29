@@ -114,8 +114,8 @@ export default function WhatWeBelieves() {
           <div
             className="
               pointer-events-none
-              -bottom-[120px]
               absolute
+              -bottom-[120px]
               right-[-80px]
               h-[270px]
               w-[270px]
@@ -186,9 +186,9 @@ export default function WhatWeBelieves() {
                 lg:text-[36px]
               "
             >
-              “We Prescribe Exercises -
+              “That belief is the ground
               <br className="hidden sm:block" />
-              Not Medicines”
+              SPARRC stands on.”
             </motion.h2>
           </div>
         </motion.div>
@@ -258,11 +258,12 @@ export default function WhatWeBelieves() {
               lg:text-[14px]
             "
           >
-            We believe the body was built to move and that most pain, illness,
-            and most of what ages us badly is a movement problem before it&apos;s
-            a medicine problem. So when someone comes to us hurting, our first
-            instinct isn&apos;t a prescription pad. It&apos;s an exercise plan,
-            built for their body, their life, their goals.
+            It started with one man&apos;s hands, forty years before
+            &quot;sports medicine&quot; had a name here. Dr. Kannan Pugazhendi
+            worked with muscle and fascia when the idea wasn&apos;t yet
+            considered medicine. Magazines called it magic, athletes were back
+            on the field in a jiffy. It wasn&apos;t magic. It was a science
+            still waiting for its name.
           </motion.p>
 
           {/* Paragraph 2 */}
@@ -293,11 +294,44 @@ export default function WhatWeBelieves() {
               lg:text-[14px]
             "
           >
-            That&apos;s what We Prescribe Exercises - Not Medicines has meant
-            since 2006: not a rejection of medicine, but a refusal to let it be
-            the first or only answer. Healing works better as a relationship
-            than a transaction. Over a million of them have walked, run, danced,
-            and lived better because of it.
+            He still doesn&apos;t start with an MRI. He trained in an era that
+            diagnosed a torn ligament, a prolapsed disc, through skilled hands
+            — before imaging did it for us. That skill is rare in today&apos;s
+            world.
+          </motion.p>
+
+          {/* Paragraph 3 */}
+
+          <motion.p
+            initial={{
+              opacity: 0,
+              y: 18,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.7,
+              delay: 0.38,
+              ease: smoothEase,
+            }}
+            className="
+              mt-6
+              max-w-[620px]
+              text-[13px]
+              font-[400]
+              leading-[1.85]
+              text-[#20242C]
+              sm:text-[14px]
+              lg:text-[14px]
+            "
+          >
+            Dr Kannan refers to Exercise medicine as fitness medicine — using
+            exercise as one of his main tools to help people improve their
+            quality of life. As he says, &quot;fitness medicine is to keep the
+            healthy population healthy.&quot;
           </motion.p>
 
           {/* Bottom line */}
@@ -314,7 +348,7 @@ export default function WhatWeBelieves() {
             }}
             transition={{
               duration: 0.9,
-              delay: 0.4,
+              delay: 0.48,
               ease: smoothEase,
             }}
             className="

@@ -54,13 +54,11 @@ const termsSections: TermsSectionData[] = [
   {
     title: "Overview",
     paragraphs: [
-      `This website is operated by SPARRC. Throughout the site, the terms “we”, “us” and “our” refer to SPARRC, offers this website, including all information, tools and services available from this site to you, the user, conditioned upon your acceptance of all terms, conditions, policies and notices stated here.`,
+      `This website is operated by SPARRC. Throughout the site, the terms “we”, “us” and “our” refer to SPARRC. We provide this website, along with all the information, tools and services available on it, to you, the user, subject to your acceptance of the terms, conditions, policies and notices stated here.`,
+      `By visiting our website and/or purchasing something from us, you use our “Service” and agree to follow these Terms and Conditions (“Terms of Service” or “Terms”). This also includes any additional terms, conditions and policies referred to here or available through links on the website. These Terms apply to everyone who uses the site, including browsers, vendors, customers, merchants and people who contribute content.`,
+      `Please read these Terms carefully before accessing or using our website. By accessing or using any part of the site, you agree to these Terms. If you do not agree with all the terms and conditions stated here, you should not access the website or use its services. If these Terms are considered an offer, acceptance is limited to these Terms.`,
+      `Any new features or tools added to the website or store will also be covered by these Terms. You can review the latest version of the Terms at any time on this page. We reserve the right to update, change or replace any part of these Terms by posting the changes on our website. It is your responsibility to check this page from time to time for updates. If you continue to use or access the website after changes are posted, it means you accept those changes.`,
 
-      `By visiting our site and/ or purchasing something from us, you engage in our “Service” and agree to be bound by the following terms and conditions (“Terms of Service”, “Terms”), including those additional terms and conditions and policies referenced herein and/or available by hyperlink. These Terms of Service apply to all users of the site, including without limitation users who are browsers, vendors, customers, merchants, and/ or contributors of content.`,
-
-      `Please read these Terms of Service carefully before accessing or using our website. By accessing or using any part of the site, you agree to be bound by these Terms of Service. If you do not agree to all the terms and conditions of this agreement, then you may not access the website or use any services. If these Terms of Service are considered an offer, acceptance is expressly limited to these Terms of Service.`,
-
-      `Any new features or tools which are added to the current store shall also be subject to the Terms of Service. You can review the most current version of the Terms of Service at any time on this page. We reserve the right to update, change or replace any part of these Terms of Service by posting updates and/or changes to our website. It is your responsibility to check this page periodically for changes. Your continued use of or access to the website following the posting of any changes constitutes acceptance of those changes.`,
     ],
   },
   {

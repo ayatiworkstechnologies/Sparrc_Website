@@ -249,6 +249,9 @@ export default function RefundCancellationReturnPolicyPage() {
                 Refunds for unused sessions may be considered only under the
                 circumstances outlined in this policy.
               </AnimatedParagraph>
+              <AnimatedParagraph>
+                Once a package has commenced, it is not refundable in full. Single session costing will be deducted. 
+              </AnimatedParagraph>
             </PolicySection>
 
             {/* 4 */}

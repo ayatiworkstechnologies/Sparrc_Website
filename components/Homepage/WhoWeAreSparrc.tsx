@@ -6,13 +6,11 @@ import { motion } from "framer-motion";
 const ease: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 const paragraphs = [
-  `We are SPARRC - Sports Performance Assessment Rehabilitation Research Counseling Institute - India’s leading sports and fitness medicine network, founded in 2006 on a simple, stubborn belief: prescribe exercise, not medicine, wherever it is genuinely the better answer.`,
+     `We are SPARRC — Sports Performance Assessment Rehabilitation Research Counseling Institute — India’s leading sports and fitness medicine chain. SPARRC was founded in 2006 on a simple, scientific concept: exercise intervention not medicine, wherever it is genuinely the better answer.`, 
+     `We call the people we treat “medical guests”, not patients, because we believe healing works better as a relationship than a transaction. SPARRC has achieved a 95% success rate in resolving pain without surgery.`,
+     `SPARRC is led by Dr Kannan Pugazhendi, who brings four decades of expertise in sports and fitness medicine, and Dr Sujatha Pugazhendi, whose vision has helped take SPARRC from a single room to 21 centres across India. Today, our work spans sports medicine and rehabilitation, and extends into breath and movement science through our Kinesio Health discipline.`,
 
-  `SPARRC has helped over a million people move, heal and live better, with a 95% success rate in resolving pain without surgery. We call the people we treat medical guests, not patients, because we believe healing works better as a relationship than a transaction.`,
 
-  `SPARRC is led by Dr Kannan Pugazhendi, who brings four decades of expertise in sports and fitness medicine, and Dr Sujatha Pugazhendi, whose vision has helped take SPARRC from a single room to 21 centres across India. Today, our work spans sports medicine and rehabilitation, and extends into breath and movement science through our Kinesio Health discipline.`,
-
-  `Through it all, the conviction that shaped SPARRC on day one remains unchanged: the body was made to move, and much of what ages it, hurts it or holds it back is a movement problem before it becomes a medicine problem.`,
 ];
 
 const stats = [
@@ -235,7 +233,7 @@ export default function WhoWeAreSparrc() {
             overflow-hidden
             sm:h-[560px]
             md:h-[650px]
-            lg:h-[807px]
+            lg:h-[700px]
             lg:w-[720px]
             lg:max-w-full
           "

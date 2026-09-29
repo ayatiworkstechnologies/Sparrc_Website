@@ -27,17 +27,17 @@ type CommunityMeetingNavigationProps = {
 };
 
 const meetingLinks = [
+  // {
+  //   title: "Neuro Community Meeting on June 7, 2024",
+  //   href: "/events/neuro-community-meeting-june-7-2024",
+  // },
+  // {
+  //   title: "Knee Health Community Gathering July 29, 2024",
+  //   href: "/events/knee-health-community-gathering-july-29-2024",
+  // },
   {
-    title: "Neuro Community Meeting on June 7, 2024",
-    href: "/events/neuro-community-meeting-june-7-2024",
-  },
-  {
-    title: "Knee Health Community Gathering July 29, 2024",
-    href: "/events/knee-health-community-gathering-july-29-2024",
-  },
-  {
-    title: "Geriatric Community Meeting June 14, 2024",
-    href: "/events/geriatric-community-meeting-june-14-2024",
+    title: "Women’s Fitness Medicine",
+    href: "/events/womens-fitness-medicine",
   },
 ];
 

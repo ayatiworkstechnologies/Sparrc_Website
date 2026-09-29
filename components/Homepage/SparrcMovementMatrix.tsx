@@ -303,13 +303,13 @@ export default function SparrcMovementMatrix() {
                   mt-2
                   text-[11px]
                   font-[700]
-                  uppercase
+                  
                   tracking-[0.01em]
                   text-[#77DFFF]
                   sm:text-[11px]
                 "
               >
-                We examine the physical factors that influence movement, function and performance:
+                The SPARRC Kinesio-Health is built on Psychosocial concepts. We combine two complementary processes to understand and treat the whole person. 
               </p>
 
               <motion.div
@@ -462,13 +462,13 @@ export default function SparrcMovementMatrix() {
                 mt-2
                 text-[11px]
                 font-[700]
-                uppercase
+               
                 tracking-[0.01em]
                 text-[#603CFF]
                 sm:text-[12px]
               "
             >
-              EVERYDAY HABITS DRIVING PHYSIOLOGICAL RECOVERY
+              Everyday Habits Driving Physiological Recovery
             </p>
 
             <motion.div
