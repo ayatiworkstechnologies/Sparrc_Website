@@ -38,11 +38,11 @@ const footerData = {
 
   discoverLinks: [
     { title: "HOME", href: "/" },
-    { title: "RESEARCH", href: "/story/research" },
-    { title: "PRIVACY POLICY", href: "/story/privacy-policy" },
+    { title: "RESEARCH", href: "/associates/research" },
+    { title: "PRIVACY POLICY", href: "/associates/privacy-policy" },
     {
       title: "REFUND, CANCELLATION & PACKAGE POLICY",
-      href: "/story/refund-cancellation-return-policy",
+      href: "/associates/refund-cancellation-return-policy",
     },
     { title: "E-MAGAZINE", href: "/e-magazine" },
     { title: "EVENTS", href: "/events" },

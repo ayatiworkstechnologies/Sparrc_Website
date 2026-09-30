@@ -4,8 +4,6 @@ import Link from "next/link";
 
 import {
   ArrowRight,
-  GraduationCap,
-  Quote,
   RefreshCcw,
   Scale,
   Search,
@@ -30,42 +28,35 @@ const storyItems: StoryItem[] = [
   //   title: "Testimonials",
   //   description:
   //     "Read inspiring recovery experiences and real stories shared by our patients, athletes and clients.",
-  //   href: "/story/testimonials",
+  //   href: "/associates/testimonials",
   //   icon: Quote,
   // },
   {
     title: "Research",
     description:
       "Discover SPARRC research initiatives, clinical insights and evidence-based approaches to movement and recovery.",
-    href: "/story/research",
+    href: "/associates/research",
     icon: Search,
-  },
-  {
-    title: "IISM College",
-    description:
-      "Learn about our educational vision, professional training programmes and contribution to sports medicine education.",
-    href: "/story/iism-college",
-    icon: GraduationCap,
   },
   {
     title: "Privacy Policy",
     description:
       "Understand how SPARRC collects, protects and responsibly handles personal and healthcare-related information.",
-    href: "/story/privacy-policy",
+    href: "/associates/privacy-policy",
     icon: ShieldCheck,
   },
   {
     title: "Refund / Cancellation / Return Policy",
     description:
       "Review the terms applicable to appointment cancellations, eligible refunds, programmes and product returns.",
-    href: "/story/refund-cancellation-return-policy",
+    href: "/associates/refund-cancellation-return-policy",
     icon: RefreshCcw,
   },
   {
     title: "Terms and Conditions",
     description:
       "Read the terms governing the use of SPARRC services, programmes, appointments and digital platforms.",
-    href: "/story/terms-and-conditions",
+    href: "/associates/terms-and-conditions",
     icon: Scale,
   },
 ];

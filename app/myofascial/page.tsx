@@ -36,6 +36,20 @@ const myofascialItems: MyofascialItem[] = [
     href: "/myofascial/hfi-online",
     icon: Laptop,
   },
+  {
+  title: "Senior Internship Program",
+  description:
+    "Gain hands-on clinical experience, advanced practical training and expert mentorship in sports medicine and rehabilitation.",
+  href: "/myofascial/senior-internship-program",
+  icon: GraduationCap,
+},
+  {
+    title: "IISM College",
+    description:
+      "Learn about our educational vision, professional training programmes and contribution to sports medicine education.",
+    href: "/myofascial/iism-college",
+    icon: GraduationCap,
+  },
 ];
 
 export default function MyofascialPage() {
@@ -88,7 +102,7 @@ export default function MyofascialPage() {
           </div>
 
           {/* Cards */}
-          <div className="mx-auto mt-12 grid max-w-5xl gap-5 sm:grid-cols-2 xl:gap-6">
+          <div className="mx-auto mt-12 grid max-w-5xl gap-5 sm:grid-cols-2 lg:grid-cols-2 xl:gap-6">
             {myofascialItems.map((item) => {
               const Icon = item.icon;
 

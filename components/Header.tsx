@@ -81,16 +81,17 @@ const navItems: NavItem[] = [
     dropdown: [
       { label: "Internship", slug: "internship" },
       { label: "HFI-online", slug: "hfi-online" },
+      { label: "Senior Internship Program", slug: "senior-internship-program" },
+      { label: "IISM College", slug: "iism-college" },
     ],
   },
   {
-    name: "Story",
-    href: "/story",
+    name: "Associates",
+    href: "/associates",
     columns: 1,
     dropdown: [
      
       { label: "Research", slug: "research" },
-      { label: "IISM College", slug: "iism-college" },
       { label: "Privacy Policy", slug: "privacy-policy" },
       {
         label: "Refund / Cancellation / Return Policy",
@@ -202,7 +203,7 @@ export default function Header() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-7 xl:flex">
+        <nav className="hidden items-center gap-1 xl:gap-5 xl:flex">
           {navItems.map((item) => {
             const active = isParentActive(item);
 

@@ -288,7 +288,7 @@ export default function PrivacyPolicyPage() {
             className="max-w-[800px]"
           >
             <p className="text-[12px] font-bold uppercase tracking-[0.1em] text-[#30343c]">
-              Story
+              Associates
             </p>
 
             <h1 className="mt-5 text-[29px] font-extrabold leading-[1.28] text-[#11151c] sm:text-[36px] lg:text-[42px]">
