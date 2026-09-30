@@ -34,7 +34,7 @@ const locations = [
   },
   {
     name: "COIMBATORE",
-    areas: "Avinashi Road, R.SPuram",
+    areas: "Avinashi Road, R.S Puram",
     point: { top: "88%", left: "34%" },
   },
   {
