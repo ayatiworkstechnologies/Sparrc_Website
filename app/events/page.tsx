@@ -21,7 +21,7 @@ export default function EventsPage() {
 
       <CommunityMeetingNavigation />
 
-      <SeniorInternshipProgram />
+      {/* <SeniorInternshipProgram /> */}
 
       {/* <EventShowcase /> */}
 
