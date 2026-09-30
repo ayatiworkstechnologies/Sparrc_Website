@@ -74,7 +74,7 @@ export default function SujathaVisionSection() {
                         variants={contentVariants}
                         className="text-[23px] font-extrabold leading-[1.25] tracking-[-0.025em] text-[#111111] sm:text-[28px] lg:text-[31px]"
                     >
-                        Dr. Sujatha Pugazhendi is a visionary
+                        Mrs. Sujatha Pugazhendi is a visionary
                     </motion.h1>
 
                     <motion.p
@@ -82,7 +82,7 @@ export default function SujathaVisionSection() {
                         className="mx-auto mt-4 max-w-[1040px] text-[13px] font-normal leading-[1.75] text-[#8a8a8a] sm:text-[14px] md:text-[15px]"
                     >
                         entrepreneur and a pioneer in the field of Sports and Fitness
-                        Medicine. As the co-founder of SPARRC Institute, she has played a
+                        Medicine. As the founderof SPARRC Institute, she has played a
                         pivotal role in transforming rehabilitation and fitness services in
                         India. Since its inception in 2006, SPARRC has expanded to 19
                         centers across 9 locations, with a team of over 200
@@ -132,7 +132,7 @@ export default function SujathaVisionSection() {
                                 </div>
 
                                 <h2 className="text-[22px] font-extrabold leading-[1.25] tracking-[-0.02em] text-[#111111] sm:text-[26px] lg:text-[27px]">
-                                    Dr. Sujatha Pugazhendi
+                                    Mrs. Sujatha Pugazhendi
                                 </h2>
                             </div>
 
@@ -177,7 +177,7 @@ export default function SujathaVisionSection() {
                                 <div className="relative aspect-[1.36/1] w-full overflow-hidden bg-[#eeeeee]">
                                     <Image
                                         src="/images/team-1.png"
-                                        alt="Dr. Sujatha Pugazhendi"
+                                        alt="Mrs. Sujatha Pugazhendi"
                                         fill
                                         sizes="(max-width: 1023px) 100vw, 38vw"
                                         className="object-cover object-center transition-transform duration-700 ease-out hover:scale-[1.035]"

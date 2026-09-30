@@ -63,7 +63,7 @@ function PortraitCard() {
     >
       <Image
         src="/images/sujatha-pugazhendi-01.png"
-        alt="Dr. Sujatha Pugazhendi"
+        alt="Mrs. Sujatha Pugazhendi"
         fill
         priority
         sizes="(max-width: 1024px) 100vw, 480px"
@@ -96,7 +96,7 @@ function PortraitCard() {
             sm:text-[20px]
           "
         >
-          Dr. Sujatha Pugazhendi
+          Mrs. Sujatha Pugazhendi
         </h3>
 
         <p
@@ -110,7 +110,7 @@ function PortraitCard() {
             text-[#63D5EB]
           "
         >
-          CO-FOUNDER &amp; CEO, SPARRC
+          founder&amp; CEO, SPARRC
         </p>
       </div>
     </div>
@@ -341,7 +341,7 @@ export default function WomanBehindSparrc() {
                   md:text-[19px]
                 "
               >
-                “Long before she became Dr Sujatha
+                “Long before she became Mrs Sujatha
                 Pugazhendi, she was a dancer and an
                 athlete. Movement was how she first
                 learnt to understand her own body.”
@@ -379,7 +379,7 @@ export default function WomanBehindSparrc() {
                 md:text-[15px]
               "
             >
-              Dr. Sujatha Pugazhendi built SPARRC
+              Mrs. Sujatha Pugazhendi built SPARRC
               on a simple, powerful idea: prescribe
               exercise instead of medicine when
               movement is the better answer. A

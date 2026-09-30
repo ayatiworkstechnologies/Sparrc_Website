@@ -147,7 +147,7 @@ export default function KannanVisionSection() {
             Indies series. He further honed his expertise by earning a
             Master&apos;s in Sports Medicine from the University of New South
             Wales, Australia. What sets him apart is his integration of sports
-            medicine and yoga into pain management which has led to 1 million
+            medicine and yoga into pain management which has led to 2 Million
             success stories.
           </motion.p>
         </motion.div>

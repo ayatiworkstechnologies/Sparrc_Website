@@ -7,7 +7,7 @@ export default function SujathaPugazhendiPage() {
   return (
     <>
       <InnerBanner
-        title="Sujatha Pugazhendi"
+        title="Mrs.Sujatha Pugazhendi"
         bgImage="/images/page-banner-bg.png"
       />
 

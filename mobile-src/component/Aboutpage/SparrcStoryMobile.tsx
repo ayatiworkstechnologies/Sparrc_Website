@@ -1315,7 +1315,7 @@ export default function SparrcStoryMobile() {
                     text-[#68758A]
                   "
                 >
-                  Long before she became Dr Sujatha
+                  Long before she became Mrs Sujatha
                   Pugazhendi, she was a dancer and an
                   athlete. Movement was how she first
                   learnt to understand her own body.

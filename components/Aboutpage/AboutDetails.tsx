@@ -13,7 +13,7 @@ const aboutData = {
   points: [
     {
       icon: "/icons/logo-icon.png",
-      text: "has helped over 1 Million Patients to be free from Pain",
+      text: "has helped over 2 Million Patients to be free from Pain",
     },
     {
       icon: "/icons/logo-icon.png",

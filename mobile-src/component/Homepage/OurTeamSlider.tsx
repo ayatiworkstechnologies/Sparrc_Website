@@ -47,10 +47,10 @@ type TeamMember = {
 const teamMembers: TeamMember[] = [
   {
     id: 1,
-    name: "Dr. Sujatha Pugazhendi",
-    designation: "Co-Founder & CEO",
+    name: "Mrs. Sujatha Pugazhendi",
+    designation: "founder& CEO",
     summary:
-      "Dr. Sujatha Pugazhendi is the Co-Founder and CEO of SPARRC Institute and a pioneer in Sports and Fitness Medicine.",
+      "Mrs. Sujatha Pugazhendi is the founderand CEO of SPARRC Institute and a pioneer in Sports and Fitness Medicine.",
     image: "/mobile/images/sujatha-pugazhendi.png",
     modalSubtitle:
       "Visionary Entrepreneur & Pioneer in Sports and Fitness Medicine",
@@ -59,7 +59,7 @@ const teamMembers: TeamMember[] = [
       {
         title: "Professional Profile",
         paragraphs: [
-          "Dr. Sujatha Pugazhendi is the Co-Founder and CEO of SPARRC Institute and a pioneer in Sports and Fitness Medicine. Along with Dr. Kannan Pugazhendi, she founded SPARRC in 2006 and has played a key role in building the organisation into a growing network of sports, rehabilitation, and fitness medicine centres.",
+          "Mrs. Sujatha Pugazhendi is the founderand CEO of SPARRC Institute and a pioneer in Sports and Fitness Medicine. Along with Dr. Kannan Pugazhendi, she founded SPARRC in 2006 and has played a key role in building the organisation into a growing network of sports, rehabilitation, and fitness medicine centres.",
 
           "With over 18 years of experience in entrepreneurship, operations, strategic planning, branding, and healthcare innovation, she has focused on making fitness and rehabilitation more accessible while empowering healthcare professionals within the organisation.",
         ],
@@ -68,7 +68,7 @@ const teamMembers: TeamMember[] = [
       {
         title: "Leadership & Career Highlights",
         bullets: [
-          "Co-Founder & CEO – SPARRC Institute",
+          "founder& CEO – SPARRC Institute",
           "Founder/leader behind SPARRC’s expansion into a national network of centres",
           "Led organisational growth, operations, branding, financial development, and strategic execution",
           "Launched the Indian Institute of Sports Medicine (IISM) to expand education in sports and fitness medicine",
@@ -90,7 +90,7 @@ const teamMembers: TeamMember[] = [
         bullets: [
           "Best Entrepreneur Award – MSME, Government of Tamil Nadu, 2013",
           "Honorary Doctorate (D.Litt) – The International Tamil University, USA, 2018",
-          "Co-led the growth of SPARRC, which has supported more than 1 million patients and built a large multidisciplinary team",
+          "Co-led the growth of SPARRC, which has supported more than 2 Million patients and built a large multidisciplinary team",
           "Contributed to healthcare education and knowledge sharing through IISM and SPARRC publications",
           "Co-authored research on non-invasive physical therapies and rehabilitation for musculoskeletal conditions",
         ],
@@ -99,7 +99,7 @@ const teamMembers: TeamMember[] = [
       {
         title: "Vision & Impact",
         paragraphs: [
-          "Dr. Sujatha Pugazhendi continues to focus on integrating healthcare, fitness, rehabilitation, education, and entrepreneurship. Her work through SPARRC and its specialised initiatives reflects a commitment to inclusive, accessible, and exercise-based approaches to health and wellness.",
+          "Mrs. Sujatha Pugazhendi continues to focus on integrating healthcare, fitness, rehabilitation, education, and entrepreneurship. Her work through SPARRC and its specialised initiatives reflects a commitment to inclusive, accessible, and exercise-based approaches to health and wellness.",
         ],
       },
     ],
@@ -108,7 +108,7 @@ const teamMembers: TeamMember[] = [
   {
     id: 2,
     name: "Dr. Kannan Pugazhendi",
-    designation: "Co-Founder : SPARRC",
+    designation: "founder: SPARRC",
     summary:
       "Dr. Kannan Pugazhendi, founder of SPARRC Institute, is a prominent sports physician who has dedicated over three decades to advancing sports medicine.",
     image: "/mobile/images/dr-kannan-pugazhendi.png",
@@ -141,7 +141,7 @@ const teamMembers: TeamMember[] = [
       {
         title: "Building SPARRC",
         paragraphs: [
-          "Driven by the need for accessible sports and rehabilitation medicine, Dr. Kannan founded SPARRC Institute in 2006. The organisation has grown into a network of sports and fitness medicine centres, bringing together doctors, physiotherapists, trainers, and rehabilitation professionals. SPARRC has reportedly supported over 1 million patients through integrated sports medicine, rehabilitation, fitness, and yoga-based approaches to pain management and wellness.",
+          "Driven by the need for accessible sports and rehabilitation medicine, Dr. Kannan founded SPARRC Institute in 2006. The organisation has grown into a network of sports and fitness medicine centres, bringing together doctors, physiotherapists, trainers, and rehabilitation professionals. SPARRC has reportedly supported over 2 Million patients through integrated sports medicine, rehabilitation, fitness, and yoga-based approaches to pain management and wellness.",
         ],
       },
 

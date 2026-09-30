@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 const teamMembers = [
   {
-    name: "Sujatha Pugazhendi",
+    name: "Mrs. Sujatha Pugazhendi",
     role: "Founder & CEO",
     image: "/images/team-1.png",
     description:
