@@ -59,7 +59,7 @@ const trainingItems = [
 
 const featureCards = [
   {
-    tag: "SPARRC INDIA STRENGTH MOVEMENT",
+    tag: "Preserve Muscle & Strength",
     title: "Beat Sarcopenia, Beat Dynapenia",
     description:
       "Loss of muscle mass (Sarcopenia) and loss of muscle strength (Dynapenia) are major challenges in healthy ageing. Our targeted program rebuilds capacity, prevents muscle wastage, and preserves dynamic physical independence.",

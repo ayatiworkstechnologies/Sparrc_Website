@@ -37,14 +37,14 @@ export default function RehabilitationPage() {
             href: "/programs-care/rehabilitation/geriatric-rehabilitation",
             buttonText: "Read more",
           },
-          {
-            title: "Clinical Pilates",
-            description:
-              "Clinical Pilates takes an individualized approach to treating injuries and other musculoskeletal dysfunctions.",
-            image: "/images/clinical-pilates.png",
-            href: "/programs-care/rehabilitation/clinical-pilates",
-            buttonText: "Read more",
-          },
+          // {
+          //   title: "Clinical Pilates",
+          //   description:
+          //     "Clinical Pilates takes an individualized approach to treating injuries and other musculoskeletal dysfunctions.",
+          //   image: "/images/clinical-pilates.png",
+          //   href: "/programs-care/rehabilitation/clinical-pilates",
+          //   buttonText: "Read more",
+          // },
           {
             title: "Sports Rehabilitation",
             description:

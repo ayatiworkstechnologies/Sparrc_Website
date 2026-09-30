@@ -28,6 +28,7 @@ export default function AquatherapyPage() {
             images: [
               "/images/aquatherapy-1.png",
               "/images/aquatherapy-2.png",
+              "/images/aquatherapy-3.png",
             ],
             showFeatures: false,
             content:

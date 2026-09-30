@@ -26,13 +26,13 @@ type StoryItem = {
 };
 
 const storyItems: StoryItem[] = [
-  {
-    title: "Testimonials",
-    description:
-      "Read inspiring recovery experiences and real stories shared by our patients, athletes and clients.",
-    href: "/story/testimonials",
-    icon: Quote,
-  },
+  // {
+  //   title: "Testimonials",
+  //   description:
+  //     "Read inspiring recovery experiences and real stories shared by our patients, athletes and clients.",
+  //   href: "/story/testimonials",
+  //   icon: Quote,
+  // },
   {
     title: "Research",
     description:

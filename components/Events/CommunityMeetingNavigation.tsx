@@ -276,7 +276,7 @@ export default function CommunityMeetingNavigation({
               </div>
 
               <h2 className="mt-4 max-w-[620px] text-[25px] font-bold leading-tight text-[#171a21] sm:text-[31px] lg:text-[36px]">
-                Stories, milestones and community impact
+                Real-Life Stories, Milestones and Community
               </h2>
             </div>
 

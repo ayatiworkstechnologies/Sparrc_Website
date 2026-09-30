@@ -28,8 +28,25 @@ type NavItem = {
 };
 
 const navItems: NavItem[] = [
-  { name: "Home", href: "/" },
   { name: "About", href: "/about" },
+  {
+    name: "How We Help",
+    href: "/how-we-help",
+    columns: 2,
+    dropdown: [
+      { label: "MTPT", slug: "mtpt" },
+      { label: "Exercise Prescription", slug: "exercise-prescription" },
+      { label: "PEMF", slug: "pemf" },
+      { label: "Sports Massage", slug: "sports-massage" },
+      { label: "Physiotherapy", slug: "physiotherapy" },
+      { label: "Aquatherapy", slug: "aquatherapy" },
+      { label: "Group Therapy", slug: "group-therapy" },
+      { label: "Kalaripayattu", slug: "kalaripayattu" },
+      { label: "Yoga Therapy", slug: "yoga-therapy" },
+      { label: "Alternate Therapy", slug: "alternate-therapy" },
+      { label: "Functional Training", slug: "functional-training" },
+    ],
+  },
   {
     name: "Programs & Care",
     href: "/programs-care",
@@ -55,24 +72,7 @@ const navItems: NavItem[] = [
       { label: "Digital Care", slug: "digital-care" },
     ],
   },
-  {
-    name: "How We Help",
-    href: "/how-we-help",
-    columns: 2,
-    dropdown: [
-      { label: "MTPT", slug: "mtpt" },
-      { label: "Exercise Prescription", slug: "exercise-prescription" },
-      { label: "PEMF", slug: "pemf" },
-      { label: "Sports Massage", slug: "sports-massage" },
-      { label: "Physiotherapy", slug: "physiotherapy" },
-      { label: "Aquatherapy", slug: "aquatherapy" },
-      { label: "Group Therapy", slug: "group-therapy" },
-      { label: "Kalaripayattu", slug: "kalaripayattu" },
-      { label: "Yoga Therapy", slug: "yoga-therapy" },
-      { label: "Alternate Therapy", slug: "alternate-therapy" },
-      { label: "Functional Training", slug: "functional-training" },
-    ],
-  },
+  
   { name: "Events", href: "/events" },
   {
     name: "Myofascial",
@@ -88,7 +88,7 @@ const navItems: NavItem[] = [
     href: "/story",
     columns: 1,
     dropdown: [
-      { label: "Testimonials", slug: "testimonials" },
+     
       { label: "Research", slug: "research" },
       { label: "IISM College", slug: "iism-college" },
       { label: "Privacy Policy", slug: "privacy-policy" },
@@ -99,6 +99,9 @@ const navItems: NavItem[] = [
       { label: "Terms and Conditions", slug: "terms-and-conditions" },
     ],
   },
+
+  { name: "Testimonials", href: "/testimonials" },
+
   { name: "Contact", href: "/contact" },
 ];
 
