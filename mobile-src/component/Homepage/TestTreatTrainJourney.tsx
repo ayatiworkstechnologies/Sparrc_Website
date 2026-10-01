@@ -288,7 +288,7 @@ export default function TestTreatTrainJourney() {
           (previous + 1) %
           journeyItems.length,
       );
-    }, 3200);
+    }, 4500);
 
     return () => {
       window.clearInterval(interval);

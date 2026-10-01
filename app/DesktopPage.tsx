@@ -32,7 +32,7 @@ export default function Home() {
 
         {/* Tablet / Desktop Banner */}
         <Image
-          src="/images/banner-01-desktop.png"
+          src="/images/banner-001-desktop.png"
           alt="SPARRC Desktop Banner"
           width={1920}
           height={800}

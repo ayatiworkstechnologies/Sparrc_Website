@@ -323,7 +323,8 @@ export default function RecoveryJourneySection() {
         >
           We Are SPARRC
           <br />
-          The Better Answer
+          Transforming Lives
+
         </h1>
 
         <p
@@ -338,9 +339,7 @@ export default function RecoveryJourneySection() {
             md:text-[21px]
           "
         >
-          We prescribe tailored movement to heal and restore. Across 21
-          centres, we&apos;ve helped over a million people move, heal and live
-          better – with a 95% success rate in resolving pain without surgery.
+          For 40 years, SPARRC has worked with the body where movement begins: muscle and fascia. We understand pain, restore movement and rebuild strength at its source. We integrate myofascial and exercise interventions  to help the body perform better. Over 2 million people across different walks of life have been impacted by SPARRC
         </p>
       </motion.div>
 

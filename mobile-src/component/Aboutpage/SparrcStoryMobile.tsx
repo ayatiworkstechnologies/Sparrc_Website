@@ -53,8 +53,8 @@ const ease: [number, number, number, number] = [
 const navItems: NavItem[] = [
   {
     id: "who-we-are",
-    label: "Who We Are",
-    shortLabel: "Who We Are",
+    label: "About Us",
+    shortLabel: "About Us",
   },
   {
     id: "what-we-believe",
@@ -370,7 +370,7 @@ export default function SparrcStoryMobile() {
           (previous + 1) %
           journeyItems.length,
       );
-    }, 3200);
+    }, 4500);
 
     return () => {
       window.clearInterval(timer);
@@ -475,7 +475,7 @@ export default function SparrcStoryMobile() {
               text-[#151421]
             "
           >
-            We prescribe movement, not medicine.
+            TRANSFORMING LIVES
           </h1>
 
           <p
@@ -486,11 +486,7 @@ export default function SparrcStoryMobile() {
               text-[#68758A]
             "
           >
-            SPARRC is a sports and fitness medicine
-            network built on the belief that the
-            body was made to move - and that most
-            pain, illness, and decline is a movement
-            problem before it is a medicine problem.
+            For 40 years, SPARRC has worked with the body where movement begins: muscle and fascia. We understand pain, restore movement and rebuild strength at its source. We integrate myofascial and exercise interventions  to help the body perform better. Over 2 million people across different walks of life have been impacted by SPARRC
           </p>
 
           {/* STATS */}
@@ -509,12 +505,12 @@ export default function SparrcStoryMobile() {
                 label: "Centres\nacross India",
               },
               {
-                value: "1M+",
-                label: "People\nhelped",
+                value: "2M+",
+                label: "Lives\nImpacted",
               },
               {
-                value: "95%",
-                label: "Surgery\navoidance",
+                value: "40",
+                label: "Years of\nExcellence",
               },
             ].map((stat, index) => (
               <motion.div
@@ -705,14 +701,13 @@ export default function SparrcStoryMobile() {
                       transition-all
                       duration-300
 
-                      ${
-                        active
-                          ? `
+                      ${active
+                        ? `
                             border-transparent
                             text-white
                             shadow-[0_7px_18px_rgba(36,89,208,0.18)]
                           `
-                          : `
+                        : `
                             border-[#DEE4EC]
                             bg-[#F8FAFC]
                             text-[#333A49]
@@ -747,10 +742,9 @@ export default function SparrcStoryMobile() {
                         text-[9px]
                         font-[700]
 
-                        ${
-                          active
-                            ? "text-white/75"
-                            : "text-[#8D9BAD]"
+                        ${active
+                          ? "text-white/75"
+                          : "text-[#8D9BAD]"
                         }
                       `}
                     >
@@ -810,11 +804,11 @@ export default function SparrcStoryMobile() {
               prefersReducedMotion
                 ? undefined
                 : {
-                    opacity: 0,
-                    x: 22,
-                    y: 8,
-                    scale: 0.985,
-                  }
+                  opacity: 0,
+                  x: 22,
+                  y: 8,
+                  scale: 0.985,
+                }
             }
             animate={{
               opacity: 1,
@@ -826,11 +820,11 @@ export default function SparrcStoryMobile() {
               prefersReducedMotion
                 ? undefined
                 : {
-                    opacity: 0,
-                    x: -18,
-                    y: 5,
-                    scale: 0.99,
-                  }
+                  opacity: 0,
+                  x: -18,
+                  y: 5,
+                  scale: 0.99,
+                }
             }
             transition={{
               duration: 0.42,
@@ -872,7 +866,7 @@ export default function SparrcStoryMobile() {
                       text-white/65
                     "
                   >
-                    WHO WE ARE
+                    
                   </p>
 
                   <span
@@ -899,7 +893,7 @@ export default function SparrcStoryMobile() {
                     tracking-[-0.04em]
                   "
                 >
-                  Who We Are
+                  About Us
                 </h2>
 
                 <p
@@ -931,29 +925,29 @@ export default function SparrcStoryMobile() {
 
             {activeNav ===
               "what-we-believe" && (
-              <ContentCard>
-                <div
-                  className="
+                <ContentCard>
+                  <div
+                    className="
                     flex
                     items-center
                     justify-between
                     gap-3
                   "
-                >
-                  <p
-                    className="
+                  >
+                    <p
+                      className="
                       text-[9px]
                       font-[700]
                       uppercase
                       tracking-[0.1em]
                       text-[#7190BB]
                     "
-                  >
-                    OUR PHILOSOPHY
-                  </p>
+                    >
+                     The Pioneer of Fitness Medicine 
+                    </p>
 
-                  <span
-                    className="
+                    <span
+                      className="
                       rounded-full
                       bg-[#F1F4F8]
                       px-3
@@ -962,62 +956,66 @@ export default function SparrcStoryMobile() {
                       font-[700]
                       text-[#8794A6]
                     "
-                  >
-                    {activeNumber} / 05
-                  </span>
-                </div>
+                    >
+                      {activeNumber} / 05
+                    </span>
+                  </div>
 
-                <h2
-                  className="
+                  <h2
+                    className="
                     mt-6
                     text-[26px]
                     font-[700]
                     tracking-[-0.035em]
                     text-[#1B1C28]
                   "
-                >
-                  What We Believe
-                </h2>
+                  >
+                    What We Believe
+                  </h2>
 
-                <p
-                  className="
+                  <p
+                    className="
                     mt-5
                     text-[14px]
                     leading-[1.82]
                     text-[#68758A]
                   "
-                >
-                  We believe the body was built to move
-                  and that most pain, illness, and most
-                  of what ages us badly is a movement
-                  problem before it&apos;s a medicine
-                  problem. So when someone comes to us
-                  hurting, our first instinct isn&apos;t
-                  a prescription pad. It&apos;s an
-                  exercise plan, built for their body,
-                  their life, their goals.
-                </p>
+                  >
+                    It started with one man's hands, forty years before "sports medicine" had a name here. Dr. Kannan Pugazhendi worked with muscle and fascia when the idea wasn't yet considered medicine. Magazines called it magic, athletes were back on the field in a jiffy. It wasn't magic. It was a science still waiting for its name.
+                  </p>
 
-                <p
-                  className="
+                  <p
+                    className="
                     mt-5
                     text-[14px]
                     leading-[1.82]
                     text-[#68758A]
                   "
-                >
-                  That&apos;s what &quot;We Prescribe
-                  Exercises - Not Medicines&quot; has
-                  meant since 2006: not a rejection of
-                  medicine, but a refusal to let it be
-                  the first or only answer. Healing
-                  works better as a relationship than a
-                  transaction. Over a million of them
-                  have walked, run, danced, and lived
-                  better because of it.
-                </p>
-              </ContentCard>
-            )}
+                  >
+                    He still doesn't start with an MRI. He trained in an era that diagnosed a torn ligament, a prolapsed disc, through skilled hands — before imaging did it for us. That skill is rare in today's world. 
+                  </p>
+                  <p
+                    className="
+                    mt-5
+                    text-[14px]
+                    leading-[1.82]
+                    text-[#68758A]
+                  "
+                  >
+                    Dr Kannan refers to Exercise medicine as fitness medicine — using exercise as one of his main tools to help people improve their quality of life. As he says, "fitness medicine is to keep the healthy population healthy."
+                  </p>
+                  <p
+                    className="
+                    mt-5
+                    text-[14px]
+                    leading-[1.82]
+                    text-[#68758A]
+                  "
+                  >
+                    That belief is the ground SPARRC stands on.
+                  </p>
+                </ContentCard>
+              )}
 
             {/* ===============================================
                 WHAT WE DO
@@ -1199,15 +1197,14 @@ export default function SparrcStoryMobile() {
                             index,
                           )
                         }
-                        aria-label={`Show item ${
-                          index + 1
-                        }`}
+                        aria-label={`Show item ${index + 1
+                          }`}
                       >
                         <motion.span
                           animate={{
                             width:
                               index ===
-                              activeJourney
+                                activeJourney
                                 ? 25
                                 : 6,
                           }}
@@ -1220,11 +1217,10 @@ export default function SparrcStoryMobile() {
                             h-[6px]
                             rounded-full
 
-                            ${
-                              index ===
+                            ${index ===
                               activeJourney
-                                ? "bg-[#2465D7]"
-                                : "bg-[#D9DEE7]"
+                              ? "bg-[#2465D7]"
+                              : "bg-[#D9DEE7]"
                             }
                           `}
                         />
@@ -1248,39 +1244,39 @@ export default function SparrcStoryMobile() {
 
             {activeNav ===
               "woman-behind-sparrc" && (
-              <ContentCard>
-                {/* MAIN IMAGE */}
+                <ContentCard>
+                  {/* MAIN IMAGE */}
 
-                <StoryImage
-                  src="/mobile/images/woman-behind-sparrc.png"
-                  alt="The Woman Behind SPARRC"
-                />
+                  <StoryImage
+                    src="/mobile/images/woman-behind-sparrc.png"
+                    alt="The Woman Behind SPARRC"
+                  />
 
-                {/* HEADER */}
+                  {/* HEADER */}
 
-                <div
-                  className="
+                  <div
+                    className="
                     mt-5
                     flex
                     items-center
                     justify-between
                     gap-3
                   "
-                >
-                  <p
-                    className="
+                  >
+                    <p
+                      className="
                       text-[9px]
                       font-[700]
                       uppercase
                       tracking-[0.1em]
                       text-[#7190BB]
                     "
-                  >
-                    LEADERSHIP &amp; VISION
-                  </p>
+                    >
+                      LEADERSHIP &amp; VISION
+                    </p>
 
-                  <span
-                    className="
+                    <span
+                      className="
                       rounded-full
                       bg-[#F1F4F8]
                       px-3
@@ -1289,13 +1285,13 @@ export default function SparrcStoryMobile() {
                       font-[700]
                       text-[#8794A6]
                     "
-                  >
-                    {activeNumber} / 05
-                  </span>
-                </div>
+                    >
+                      {activeNumber} / 05
+                    </span>
+                  </div>
 
-                <h2
-                  className="
+                  <h2
+                    className="
                     mt-4
                     text-[25px]
                     font-[700]
@@ -1303,222 +1299,222 @@ export default function SparrcStoryMobile() {
                     tracking-[-0.04em]
                     text-[#1B1C28]
                   "
-                >
-                  The Woman Behind SPARRC
-                </h2>
+                  >
+                    The Woman Behind SPARRC
+                  </h2>
 
-                <p
-                  className="
+                  <p
+                    className="
                     mt-4
                     text-[14px]
                     leading-[1.8]
                     text-[#68758A]
                   "
-                >
-                  Long before she became Mrs Sujatha
-                  Pugazhendi, she was a dancer and an
-                  athlete. Movement was how she first
-                  learnt to understand her own body.
-                  Later, while teaching aerobics and
-                  Zumba, she began to notice something
-                  else: telling people that exercise
-                  was good for them was rarely enough.
-                  They were far more likely to keep
-                  moving when movement itself felt
-                  good, achievable and worth coming
-                  back to.
-                </p>
+                  >
+                    Long before she became Mrs Sujatha
+                    Pugazhendi, she was a dancer and an
+                    athlete. Movement was how she first
+                    learnt to understand her own body.
+                    Later, while teaching aerobics and
+                    Zumba, she began to notice something
+                    else: telling people that exercise
+                    was good for them was rarely enough.
+                    They were far more likely to keep
+                    moving when movement itself felt
+                    good, achievable and worth coming
+                    back to.
+                  </p>
 
-                {/* ===========================================
+                  {/* ===========================================
                     CLINICAL FOUNDATION
                 ============================================ */}
 
-                <StorySection
-                  eyebrow="THE CLINICAL FOUNDATION"
-                  title="The Clinical Foundation"
-                  image="/mobile/images/clinical-foundation.png"
-                  imageAlt="The Clinical Foundation"
-                >
-                  <p>
-                    A Master&apos;s in Sports
-                    Physiotherapy gave that instinct a
-                    clinical grounding. She learnt to
-                    look beyond where it hurt and ask
-                    why it hurt: why one joint was
-                    compensating for another, why the
-                    same pain kept returning, and why
-                    rest was not always the answer.
-                  </p>
+                  <StorySection
+                    eyebrow="THE CLINICAL FOUNDATION"
+                    title="The Clinical Foundation"
+                    image="/mobile/images/clinical-foundation.png"
+                    imageAlt="The Clinical Foundation"
+                  >
+                    <p>
+                      A Master&apos;s in Sports
+                      Physiotherapy gave that instinct a
+                      clinical grounding. She learnt to
+                      look beyond where it hurt and ask
+                      why it hurt: why one joint was
+                      compensating for another, why the
+                      same pain kept returning, and why
+                      rest was not always the answer.
+                    </p>
 
-                  <p>
-                    In 2006, that thinking helped shape
-                    SPARRC, which she founded with her
-                    husband, Dr Kannan Pugazhendi. At
-                    its heart was a straightforward
-                    idea they continue to work with
-                    today: prescribe exercise instead
-                    of medicine when exercise is
-                    genuinely the better answer.
-                  </p>
-                </StorySection>
+                    <p>
+                      In 2006, that thinking helped shape
+                      SPARRC, which she founded with her
+                      husband, Dr Kannan Pugazhendi. At
+                      its heart was a straightforward
+                      idea they continue to work with
+                      today: prescribe exercise instead
+                      of medicine when exercise is
+                      genuinely the better answer.
+                    </p>
+                  </StorySection>
 
-                {/* ===========================================
+                  {/* ===========================================
                     WHOLE PERSON
                 ============================================ */}
 
-                <StorySection
-                  eyebrow="WHOLE PERSON"
-                  title="Looking at the Whole Person"
-                  image="/mobile/images/looking-at-whole-person.png"
-                  imageAlt="Looking at the Whole Person"
-                >
-                  <p>
-                    Building SPARRC from the ground up
-                    gradually changed the way Sujatha
-                    looked at health. An injury could
-                    rarely be separated neatly from
-                    the person living with it. So her
-                    own learning widened too. She
-                    trained in yoga and acupuncture,
-                    qualified as an Integrative
-                    Nutrition Health Coach through
-                    IIN, and studied entrepreneurship
-                    at London Business School and
-                    leadership at Harvard Business
-                    School.
-                  </p>
+                  <StorySection
+                    eyebrow="WHOLE PERSON"
+                    title="Looking at the Whole Person"
+                    image="/mobile/images/looking-at-whole-person.png"
+                    imageAlt="Looking at the Whole Person"
+                  >
+                    <p>
+                      Building SPARRC from the ground up
+                      gradually changed the way Sujatha
+                      looked at health. An injury could
+                      rarely be separated neatly from
+                      the person living with it. So her
+                      own learning widened too. She
+                      trained in yoga and acupuncture,
+                      qualified as an Integrative
+                      Nutrition Health Coach through
+                      IIN, and studied entrepreneurship
+                      at London Business School and
+                      leadership at Harvard Business
+                      School.
+                    </p>
 
-                  <p>
-                    The business education had a
-                    practical purpose. If the idea
-                    behind SPARRC was going to reach
-                    more people, the institution
-                    carrying it had to grow with it.
-                    Under her leadership, a single
-                    clinic expanded into a network of
-                    centres across India, treating
-                    more than a million people and
-                    reporting a 95% success rate in
-                    resolving pain without surgery.
-                  </p>
-                </StorySection>
+                    <p>
+                      The business education had a
+                      practical purpose. If the idea
+                      behind SPARRC was going to reach
+                      more people, the institution
+                      carrying it had to grow with it.
+                      Under her leadership, a single
+                      clinic expanded into a network of
+                      centres across India, treating
+                      more than a million people and
+                      reporting a 95% success rate in
+                      resolving pain without surgery.
+                    </p>
+                  </StorySection>
 
-                {/* ===========================================
+                  {/* ===========================================
                     BREATH STORY
                 ============================================ */}
 
-                <StorySection
-                  eyebrow="BREATH & MOVEMENT"
-                  title="Where Breath Enters the Story"
-                  image="/mobile/images/breath-enters-story.png"
-                  imageAlt="Where Breath Enters the Story"
-                >
-                  <p>
-                    Throughout these years, Sujatha
-                    maintained a practice that was
-                    much more personal: breathwork.
-                  </p>
+                  <StorySection
+                    eyebrow="BREATH & MOVEMENT"
+                    title="Where Breath Enters the Story"
+                    image="/mobile/images/breath-enters-story.png"
+                    imageAlt="Where Breath Enters the Story"
+                  >
+                    <p>
+                      Throughout these years, Sujatha
+                      maintained a practice that was
+                      much more personal: breathwork.
+                    </p>
 
-                  <p>
-                    Over time, she began paying closer
-                    attention to the relationship
-                    between breathing and movement.
-                    How we breathe, she came to
-                    believe, can influence how we
-                    move, recover and experience
-                    pain. A muscle or joint therefore
-                    tells only part of the story.
-                  </p>
+                    <p>
+                      Over time, she began paying closer
+                      attention to the relationship
+                      between breathing and movement.
+                      How we breathe, she came to
+                      believe, can influence how we
+                      move, recover and experience
+                      pain. A muscle or joint therefore
+                      tells only part of the story.
+                    </p>
 
-                  <p>
-                    That thinking is now developing
-                    into Kinesio Health, her approach
-                    to bringing breath and movement
-                    into the same conversation.
-                    Rather than treating them as
-                    separate areas of wellness, it
-                    looks at how the two work
-                    together within the body.
-                  </p>
+                    <p>
+                      That thinking is now developing
+                      into Kinesio Health, her approach
+                      to bringing breath and movement
+                      into the same conversation.
+                      Rather than treating them as
+                      separate areas of wellness, it
+                      looks at how the two work
+                      together within the body.
+                    </p>
 
-                  <p>
-                    It is also at the heart of the
-                    book she is currently writing,
-                    The Superpower of Doing a Little
-                    Everyday. The title reflects an
-                    idea that has followed her from
-                    her earliest years in sport and
-                    dance through physiotherapy,
-                    SPARRC and now Kinesio Health:
-                    meaningful change in the body
-                    rarely comes from doing something
-                    extraordinary once. More often,
-                    it comes from doing something
-                    small, and continuing to do it.
-                  </p>
+                    <p>
+                      It is also at the heart of the
+                      book she is currently writing,
+                      The Superpower of Doing a Little
+                      Everyday. The title reflects an
+                      idea that has followed her from
+                      her earliest years in sport and
+                      dance through physiotherapy,
+                      SPARRC and now Kinesio Health:
+                      meaningful change in the body
+                      rarely comes from doing something
+                      extraordinary once. More often,
+                      it comes from doing something
+                      small, and continuing to do it.
+                    </p>
 
-                  <p>
-                    For Sujatha, that ultimately
-                    means helping people understand
-                    their bodies well enough to trust
-                    them again.
-                  </p>
-                </StorySection>
+                    <p>
+                      For Sujatha, that ultimately
+                      means helping people understand
+                      their bodies well enough to trust
+                      them again.
+                    </p>
+                  </StorySection>
 
-                {/* ===========================================
+                  {/* ===========================================
                     RECOGNITION
                 ============================================ */}
 
-                <motion.section
-                  initial={{
-                    opacity: 0,
-                    y: 18,
-                  }}
-                  whileInView={{
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  viewport={{
-                    once: true,
-                    amount: 0.2,
-                  }}
-                  transition={{
-                    duration: 0.55,
-                    ease,
-                  }}
-                  className="
+                  <motion.section
+                    initial={{
+                      opacity: 0,
+                      y: 18,
+                    }}
+                    whileInView={{
+                      opacity: 1,
+                      y: 0,
+                    }}
+                    viewport={{
+                      once: true,
+                      amount: 0.2,
+                    }}
+                    transition={{
+                      duration: 0.55,
+                      ease,
+                    }}
+                    className="
                     mt-7
                     border-t
                     border-[#E6EAF0]
                     pt-7
                   "
-                >
-                  <p
-                    className="
+                  >
+                    <p
+                      className="
                       text-[9px]
                       font-[700]
                       uppercase
                       tracking-[0.11em]
                       text-[#6588B8]
                     "
-                  >
-                    HONOURS &amp; RECOGNITION
-                  </p>
+                    >
+                      HONOURS &amp; RECOGNITION
+                    </p>
 
-                  <h3
-                    className="
+                    <h3
+                      className="
                       mt-2
                       text-[22px]
                       font-[700]
                       tracking-[-0.035em]
                       text-[#171824]
                     "
-                  >
-                    Recognition
-                  </h3>
+                    >
+                      Recognition
+                    </h3>
 
-                  <div
-                    className="
+                    <div
+                      className="
                       mt-5
                       overflow-hidden
                       rounded-[17px]
@@ -1527,11 +1523,11 @@ export default function SparrcStoryMobile() {
                       bg-[#F8FAFC]
                       px-4
                     "
-                  >
-                    {/* AWARD 1 */}
+                    >
+                      {/* AWARD 1 */}
 
-                    <div
-                      className="
+                      <div
+                        className="
                         flex
                         items-start
                         gap-4
@@ -1539,78 +1535,78 @@ export default function SparrcStoryMobile() {
                         border-[#E4E8EE]
                         py-5
                       "
-                    >
-                      <AwardIcon />
+                      >
+                        <AwardIcon />
 
-                      <div>
-                        <p
-                          className="
+                        <div>
+                          <p
+                            className="
                             text-[14px]
                             font-[700]
                             leading-[1.4]
                             text-[#273044]
                           "
-                        >
-                          Best Entrepreneur Award,
-                          2013
-                        </p>
+                          >
+                            Best Entrepreneur Award,
+                            2013
+                          </p>
 
-                        <p
-                          className="
+                          <p
+                            className="
                             mt-2
                             text-[12px]
                             leading-[1.5]
                             text-[#788397]
                           "
-                        >
-                          MSME, Government of Tamil
-                          Nadu
-                        </p>
+                          >
+                            MSME, Government of Tamil
+                            Nadu
+                          </p>
+                        </div>
                       </div>
-                    </div>
 
-                    {/* AWARD 2 */}
+                      {/* AWARD 2 */}
 
-                    <div
-                      className="
+                      <div
+                        className="
                         flex
                         items-start
                         gap-4
                         py-5
                       "
-                    >
-                      <AwardIcon />
+                      >
+                        <AwardIcon />
 
-                      <div>
-                        <p
-                          className="
+                        <div>
+                          <p
+                            className="
                             text-[14px]
                             font-[700]
                             leading-[1.4]
                             text-[#273044]
                           "
-                        >
-                          Best Entrepreneur Award,
-                          2025
-                        </p>
+                          >
+                            Best Entrepreneur Award,
+                            2025
+                          </p>
 
-                        <p
-                          className="
+                          <p
+                            className="
                             mt-2
                             text-[12px]
                             leading-[1.5]
                             text-[#788397]
                           "
-                        >
-                          Award body/title to be
-                          verified
-                        </p>
+                          >
+                            Award body/title to be
+                            verified
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </motion.section>
-              </ContentCard>
-            )}
+                  </motion.section>
+                </ContentCard>
+              )}
 
             {/* ===============================================
                 MOVEMENT MATRIX
@@ -1618,29 +1614,29 @@ export default function SparrcStoryMobile() {
 
             {activeNav ===
               "movement-matrix" && (
-              <ContentCard>
-                <div
-                  className="
+                <ContentCard>
+                  <div
+                    className="
                     flex
                     items-center
                     justify-between
                     gap-3
                   "
-                >
-                  <p
-                    className="
+                  >
+                    <p
+                      className="
                       text-[9px]
                       font-[700]
                       uppercase
                       tracking-[0.1em]
                       text-[#7190BB]
                     "
-                  >
-                    KINESIO HEALTH
-                  </p>
+                    >
+                      KINESIO HEALTH
+                    </p>
 
-                  <span
-                    className="
+                    <span
+                      className="
                       rounded-full
                       bg-[#F1F4F8]
                       px-3
@@ -1649,13 +1645,13 @@ export default function SparrcStoryMobile() {
                       font-[700]
                       text-[#8794A6]
                     "
-                  >
-                    {activeNumber} / 05
-                  </span>
-                </div>
+                    >
+                      {activeNumber} / 05
+                    </span>
+                  </div>
 
-                <h2
-                  className="
+                  <h2
+                    className="
                     mt-5
                     text-[27px]
                     font-[700]
@@ -1663,42 +1659,39 @@ export default function SparrcStoryMobile() {
                     tracking-[-0.04em]
                     text-[#171824]
                   "
-                >
-                  The SPARRC Movement Matrix
-                </h2>
+                  >
+                    The SPARRC Movement Matrix
+                  </h2>
 
-                <p
-                  className="
+                  <p
+                    className="
                     mt-5
                     text-[15px]
                     leading-[1.75]
                     text-[#67758A]
                   "
-                >
-                  The SPARRC Kinesio-Health is
-                  screened and engineered by
-                  bio-Psychosocial concepts. We
-                  integrate two complementary
-                  processes:
-                </p>
+                  >
+                    The SPARRC Kinesio-Health is built on Psychosocial concepts. We combine two complementary processes to understand and treat the whole person. 
 
-                {/* MATRIX 1 */}
+                  </p>
 
-                <motion.div
-                  initial={{
-                    opacity: 0,
-                    y: 16,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.08,
-                    ease,
-                  }}
-                  className="
+                  {/* MATRIX 1 */}
+
+                  <motion.div
+                    initial={{
+                      opacity: 0,
+                      y: 16,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      y: 0,
+                    }}
+                    transition={{
+                      duration: 0.5,
+                      delay: 0.08,
+                      ease,
+                    }}
+                    className="
                     mt-6
                     rounded-[18px]
                     bg-gradient-to-br
@@ -1710,32 +1703,32 @@ export default function SparrcStoryMobile() {
                     text-white
                     shadow-[0_12px_30px_rgba(19,83,200,0.14)]
                   "
-                >
-                  <h3
-                    className="
+                  >
+                    <h3
+                      className="
                       text-[19px]
                       font-[700]
                       leading-[1.3]
                     "
-                  >
-                    1. SPARRC Movement Matrix
-                  </h3>
+                    >
+                      1. SPARRC Movement Matrix
+                    </h3>
 
-                  <p
-                    className="
+                    <p
+                      className="
                       mt-4
                       text-[14px]
                       leading-[1.7]
                       text-white/90
                     "
-                  >
-                    We examine the physical factors
-                    that influence movement,
-                    function and performance.
-                  </p>
+                    >
+                      We examine the physical factors
+                      that influence movement,
+                      function and performance.
+                    </p>
 
-                  <ul
-                    className="
+                    <ul
+                      className="
                       mt-5
                       space-y-3
                       pl-5
@@ -1743,42 +1736,42 @@ export default function SparrcStoryMobile() {
                       leading-[1.55]
                       text-white/95
                     "
-                  >
-                    <li className="list-disc">
-                      Breathing patterns
-                    </li>
+                    >
+                      <li className="list-disc">
+                        Breathing patterns
+                      </li>
 
-                    <li className="list-disc">
-                      Fascia &amp; muscle health
-                    </li>
+                      <li className="list-disc">
+                        Fascia &amp; muscle health
+                      </li>
 
-                    <li className="list-disc">
-                      Movement mechanics
-                    </li>
+                      <li className="list-disc">
+                        Movement mechanics
+                      </li>
 
-                    <li className="list-disc">
-                      Performance / Activity load
-                    </li>
-                  </ul>
-                </motion.div>
+                      <li className="list-disc">
+                        Performance / Activity load
+                      </li>
+                    </ul>
+                  </motion.div>
 
-                {/* MATRIX 2 */}
+                  {/* MATRIX 2 */}
 
-                <motion.div
-                  initial={{
-                    opacity: 0,
-                    y: 16,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.15,
-                    ease,
-                  }}
-                  className="
+                  <motion.div
+                    initial={{
+                      opacity: 0,
+                      y: 16,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      y: 0,
+                    }}
+                    transition={{
+                      duration: 0.5,
+                      delay: 0.15,
+                      ease,
+                    }}
+                    className="
                     mt-4
                     rounded-[18px]
                     bg-gradient-to-br
@@ -1790,19 +1783,19 @@ export default function SparrcStoryMobile() {
                     text-white
                     shadow-[0_12px_30px_rgba(19,83,200,0.14)]
                   "
-                >
-                  <h3
-                    className="
+                  >
+                    <h3
+                      className="
                       text-[19px]
                       font-[700]
                       leading-[1.3]
                     "
-                  >
-                    2. SPARRC Lifestyle Levers
-                  </h3>
+                    >
+                      2. SPARRC Lifestyle Levers
+                    </h3>
 
-                  <ul
-                    className="
+                    <ul
+                      className="
                       mt-5
                       space-y-3
                       pl-5
@@ -1810,30 +1803,30 @@ export default function SparrcStoryMobile() {
                       leading-[1.55]
                       text-white/95
                     "
-                  >
-                    <li className="list-disc">
-                      Sunlight exposure
-                    </li>
+                    >
+                      <li className="list-disc">
+                        Sunlight exposure
+                      </li>
 
-                    <li className="list-disc">
-                      Hydration
-                    </li>
+                      <li className="list-disc">
+                        Hydration
+                      </li>
 
-                    <li className="list-disc">
-                      Nutrition
-                    </li>
+                      <li className="list-disc">
+                        Nutrition
+                      </li>
 
-                    <li className="list-disc">
-                      Recovery and Sleep
-                    </li>
+                      <li className="list-disc">
+                        Recovery and Sleep
+                      </li>
 
-                    <li className="list-disc">
-                      Stress management
-                    </li>
-                  </ul>
-                </motion.div>
-              </ContentCard>
-            )}
+                      <li className="list-disc">
+                        Stress management
+                      </li>
+                    </ul>
+                  </motion.div>
+                </ContentCard>
+              )}
           </motion.div>
         </AnimatePresence>
       </div>

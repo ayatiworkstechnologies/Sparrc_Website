@@ -222,7 +222,8 @@ export default function SparrcMovementMatrix() {
               md:text-[15px]
             "
           >
-           The SPARRC Kinesio-Health is screened and engineered by bio-Psychosocial concepts. We integrate two complementary processes to understand and treat the whole person.
+            The SPARRC Kinesio-Health is built on Psychosocial concepts. We combine two complementary processes to understand and treat the whole person. 
+
           </p>
         </motion.div>
 
@@ -309,7 +310,9 @@ export default function SparrcMovementMatrix() {
                   sm:text-[11px]
                 "
               >
-                The SPARRC Kinesio-Health is built on Psychosocial concepts. We combine two complementary processes to understand and treat the whole person. 
+                We examine the physical factors
+                      that influence movement,
+                      function and performance.
               </p>
 
               <motion.div
