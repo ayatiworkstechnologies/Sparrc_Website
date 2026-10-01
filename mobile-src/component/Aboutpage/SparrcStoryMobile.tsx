@@ -1559,8 +1559,7 @@ export default function SparrcStoryMobile() {
                             text-[#788397]
                           "
                           >
-                            MSME, Government of Tamil
-                            Nadu
+                            Presented by MSME, Government of Tamil Nadu
                           </p>
                         </div>
                       </div>
@@ -1586,8 +1585,7 @@ export default function SparrcStoryMobile() {
                             text-[#273044]
                           "
                           >
-                            Best Entrepreneur Award,
-                            2025
+                           Governor’s Award, 2025
                           </p>
 
                           <p
@@ -1598,8 +1596,7 @@ export default function SparrcStoryMobile() {
                             text-[#788397]
                           "
                           >
-                            Award body/title to be
-                            verified
+                           Government of Tamil Nadu
                           </p>
                         </div>
                       </div>
