@@ -75,8 +75,8 @@ const navItems: NavItem[] = [
   
   { name: "Events", href: "/events" },
   {
-    name: "Myofascial",
-    href: "/myofascial",
+    name: "MSA",
+    href: "/myofascial-science-academy",
     columns: 1,
     dropdown: [
       { label: "Internship", slug: "internship" },

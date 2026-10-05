@@ -35,7 +35,7 @@ const awards = [
   },
   {
     title: "Governor’s Award, 2025",
-    description: "Government of Tamil Nadu",
+    description: "Recipient of the prestigious Governor’s Award on Women’s Day, presented by the Hon’ble Governor of Tamil Nadu, Shri R. N. Ravi.",
   },
 ];
 
@@ -943,7 +943,7 @@ export default function WomanBehindSparrc() {
                                   leading-[1.4]
                                   text-[#151515]
 
-                                  sm:text-[12px]
+                                  sm:text-[15px]
                                 "
                               >
                                 {

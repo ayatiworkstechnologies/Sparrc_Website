@@ -287,17 +287,17 @@ export default function RecoveryJourneySection() {
           prefersReducedMotion
             ? undefined
             : {
-                opacity: 0,
-                y: 18,
-              }
+              opacity: 0,
+              y: 18,
+            }
         }
         whileInView={
           prefersReducedMotion
             ? undefined
             : {
-                opacity: 1,
-                y: 0,
-              }
+              opacity: 1,
+              y: 0,
+            }
         }
         viewport={{
           once: true,
@@ -311,20 +311,19 @@ export default function RecoveryJourneySection() {
       >
         <h1
           className="
-            max-w-[620px]
-            text-[29px]
-            font-[700]
-            leading-[1.1]
-            tracking-[-0.035em]
-            text-black
-            sm:text-[42px]
-            md:text-[48px]
-          "
+    max-w-[620px]
+    text-[29px]
+    font-[700]
+    leading-[1.1]
+    tracking-[-0.035em]
+    text-black
+    sm:text-[42px]
+    md:text-[48px]
+  "
         >
           We Are SPARRC
           <br />
-          Transforming Lives
-
+          <span className="italic text-[22px] font-medium">Fitness Unlimited</span>
         </h1>
 
         <p

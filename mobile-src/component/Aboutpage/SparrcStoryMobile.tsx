@@ -1596,7 +1596,7 @@ export default function SparrcStoryMobile() {
                             text-[#788397]
                           "
                           >
-                           Government of Tamil Nadu
+                           Recipient of the prestigious Governor’s Award on Women’s Day, presented by the Hon’ble Governor of Tamil Nadu, Shri R. N. Ravi.
                           </p>
                         </div>
                       </div>

@@ -9,9 +9,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Myofascial | SPARRC",
+  title: "Myofascial Science Academy | SPARRC",
   description:
-    "Explore SPARRC Myofascial internship and HFI online learning programmes.",
+    "Explore SPARRC Myofascial Science Academy internship and HFI online learning programmes.",
 };
 
 type MyofascialItem = {
@@ -26,28 +26,28 @@ const myofascialItems: MyofascialItem[] = [
     title: "Internship",
     description:
       "Explore structured internship opportunities offering practical observation, professional exposure and learning within SPARRC.",
-    href: "/myofascial/internship",
+    href: "/myofascial-science-academy/internship",
     icon: GraduationCap,
   },
   {
     title: "HFI-online",
     description:
       "Access flexible online learning programmes, expert guidance and educational resources related to health, fitness and myofascial practice.",
-    href: "/myofascial/hfi-online",
+    href: "/myofascial-science-academy/hfi-online",
     icon: Laptop,
   },
   {
   title: "Senior Internship Program",
   description:
     "Gain hands-on clinical experience, advanced practical training and expert mentorship in sports medicine and rehabilitation.",
-  href: "/myofascial/senior-internship-program",
+  href: "/myofascial-science-academy/senior-internship-program",
   icon: GraduationCap,
 },
   {
     title: "IISM College",
     description:
       "Learn about our educational vision, professional training programmes and contribution to sports medicine education.",
-    href: "/myofascial/iism-college",
+    href: "/myofascial-science-academy/iism-college",
     icon: GraduationCap,
   },
 ];
@@ -71,7 +71,7 @@ export default function MyofascialPage() {
           </p>
 
           <h1 className="mt-4 text-[36px] font-extrabold leading-tight sm:text-[46px] md:text-[58px]">
-            Myofascial
+            Myofascial Science Academy
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-[14px] leading-7 text-white/80 sm:text-[16px]">
@@ -87,7 +87,7 @@ export default function MyofascialPage() {
           {/* Section heading */}
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-[12px] font-bold uppercase tracking-[0.18em] text-[#286cba] sm:text-[13px]">
-              Explore Myofascial
+              Explore Myofascial Science Academy
             </p>
 
             <h2 className="mt-4 text-[28px] font-extrabold leading-tight text-[#101828] sm:text-[36px] md:text-[44px]">
