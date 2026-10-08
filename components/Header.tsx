@@ -91,7 +91,7 @@ const navItems: NavItem[] = [
     columns: 1,
     dropdown: [
      
-      { label: "Research", slug: "research" },
+      // { label: "Research", slug: "research" },
       { label: "Privacy Policy", slug: "privacy-policy" },
       {
         label: "Refund / Cancellation / Return Policy",
