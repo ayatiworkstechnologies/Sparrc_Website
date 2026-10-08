@@ -9,7 +9,7 @@ const locations = [
   {
     name: "CHENNAI",
     areas:
-      "Alwarpet, ECR, Anna Nagar, Egmore, Ashok Nagar, Velachery, Adyar, Chromepet, Porur",
+      "Alwarpet, ECR, Anna Nagar, Egmore, Ashok Nagar, Velachery, Adyar, Chromepet, Porur , Ambattur",
     point: { top: "82%", left: "42%" },
   },
   {

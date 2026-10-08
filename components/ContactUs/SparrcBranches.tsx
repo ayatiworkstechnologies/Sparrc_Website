@@ -11,7 +11,7 @@ import {
 type Branch = {
   name: string;
   address: string;
-  phones: string[];
+  phones?: string[];
   mapQuery?: string;
 };
 
@@ -60,6 +60,12 @@ const branchGroups: BranchGroup[] = [
           "SPARRC Adyar 4th Floor, No 45 & 47, Gandhi Nagar 1st Main Road, Chennai 600020",
         phones: ["98400 01721"],
         mapQuery: "SPARRC Institute Adyar Chennai",
+      },
+      {
+        name: "Ambattur",
+        address:
+          "SPARRC KINESIOHEALTH PVT LTD, Ground Floor, No. 123, Plot No. 1, Bharathi Nagar, Vijayalakshmi Puram, Red Hills Road, Ambattur, Chennai 600053",
+        mapQuery: "SPARRC KINESIOHEALTH PVT LTD Ambattur Chennai",
       },
       {
         name: "Chromepet",
@@ -312,6 +318,7 @@ export default function SparrcBranches() {
 }
 
 function BranchCard({ branch }: { branch: Branch }) {
+  const phones = branch.phones ?? [];
   const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
     branch.mapQuery || `${branch.name} ${branch.address}`,
   )}`;
@@ -360,35 +367,37 @@ function BranchCard({ branch }: { branch: Branch }) {
         </div>
 
         {/* Phone numbers */}
-        <div className="mt-5 flex items-start gap-3">
-          <Phone
-            size={16}
-            strokeWidth={2}
-            className="mt-0.5 shrink-0 text-[#ff6545]"
-          />
+        {phones.length ? (
+          <div className="mt-5 flex items-start gap-3">
+            <Phone
+              size={16}
+              strokeWidth={2}
+              className="mt-0.5 shrink-0 text-[#ff6545]"
+            />
 
-          <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1">
-            {branch.phones.map((phone, index) => (
-              <span
-                key={`${phone}-${index}`}
-                className="inline-flex items-center"
-              >
-                <a
-                  href={`tel:${phone.replace(/[^\d+]/g, "")}`}
-                  className="text-[12px] leading-5 text-[#4e4954] transition-colors duration-200 hover:text-[#5b31f4] sm:text-[12.5px]"
+            <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1">
+              {phones.map((phone, index) => (
+                <span
+                  key={`${phone}-${index}`}
+                  className="inline-flex items-center"
                 >
-                  {phone}
-                </a>
+                  <a
+                    href={`tel:${phone.replace(/[^\d+]/g, "")}`}
+                    className="text-[12px] leading-5 text-[#4e4954] transition-colors duration-200 hover:text-[#5b31f4] sm:text-[12.5px]"
+                  >
+                    {phone}
+                  </a>
 
-                {index < branch.phones.length - 1 && (
-                  <span className="ml-1.5 text-[#aaa5af]">
-                    /
-                  </span>
-                )}
-              </span>
-            ))}
+                  {index < phones.length - 1 && (
+                    <span className="ml-1.5 text-[#aaa5af]">
+                      /
+                    </span>
+                  )}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
+        ) : null}
 
         {/* Push button to bottom for equal alignment */}
         <div className="mt-auto pt-7">

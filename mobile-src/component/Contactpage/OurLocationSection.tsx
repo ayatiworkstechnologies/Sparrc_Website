@@ -46,7 +46,7 @@ const LOCATION = {
 type Branch = {
   name: string;
   address: string;
-  phones: string[];
+  phones?: string[];
   mapQuery?: string;
 };
 
@@ -115,6 +115,14 @@ const branchGroups: BranchGroup[] = [
         phones: ["98400 01721"],
 
         mapQuery: "SPARRC Institute Adyar Chennai",
+      },
+      {
+        name: "Ambattur",
+
+        address:
+          "SPARRC KINESIOHEALTH PVT LTD, Ground Floor, No. 123, Plot No. 1, Bharathi Nagar, Vijayalakshmi Puram, Red Hills Road, Ambattur, Chennai 600053",
+
+        mapQuery: "SPARRC KINESIOHEALTH PVT LTD Ambattur Chennai",
       },
 
       {
@@ -680,6 +688,7 @@ function BranchCard({
   branch: Branch;
   prefersReducedMotion: boolean;
 }) {
+  const phones = branch.phones ?? [];
   const mapUrl = getMapUrl(branch);
 
   return (
@@ -748,25 +757,27 @@ function BranchCard({
 
       {/* Phone numbers */}
 
-      <div className="mt-4 flex min-w-0 items-start gap-2.5">
-        <Phone
-          size={17}
-          strokeWidth={2}
-          className="mt-[3px] shrink-0 text-[#2445d8]"
-        />
+      {phones.length ? (
+        <div className="mt-4 flex min-w-0 items-start gap-2.5">
+          <Phone
+            size={17}
+            strokeWidth={2}
+            className="mt-[3px] shrink-0 text-[#2445d8]"
+          />
 
-        <div className="flex min-w-0 flex-wrap items-center gap-x-2 gap-y-2">
-          {branch.phones.map((phone, index) => (
-            <a
-              key={`${phone}-${index}`}
-              href={getPhoneHref(phone)}
-              className="inline-flex min-h-[24px] items-center break-all text-[13px] font-semibold leading-5 text-[#2445d8] transition-colors duration-200 hover:text-[#152d9b]"
-            >
-              {phone}
-            </a>
-          ))}
+          <div className="flex min-w-0 flex-wrap items-center gap-x-2 gap-y-2">
+            {phones.map((phone, index) => (
+              <a
+                key={`${phone}-${index}`}
+                href={getPhoneHref(phone)}
+                className="inline-flex min-h-[24px] items-center break-all text-[13px] font-semibold leading-5 text-[#2445d8] transition-colors duration-200 hover:text-[#152d9b]"
+              >
+                {phone}
+              </a>
+            ))}
+          </div>
         </div>
-      </div>
+      ) : null}
 
       {/* Directions button */}
 
