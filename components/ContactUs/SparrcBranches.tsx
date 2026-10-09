@@ -65,6 +65,7 @@ const branchGroups: BranchGroup[] = [
         name: "Ambattur",
         address:
           "SPARRC KINESIOHEALTH PVT LTD, Ground Floor, No. 123, Plot No. 1, Bharathi Nagar, Vijayalakshmi Puram, Red Hills Road, Ambattur, Chennai 600053",
+        phones: ["99943 33105"],
         mapQuery: "SPARRC KINESIOHEALTH PVT LTD Ambattur Chennai",
       },
       {
