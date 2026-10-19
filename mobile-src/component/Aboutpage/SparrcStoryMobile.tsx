@@ -904,7 +904,7 @@ export default function SparrcStoryMobile() {
                     text-white/92
                   "
                 >
-                  We are SPARRC - Sports Performance
+                  WE are SPARRC - Sports Performance
                   Assessment Rehabilitation Research
                   Counseling Institute - one of
                   India&apos;s pioneering instead of leading sports and fitness
