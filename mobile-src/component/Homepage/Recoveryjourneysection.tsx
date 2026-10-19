@@ -338,7 +338,7 @@ export default function RecoveryJourneySection() {
             md:text-[21px]
           "
         >
-          For 40 years, SPARRC has worked with the body where movement begins: muscle and fascia. We understand pain, restore movement and rebuild strength at its source. We integrate myofascial and exercise interventions  to help the body perform better. Over 2 million people across different walks of life have been impacted by SPARRC
+          For 40 years , Dr Kannan Pugazhendi’ s SPARRC has worked has worked with the body where movement begins: muscle and fascia. We understand pain, restore movement and rebuild strength at its source. We integrate myofascial and exercise interventions  to help the body perform better. Over 2 million people across different walks of life have been impacted by SPARRC
         </p>
       </motion.div>
 

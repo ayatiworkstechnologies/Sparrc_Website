@@ -9,7 +9,7 @@ const aboutData = {
   intro:
     "SPARRC — Sports Performance Assessment Rehabilitation Research Counseling Institute is India’s leading Sports and Fitness Medicine Clinic.",
   founded:
-    "SPARRC was founded in 2006 by Dr. Kannan Pugazhendi and Mrs. Sujatha Pugazhendi. Since then, SPARRC:",
+    "For 40 years , Dr Kannan Pugazhendi’ s SPARRC has worked:",
   points: [
     {
       icon: "/icons/logo-icon.png",

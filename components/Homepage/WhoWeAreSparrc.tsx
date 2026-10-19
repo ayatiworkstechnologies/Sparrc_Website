@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const ease: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 const paragraphs = [
-     `We are SPARRC — Sports Performance Assessment Rehabilitation Research Counseling Institute — India’s leading sports and fitness medicine chain. SPARRC was founded in 2006 on a simple, scientific concept: exercise intervention not medicine, wherever it is genuinely the better answer.`, 
+     `We are SPARRC — Sports Performance Assessment Rehabilitation Research Counseling Institute — India’s leading sports and fitness medicine chain. SPARRC was founded over 40 years ago on a simple, scientific concept: exercise intervention, not medicine, wherever it is genuinely the better answer.`, 
      `We call the people we treat “medical guests”, not patients, because we believe healing works better as a relationship than a transaction. SPARRC has achieved a 95% success rate in resolving pain without surgery.`,
      `SPARRC is led by Dr Kannan Pugazhendi, who brings four decades of expertise in sports and fitness medicine, and Mrs Sujatha Pugazhendi, whose vision has helped take SPARRC from a single room to 21 centres across India. Today, our work spans sports medicine and rehabilitation, and extends into breath and movement science through our Kinesio Health discipline.`,
 
@@ -23,8 +23,8 @@ const stats = [
     label: "Centres Across 8 location",
   },
   {
-    value: "2006",
-    label: "Founded",
+    value: "40+ ",
+    label: "Years",
   },
 ];
 

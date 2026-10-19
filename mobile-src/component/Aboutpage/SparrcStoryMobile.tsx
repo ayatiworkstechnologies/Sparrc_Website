@@ -486,7 +486,7 @@ export default function SparrcStoryMobile() {
               text-[#68758A]
             "
           >
-            For 40 years, SPARRC has worked with the body where movement begins: muscle and fascia. We understand pain, restore movement and rebuild strength at its source. We integrate myofascial and exercise interventions  to help the body perform better. Over 2 million people across different walks of life have been impacted by SPARRC
+            For 40 years , Dr Kannan Pugazhendi’ s SPARRC has worked with the body where movement begins: muscle and fascia. We understand pain, restore movement and rebuild strength at its source. We integrate myofascial and exercise interventions  to help the body perform better. Over 2 million people across different walks of life have been impacted by SPARRC
           </p>
 
           {/* STATS */}
@@ -907,14 +907,11 @@ export default function SparrcStoryMobile() {
                   We are SPARRC - Sports Performance
                   Assessment Rehabilitation Research
                   Counseling Institute - one of
-                  India&apos;s leading sports and fitness
-                  medicine networks. Since 2006, we have
+                  India&apos;s pioneering instead of leading sports and fitness
+                  medicine networks.  we have
                   believed in prescribing exercise, not
                   medicine, wherever it is the better
-                  answer. Across 21 centres, we have
-                  helped over a million people move, heal
-                  and live better, with a 95% success
-                  rate in resolving pain without surgery.
+                  answer. Across 21 centres, we have helped over a million people move, heal and live better, and many avoid surgery they did not need, with exercise as the prescription.
                 </p>
               </section>
             )}
