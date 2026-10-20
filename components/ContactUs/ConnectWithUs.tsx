@@ -1,3 +1,4 @@
+
 "use client";
 
 import {
@@ -5,6 +6,7 @@ import {
   FormEvent,
   useEffect,
   useState,
+  useCallback,
 } from "react";
 import {
   AnimatePresence,
@@ -14,6 +16,7 @@ import {
   CheckCircle2,
   CircleAlert,
   LoaderCircle,
+  RefreshCw,
   X,
 } from "lucide-react";
 
@@ -30,6 +33,13 @@ type ToastState = {
   message: string;
 } | null;
 
+type CaptchaResponse = {
+  success: boolean;
+  captchaImage?: string;
+  captchaToken?: string;
+  message?: string;
+};
+
 const initialFormData: ContactFormData = {
   name: "",
   email: "",
@@ -38,7 +48,7 @@ const initialFormData: ContactFormData = {
 };
 
 const mapEmbedUrl =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.031353120536!2d80.2529045!3d13.033675400000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266360d32a0f9%3A0xbc4bfd812341d6d8!2sSparrc%20Institute%20Alwarpet!5e0!3m2!1sen!2sin!4v1785736208962!5m2!1sen!2sin";
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.031353120536!2d80.2529045!3d13.033675400000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266360d32a0f9%3A0xbc4bfd812341d6d8!2sSparrc%20Institute%20Alwarpet!5e0!3m2!1sen!2sin";
 
 const containerVariants = {
   hidden: {
@@ -83,6 +93,70 @@ export default function ConnectWithUs() {
   const [toast, setToast] =
     useState<ToastState>(null);
 
+  // CAPTCHA states
+  const [captchaInput, setCaptchaInput] =
+    useState("");
+
+  const [captchaImage, setCaptchaImage] =
+    useState("");
+
+  const [captchaToken, setCaptchaToken] =
+    useState("");
+
+  const [isCaptchaLoading, setIsCaptchaLoading] =
+    useState(true);
+
+  // Load or refresh CAPTCHA
+  const loadCaptcha = useCallback(async () => {
+    setIsCaptchaLoading(true);
+    setCaptchaInput("");
+    setCaptchaImage("");
+    setCaptchaToken("");
+
+    try {
+      const response = await fetch(
+        "/api/contact-enquiry",
+        {
+          method: "GET",
+          cache: "no-store",
+        }
+      );
+
+      const result: CaptchaResponse =
+        await response.json();
+
+      if (
+        !response.ok ||
+        !result.success ||
+        !result.captchaImage ||
+        !result.captchaToken
+      ) {
+        throw new Error(
+          result.message ||
+            "Unable to load CAPTCHA."
+        );
+      }
+
+      setCaptchaImage(result.captchaImage);
+      setCaptchaToken(result.captchaToken);
+    } catch (error) {
+      setToast({
+        type: "error",
+        title: "CAPTCHA Error",
+        message:
+          error instanceof Error
+            ? error.message
+            : "Unable to load CAPTCHA.",
+      });
+    } finally {
+      setIsCaptchaLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    void loadCaptcha();
+  }, [loadCaptcha]);
+
   useEffect(() => {
     if (!toast) return;
 
@@ -98,7 +172,7 @@ export default function ConnectWithUs() {
   const handleChange = (
     event: ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement
-    >,
+    >
   ) => {
     const { name, value } = event.target;
 
@@ -147,11 +221,24 @@ export default function ConnectWithUs() {
       return "Please enter your message.";
     }
 
+    // CAPTCHA validation
+    if (!captchaToken || !captchaImage) {
+      return "Please refresh the CAPTCHA.";
+    }
+
+    if (!captchaInput.trim()) {
+      return "Please enter the CAPTCHA code.";
+    }
+
+    if (captchaInput.trim().length !== 5) {
+      return "Please enter the complete 5-character CAPTCHA.";
+    }
+
     return null;
   };
 
   const handleSubmit = async (
-    event: FormEvent<HTMLFormElement>,
+    event: FormEvent<HTMLFormElement>
   ) => {
     event.preventDefault();
 
@@ -185,8 +272,10 @@ export default function ConnectWithUs() {
             email: formData.email.trim(),
             phone: formData.phone.trim(),
             message: formData.message.trim(),
+            captchaAnswer: captchaInput.trim(),
+            captchaToken,
           }),
-        },
+        }
       );
 
       const result = await response.json();
@@ -195,7 +284,7 @@ export default function ConnectWithUs() {
         throw new Error(
           typeof result?.message === "string"
             ? result.message
-            : "Unable to submit the enquiry.",
+            : "Unable to submit the enquiry."
         );
       }
 
@@ -218,6 +307,7 @@ export default function ConnectWithUs() {
       });
     } finally {
       setIsSubmitting(false);
+      void loadCaptcha();
     }
   };
 
@@ -319,13 +409,92 @@ export default function ConnectWithUs() {
                   />
                 </motion.div>
 
+                {/* CAPTCHA */}
+                <motion.div
+                  variants={itemVariants}
+                  className="mt-4"
+                >
+                  <label
+                    htmlFor="contact-captcha"
+                    className="mb-2 block text-[12px] font-semibold text-[#17151b] sm:text-[13px]"
+                  >
+                    Captcha
+                  </label>
+
+                  <div className="flex items-center gap-2">
+                    <input
+                      id="contact-captcha"
+                      type="text"
+                      value={captchaInput}
+                      onChange={(event) => {
+                        const value = event.target.value
+                          .replace(/[^a-zA-Z0-9]/g, "")
+                          .toUpperCase()
+                          .slice(0, 5);
+
+                        setCaptchaInput(value);
+                      }}
+                      placeholder="Enter Your Captcha"
+                      maxLength={5}
+                      autoComplete="off"
+                      spellCheck={false}
+                      disabled={isSubmitting}
+                      className="h-[43px] min-w-0 flex-1 rounded-[8px] border border-[#e3e0e9] bg-white px-3 text-[13px] font-medium text-[#242128] outline-none transition-all duration-300 placeholder:text-[11px] placeholder:text-[#aaa5b1] focus:border-[#6238ff] focus:ring-2 focus:ring-[#6238ff]/10 disabled:opacity-60"
+                    />
+
+                    <div className="flex h-[43px] w-[90px] shrink-0 items-center justify-center overflow-hidden rounded-[8px] border border-[#e3e0e9] bg-[#f7f8fa]">
+                      {isCaptchaLoading ? (
+                        <LoaderCircle
+                          size={18}
+                          className="animate-spin text-[#6238ff]"
+                        />
+                      ) : captchaImage ? (
+                        <img
+                          src={captchaImage}
+                          alt="CAPTCHA verification code"
+                          className="h-full w-full object-contain"
+                          draggable={false}
+                        />
+                      ) : (
+                        <span className="text-[10px] text-[#999]">
+                          Unavailable
+                        </span>
+                      )}
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={() => void loadCaptcha()}
+                      disabled={
+                        isCaptchaLoading || isSubmitting
+                      }
+                      aria-label="Refresh CAPTCHA"
+                      title="Refresh CAPTCHA"
+                      className="flex h-[43px] w-[30px] shrink-0 items-center justify-center rounded-[8px] text-[#343039] transition-all duration-300 hover:bg-[#f4f1ff] hover:text-[#6238ff] disabled:cursor-not-allowed disabled:opacity-50"
+                    >
+                      <RefreshCw
+                        size={18}
+                        className={
+                          isCaptchaLoading
+                            ? "animate-spin"
+                            : ""
+                        }
+                      />
+                    </button>
+                  </div>
+                </motion.div>
+
                 <motion.div
                   variants={itemVariants}
                   className="mt-4"
                 >
                   <button
                     type="submit"
-                    disabled={isSubmitting}
+                    disabled={
+                      isSubmitting ||
+                      isCaptchaLoading ||
+                      !captchaToken
+                    }
                     className="inline-flex min-h-[38px] min-w-[112px] items-center justify-center rounded-full bg-[linear-gradient(135deg,#6238ff_0%,#4820f2_100%)] px-6 text-[10px] font-semibold tracking-[0.18em] text-white shadow-[0_8px_20px_rgba(82,44,239,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_11px_24px_rgba(82,44,239,0.35)] disabled:cursor-not-allowed disabled:opacity-70"
                   >
                     {isSubmitting ? (
@@ -382,7 +551,7 @@ type FormFieldProps = {
   inputMode?: "text" | "email" | "tel";
   disabled?: boolean;
   onChange: (
-    event: ChangeEvent<HTMLInputElement>,
+    event: ChangeEvent<HTMLInputElement>
   ) => void;
 };
 
