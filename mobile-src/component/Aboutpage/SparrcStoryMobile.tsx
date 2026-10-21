@@ -906,8 +906,8 @@ export default function SparrcStoryMobile() {
                 >
                   WE are SPARRC - Sports Performance
                   Assessment Rehabilitation Research
-                  Counseling Institute - one of
-                  India&apos;s pioneering of leading sports and fitness
+                  Counseling Institute -
+                  India&apos;s pioneering sports and fitness
                   medicine networks.  we have
                   believed in prescribing exercise, not
                   medicine, wherever it is the better
