@@ -908,8 +908,8 @@ export default function SparrcStoryMobile() {
                   Assessment Rehabilitation Research
                   Counseling Institute -
                   India&apos;s pioneering sports and fitness
-                  medicine networks.  we have
-                  believed in prescribing exercise, not
+                  medicine networks.  WE HAVE
+                  BELIEVED in prescribing exercise, not
                   medicine, wherever it is the better
                   answer. Across 21 centres, we have helped over a million people move, heal and live better, and many avoid surgery they did not need, with exercise as the prescription.
                 </p>
