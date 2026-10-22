@@ -370,7 +370,7 @@ export default function SparrcStoryMobile() {
           (previous + 1) %
           journeyItems.length,
       );
-    }, 4500);
+    }, 7000);
 
     return () => {
       window.clearInterval(timer);
@@ -908,7 +908,7 @@ export default function SparrcStoryMobile() {
                   Assessment Rehabilitation Research
                   Counseling Institute -
                   India&apos;s pioneering sports and fitness
-                  medicine networks.  We have
+                  medicine network.  We have
                   believed in prescribing exercise, not
                   medicine, wherever it is the better
                   answer. Across 21 centres, we have helped over a million people move, heal and live better, and many avoid surgery they did not need, with exercise as the prescription.
@@ -1665,8 +1665,7 @@ export default function SparrcStoryMobile() {
                     text-[#67758A]
                   "
                   >
-                    The SPARRC Kinesio-Health is built on Psychosocial concepts. We combine two complementary processes to understand and treat the whole person. 
-
+                    The SPARRC Kinesio-Health addresses Pain and MSK conditions directly or indirectly from the visceral participation through Bio-Psychosocial paradigm.
                   </p>
 
                   {/* MATRIX 1 */}
@@ -1740,7 +1739,7 @@ export default function SparrcStoryMobile() {
                       </li>
 
                       <li className="list-disc">
-                        Movement mechanics
+                        Movement Biomechanics
                       </li>
 
                       <li className="list-disc">
