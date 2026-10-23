@@ -22,7 +22,7 @@ const LOCATION = {
   name: "SPARRC - Alwarpet",
 
   address:
-    "#4, Alwarpet St, behind Hushpuppies Showroom, Seetammal Colony, Alwarpet, Chennai, Tamil Nadu 600018",
+    "No. 4, VM Towers, Alwarpet Street, Alwarpet, Chennai - 600018. Landmark: Opp. to Old Madras Baking Company.",
 
   phoneNumbers: [
     {
@@ -32,6 +32,14 @@ const LOCATION = {
     {
       label: "044-42059405",
       href: "tel:04442059405",
+    },
+    {
+      label: "9790944605",
+      href: "tel:9790944605",
+    },
+    {
+      label: "9790944607",
+      href: "tel:9790944607",
     },
   ],
 
@@ -68,13 +76,13 @@ const branchGroups: BranchGroup[] = [
         name: "Alwarpet",
 
         address:
-          "#4, Alwarpet St, behind Hushpuppies Showroom, Seetammal Colony, MIG Colony, Alwarpet, Chennai, Tamil Nadu 600018",
+          "No. 4, VM Towers, Alwarpet Street, Alwarpet, Chennai - 600018. Landmark: Opp. to Old Madras Baking Company.",
 
         phones: [
           "044-45066131",
           "044-42059405",
           "9790944605",
-          "09790944607",
+          "9790944607",
         ],
 
         mapQuery: "SPARRC Institute Alwarpet Chennai",
@@ -84,7 +92,7 @@ const branchGroups: BranchGroup[] = [
         name: "Anna Nagar",
 
         address:
-          "Door No.116, 936, 6th Ave, Aishwarya Colony, Thangam Colony, Anna Nagar, Chennai, Tamil Nadu 600040",
+          "Plot No. 936, Door No. 116, 6th Avenue, Anna Nagar, Chennai - 600040",
 
         phones: [
           "044 2618 1819",
@@ -99,9 +107,9 @@ const branchGroups: BranchGroup[] = [
         name: "Ashok Nagar",
 
         address:
-          "No22/36, 18th Ave, Sector 10, Sector 13, Ashok Nagar, Chennai, Tamil Nadu 600083",
+          "No. 22/36, 18th Avenue, Ashok Nagar, Chennai - 600083",
 
-        phones: ["9840689902", "044 42144606"],
+        phones: ["044 42144606", "9790700712"],
 
         mapQuery: "SPARRC Institute Ashok Nagar Chennai",
       },
@@ -110,40 +118,30 @@ const branchGroups: BranchGroup[] = [
         name: "Adyar",
 
         address:
-          "SPARRC Adyar 4th Floor, No 45 & 47, Gandhi Nagar 1st Main Road, Chennai 600020",
+          "4th Floor, 1st Main Road, Gandhi Nagar, Adyar, Chennai - 600020. Landmark: 4th Floor of Odyssey Book Store.",
 
         phones: ["98400 01721"],
 
         mapQuery: "SPARRC Institute Adyar Chennai",
       },
       {
-        name: "Ambattur",
+        name: "Chrompet",
 
         address:
-          "SPARRC KINESIOHEALTH PVT LTD, Ground Floor, No. 123, Plot No. 1, Bharathi Nagar, Vijayalakshmi Puram, Red Hills Road, Ambattur, Chennai 600053",
-        phones: ["99943 33105"],
-
-        mapQuery: "SPARRC KINESIOHEALTH PVT LTD Ambattur Chennai",
-      },
-
-      {
-        name: "Chromepet",
-
-        address:
-          "4, 7th Cross Road, CLC Works Rd, Chromepet, Chennai, Tamil Nadu 600047",
+          "No. 4, 7th Main Road, New Colony, Chrompet, Chennai - 600044. Landmark: Near Government Girls High School.",
 
         phones: ["044 43858199", "8754441160"],
 
-        mapQuery: "SPARRC Institute Chromepet Chennai",
+        mapQuery: "SPARRC Institute Chrompet Chennai",
       },
 
       {
         name: "Velachery",
 
         address:
-          "Door No 17A, 7th Main Rd, Srinivasa Nagar, Ram Nagar, Velachery, Chennai, Tamil Nadu 600042",
+          "Door No. 17A, Ram Nagar North Extension, 7th Main Road Extension, Velachery East, Chennai - 600042",
 
-        phones: ["044 2259 2995", "96772 11334"],
+        phones: [],
 
         mapQuery: "SPARRC Institute Velachery Chennai",
       },
@@ -152,9 +150,9 @@ const branchGroups: BranchGroup[] = [
         name: "ECR",
 
         address:
-          "No1, Newry Arcade, Copper Beach Road, SH 49, Panaiyur, Chennai, Tamil Nadu 600115",
+          "Door No. 1, 6B, Copper Beach Road, Newry Arcade, Panaiyur, ECR, Chennai - 600119",
 
-        phones: ["965 965 0000", "9003000112"],
+        phones: ["044 46008361", "90030 00112"],
 
         mapQuery: "SPARRC Institute ECR Panaiyur Chennai",
       },
@@ -163,7 +161,7 @@ const branchGroups: BranchGroup[] = [
         name: "Egmore",
 
         address:
-          "New No 7A, 3rd Floor, Halls Road, Egmore, Chennai, Tamil Nadu 600008",
+          "New No. 7A (Old No. 2 to 4), Third Floor, Halls Road, Egmore, Chennai - 600008",
 
         phones: ["9789855888"],
 
@@ -174,7 +172,7 @@ const branchGroups: BranchGroup[] = [
         name: "Porur",
 
         address:
-          "84/6 F. No. S3, Mugalivakkam Main Road, Madhanandhapuram, Mugalivakkam, Porur, Chennai, Tamil Nadu 600125",
+          "No. 84/6, F. No. S3, Mugalivakkam Main Road, Madhanandhapuram, Mugalivakkam, Porur, Chennai - 600125",
 
         phones: ["9384111971"],
 
@@ -188,10 +186,10 @@ const branchGroups: BranchGroup[] = [
 
     branches: [
       {
-        name: "Tirupur",
+        name: "Tiruppur",
 
         address:
-          "Door No.120, Anu Business Center, 123, College Rd, KNP Puram, Odakkadu, Tiruppur, Tamil Nadu 641602",
+          "Anu Business Center, Door No. 120-123, College Road, Tiruppur - 641602",
 
         phones: ["96000 05563"],
 
@@ -199,45 +197,45 @@ const branchGroups: BranchGroup[] = [
       },
 
       {
-        name: "Coimbatore",
+        name: "Coimbatore - R.S. Puram",
 
         address:
-          "No.104, Bashyakaralu Road West, R.S. Puram, Coimbatore - 641 002",
+          "No. 104, Bashyakaralu Road West, R.S. Puram, Coimbatore - 641002",
 
-        phones: ["0422 4369612", "9677123775"],
+        phones: ["0422 4369612"],
 
         mapQuery: "SPARRC Institute RS Puram Coimbatore",
       },
 
       {
-        name: "Pondicherry",
+        name: "Puducherry",
 
         address:
-          "490, Mahatma Gandhi Rd, Chinnakadai, MG Road Area, Puducherry, 605001",
+          "No. 490, 2nd Floor, Mahatma Gandhi Road, Chinnakadai, Puducherry - 605001",
 
         phones: ["9962426660"],
 
-        mapQuery: "SPARRC Institute Pondicherry",
+        mapQuery: "SPARRC Institute Puducherry",
       },
 
       {
-        name: "Coimbatore",
+        name: "Coimbatore - Avinashi Road",
 
         address:
-          "699, Avinashi Rd, Puliakulam, Coimbatore, Tamil Nadu 641045",
+          "699, Avinashi Road, Opp. to G.K.N.M. Signal, Near Revel Bike Showroom, Coimbatore - 641037",
 
-        phones: ["75500 02015"],
+        phones: ["0422 6794587", "75500 02015"],
 
-        mapQuery: "SPARRC Institute Puliakulam Coimbatore",
+        mapQuery: "SPARRC Institute Avinashi Road Coimbatore",
       },
 
       {
         name: "Madurai",
 
         address:
-          "2/2A, 8th Street, Deputy Collector Colony, KK Nagar, Madurai - 625020",
+          "2/2A, 8th Street, Deputy Collector Colony, K.K. Nagar, Madurai - 625020",
 
-        phones: ["9840033470", "9659650000"],
+        phones: ["98400 33470"],
 
         mapQuery: "SPARRC Institute KK Nagar Madurai",
       },
@@ -249,21 +247,21 @@ const branchGroups: BranchGroup[] = [
 
     branches: [
       {
-        name: "Whitefield",
+        name: "Bengaluru - Whitefield",
 
         address:
-          "167, Whitefield Main Rd, near Yamaha Showroom, Brooke Bond First Cross, Whitefield, Bengaluru, Karnataka 560066",
+          "167, Whitefield Main Road, Near Forum Value Mall, Bengaluru - 560066",
 
-        phones: ["074065 55591"],
+        phones: ["74065 55591"],
 
         mapQuery: "SPARRC Institute Whitefield Bengaluru",
       },
 
       {
-        name: "Indra Nagar",
+        name: "Bengaluru - Indira Nagar",
 
         address:
-          "1st Floor, Divya Shakthi Building, 1201, 100 Feet Rd, HAL 2nd Stage, Doopanahalli, Indiranagar, Bengaluru, Karnataka 560038",
+          "Divya Shakthi Building, First Floor, 1201, 100 Feet Road, HAL 2nd Stage, Doopanahalli, Indira Nagar, Bengaluru, Karnataka - 560038",
 
         phones: ["08040900208", "9880198118"],
 
@@ -271,12 +269,12 @@ const branchGroups: BranchGroup[] = [
       },
 
       {
-        name: "Jayanagar Bangalore",
+        name: "Bengaluru - Jayanagar",
 
         address:
-          "648, 22 Main Road, 32nd E Cross Rd, 4th T Block East, Jayanagar, Bengaluru, Karnataka 560041",
+          "648, 22 Main, 32 'E' Cross, Jayanagar 4th 'T' Block, Bengaluru - 560041. Landmark: Next to Rajiv Gandhi University, Opposite to Axis Bank.",
 
-        phones: ["080 41288144", "97391 11175"],
+        phones: ["97391 11175", "99622 71175"],
 
         mapQuery: "SPARRC Institute Jayanagar Bengaluru",
       },
@@ -291,20 +289,20 @@ const branchGroups: BranchGroup[] = [
         name: "New Delhi",
 
         address:
-          "3rd Floor, S357, RM Vats Marg, near HDFC Bank, Block S, Panchsheel Park South, Panchsheel Park, New Delhi, Delhi 110017",
+          "S357 RM Vats Marg (Third Floor), Panchsheel Park, Near HDFC Bank, South Delhi, New Delhi - 110017",
 
-        phones: ["098219 00267"],
+        phones: ["011 4183 9002", "+91 98219 00267"],
 
         mapQuery: "SPARRC Institute Panchsheel Park New Delhi",
       },
 
       {
-        name: "Hyderabad",
+        name: "Hyderabad - Banjara Hills",
 
         address:
-          "No 8-2-682/B-5, 4th Floor, VSP Icon, Road No. 12, Banjara Hills, Hyderabad, Telangana 500034",
+          "No. 8-2-682/B-5, 4th Floor, VSP Icon, No. 12, Banjara Hills, Hyderabad - 500034. Landmark: Kotak Mahindra Bank.",
 
-        phones: ["077024 77704"],
+        phones: ["040-2339 7704", "77024 77704"],
 
         mapQuery: "SPARRC Institute Banjara Hills Hyderabad",
       },
@@ -313,23 +311,13 @@ const branchGroups: BranchGroup[] = [
         name: "Mumbai",
 
         address:
-          "323, Sushmore 2nd Floor, Linking Rd, next to Axis Bank, Khar, Khar West, Mumbai, Maharashtra 400052",
+          "4th Floor, West View, 62, Linking Road, Khar, Khar West, Mumbai, Maharashtra - 400052",
 
-        phones: ["77 38 333967", "022 2605 2081"],
+        phones: ["77383 33967"],
 
         mapQuery: "SPARRC Institute Khar West Mumbai",
       },
 
-      {
-        name: "Mumbai",
-
-        address:
-          "41, 4th Floor, West View, Corner of 1st Road & Linking Road, Above Axis Bank, Opp to Khoo-piyo, Khar Linking Road, Mumbai - 400052",
-
-        phones: ["77 38 333967", "022 2605 2081"],
-
-        mapQuery: "SPARRC Institute Linking Road Khar Mumbai",
-      },
     ],
   },
 ];
